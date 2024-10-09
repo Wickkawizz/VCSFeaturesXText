@@ -25,43 +25,35 @@ VCSFeatures returns VCSFeatures:
 
 Commands returns Commands:
 	{Commands}
-	'Commands'
-	'{'
-		('mergeStrategy' mergeStrategy=MergeStrategy)?
-		('highlevelcommand' '{' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* '}' )?
-		('lowlevelcommand' '{' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* '}' )?
-	'}';
+		'-' ('mergeStrategy' mergeStrategy=MergeStrategy)?
+		'-' ('lowlevelcommand' '{' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* '}' )?
+		'-' ('highlevelcommand' '{' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* '}' )?
+		;
 
 History returns History:
 	{History}
-	'History'
-	'{'
-		('labelType' labelType=LabelType)?
-		('commitHistoryRange' commitHistoryRange=EInt)?
-		('numberOfBranches' numberOfBranches=EInt)?
-	'}';
+
+		'-' ('labelType' labelType=LabelType)?
+		'-' ('commitHistoryRange' commitHistoryRange=EInt)?
+		'-' ('numberOfBranches' numberOfBranches=EInt)?
+		;
 
 VersionUnit returns VersionUnit:
 	{VersionUnit}
-	'VersionUnit'
-	'{'
-		('granularity' '{' granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* '}' )?
-	'}';
+		'-' ('granularity' '(' granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* ')' )?
+		;
 
 CollaborationStyle returns CollaborationStyle:
 	{CollaborationStyle}
-	'CollaborationStyle'
-	'{'
-		('collabStyle' collabStyle=CollaborationStyleType)?
-	'}';
+		'-' ('collabStyle' collabStyle=CollaborationStyleType)?
+		;
 
 Database returns Database:
 	{Database}
-	'Database'
-	connectionString=EString
-	'{'
-		('DatabaseType' DatabaseType=DatabaseType)?
-	'}';
+	'Database' '('
+	'-' 'ConnectionString' connectionString=EString
+	'-' ('DatabaseType' DatabaseType=DatabaseType)? ')'
+		;
 
 EString returns ecore::EString:
 	STRING | ID;
@@ -73,16 +65,14 @@ HighLevelCommand returns HighLevelCommand:
 	{HighLevelCommand}
 	'HighLevelCommand'
 	name=EString
-	'{'
 		('lowlevelcommand' '(' lowlevelcommand+=[LowLevelCommand|EString] ( "," lowlevelcommand+=[LowLevelCommand|EString])* ')' )?
-	'}';
+		;
 
 LowLevelCommand returns LowLevelCommand:
 	'LowLevelCommand'
-	name=EString
-	'{'
-		'command' command=LowCommands
-	'}';
+	 name=EString
+		'(' 'command' command=LowCommands ')'
+		;
 
 enum LowCommands returns LowCommands:
 				Add = 'Add' | Checkout = 'Checkout' | CheckoutCreate = 'CheckoutCreate' | Clone = 'Clone' | Commit = 'Commit' | CherryPick = 'CherryPick' | CreateBranch = 'CreateBranch' | Fetch = 'Fetch' | Init = 'Init' | Pull = 'Pull' | Push = 'Push' | RemoteAdd = 'RemoteAdd' | Rm = 'Rm' | Log = 'Log' | Open = 'Open';

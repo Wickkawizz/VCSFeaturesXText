@@ -90,8 +90,8 @@ public class VcsFeaturesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 * Constraint:
 	 *     (
 	 *         mergeStrategy=MergeStrategy? 
-	 *         (highlevelcommand+=HighLevelCommand highlevelcommand+=HighLevelCommand*)? 
-	 *         (lowlevelcommand+=LowLevelCommand lowlevelcommand+=LowLevelCommand*)?
+	 *         (lowlevelcommand+=LowLevelCommand lowlevelcommand+=LowLevelCommand*)? 
+	 *         (highlevelcommand+=HighLevelCommand highlevelcommand+=HighLevelCommand*)?
 	 *     )
 	 * </pre>
 	 */

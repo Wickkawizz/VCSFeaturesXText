@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'VCSFeatures'", "'{'", "'commands'", "','", "'}'", "'history'", "'versionunit'", "'collaborationstyle'", "'database'", "'Commands'", "'mergeStrategy'", "'highlevelcommand'", "'lowlevelcommand'", "'History'", "'labelType'", "'commitHistoryRange'", "'numberOfBranches'", "'VersionUnit'", "'granularity'", "'CollaborationStyle'", "'collabStyle'", "'Database'", "'DatabaseType'", "'HighLevelCommand'", "'('", "')'", "'LowLevelCommand'", "'command'", "'-'", "'DSMCompare'", "'GitDiff'", "'Add'", "'Checkout'", "'CheckoutCreate'", "'Clone'", "'Commit'", "'CherryPick'", "'CreateBranch'", "'Fetch'", "'Init'", "'Pull'", "'Push'", "'RemoteAdd'", "'Rm'", "'Log'", "'Open'", "'Unique'", "'CommitHash'", "'Label'", "'Line'", "'Semantic'", "'File'", "'Element'", "'LocalOnly'", "'Remote'", "'MongoDB'", "'XMI'", "'Neo4J'", "'SQL'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'VCSFeatures'", "'{'", "'commands'", "','", "'}'", "'history'", "'versionunit'", "'collaborationstyle'", "'database'", "'-'", "'mergeStrategy'", "'lowlevelcommand'", "'highlevelcommand'", "'labelType'", "'commitHistoryRange'", "'numberOfBranches'", "'granularity'", "'collabStyle'", "'Database'", "'ConnectionString'", "'DatabaseType'", "'HighLevelCommand'", "'('", "')'", "'LowLevelCommand'", "'command'", "'DSMCompare'", "'GitDiff'", "'Add'", "'Checkout'", "'CheckoutCreate'", "'Clone'", "'Commit'", "'CherryPick'", "'CreateBranch'", "'Fetch'", "'Init'", "'Pull'", "'Push'", "'RemoteAdd'", "'Rm'", "'Log'", "'Open'", "'Unique'", "'CommitHash'", "'Label'", "'Line'", "'Semantic'", "'File'", "'Element'", "'LocalOnly'", "'Remote'", "'MongoDB'", "'XMI'", "'Neo4J'", "'SQL'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -55,11 +55,8 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
     public static final int T__66=66;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
-    public static final int T__67=67;
     public static final int T__24=24;
-    public static final int T__68=68;
     public static final int T__25=25;
-    public static final int T__69=69;
     public static final int T__62=62;
     public static final int T__63=63;
     public static final int T__20=20;
@@ -412,7 +409,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_10, grammarAccess.getVCSFeaturesAccess().getHistoryKeyword_5_0());
                     			
-                    otherlv_11=(Token)match(input,12,FOLLOW_9); 
+                    otherlv_11=(Token)match(input,12,FOLLOW_6); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_5_1());
                     			
@@ -462,7 +459,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalVcsFeatures.g:201:5: otherlv_13= ',' ( (lv_history_14_0= ruleHistory ) )
                     	    {
-                    	    otherlv_13=(Token)match(input,14,FOLLOW_9); 
+                    	    otherlv_13=(Token)match(input,14,FOLLOW_6); 
 
                     	    					newLeafNode(otherlv_13, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_5_3_0());
                     	    				
@@ -506,7 +503,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_15=(Token)match(input,15,FOLLOW_10); 
+                    otherlv_15=(Token)match(input,15,FOLLOW_9); 
 
                     				newLeafNode(otherlv_15, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_5_4());
                     			
@@ -531,7 +528,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_16, grammarAccess.getVCSFeaturesAccess().getVersionunitKeyword_6_0());
                     			
-                    otherlv_17=(Token)match(input,12,FOLLOW_11); 
+                    otherlv_17=(Token)match(input,12,FOLLOW_6); 
 
                     				newLeafNode(otherlv_17, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_6_1());
                     			
@@ -581,7 +578,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalVcsFeatures.g:259:5: otherlv_19= ',' ( (lv_versionunit_20_0= ruleVersionUnit ) )
                     	    {
-                    	    otherlv_19=(Token)match(input,14,FOLLOW_11); 
+                    	    otherlv_19=(Token)match(input,14,FOLLOW_6); 
 
                     	    					newLeafNode(otherlv_19, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_6_3_0());
                     	    				
@@ -625,7 +622,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_21=(Token)match(input,15,FOLLOW_12); 
+                    otherlv_21=(Token)match(input,15,FOLLOW_10); 
 
                     				newLeafNode(otherlv_21, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_6_4());
                     			
@@ -650,7 +647,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_22, grammarAccess.getVCSFeaturesAccess().getCollaborationstyleKeyword_7_0());
                     			
-                    otherlv_23=(Token)match(input,12,FOLLOW_13); 
+                    otherlv_23=(Token)match(input,12,FOLLOW_6); 
 
                     				newLeafNode(otherlv_23, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_7_1());
                     			
@@ -700,7 +697,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalVcsFeatures.g:317:5: otherlv_25= ',' ( (lv_collaborationstyle_26_0= ruleCollaborationStyle ) )
                     	    {
-                    	    otherlv_25=(Token)match(input,14,FOLLOW_13); 
+                    	    otherlv_25=(Token)match(input,14,FOLLOW_6); 
 
                     	    					newLeafNode(otherlv_25, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_7_3_0());
                     	    				
@@ -744,7 +741,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_27=(Token)match(input,15,FOLLOW_14); 
+                    otherlv_27=(Token)match(input,15,FOLLOW_11); 
 
                     				newLeafNode(otherlv_27, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_7_4());
                     			
@@ -769,7 +766,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_28, grammarAccess.getVCSFeaturesAccess().getDatabaseKeyword_8_0());
                     			
-                    otherlv_29=(Token)match(input,12,FOLLOW_15); 
+                    otherlv_29=(Token)match(input,12,FOLLOW_12); 
 
                     				newLeafNode(otherlv_29, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_8_1());
                     			
@@ -819,7 +816,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     	case 1 :
                     	    // InternalVcsFeatures.g:375:5: otherlv_31= ',' ( (lv_database_32_0= ruleDatabase ) )
                     	    {
-                    	    otherlv_31=(Token)match(input,14,FOLLOW_15); 
+                    	    otherlv_31=(Token)match(input,14,FOLLOW_12); 
 
                     	    					newLeafNode(otherlv_31, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_8_3_0());
                     	    				
@@ -863,7 +860,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_33=(Token)match(input,15,FOLLOW_16); 
+                    otherlv_33=(Token)match(input,15,FOLLOW_13); 
 
                     				newLeafNode(otherlv_33, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_8_4());
                     			
@@ -936,42 +933,42 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCommands"
-    // InternalVcsFeatures.g:419:1: ruleCommands returns [EObject current=null] : ( () otherlv_1= 'Commands' otherlv_2= '{' (otherlv_3= 'mergeStrategy' ( (lv_mergeStrategy_4_0= ruleMergeStrategy ) ) )? (otherlv_5= 'highlevelcommand' otherlv_6= '{' ( (lv_highlevelcommand_7_0= ruleHighLevelCommand ) ) (otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) ) )* otherlv_10= '}' )? (otherlv_11= 'lowlevelcommand' otherlv_12= '{' ( (lv_lowlevelcommand_13_0= ruleLowLevelCommand ) ) (otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) ) )* otherlv_16= '}' )? otherlv_17= '}' ) ;
+    // InternalVcsFeatures.g:419:1: ruleCommands returns [EObject current=null] : ( () otherlv_1= '-' (otherlv_2= 'mergeStrategy' ( (lv_mergeStrategy_3_0= ruleMergeStrategy ) ) )? otherlv_4= '-' (otherlv_5= 'lowlevelcommand' otherlv_6= '{' ( (lv_lowlevelcommand_7_0= ruleLowLevelCommand ) ) (otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) ) )* otherlv_10= '}' )? otherlv_11= '-' (otherlv_12= 'highlevelcommand' otherlv_13= '{' ( (lv_highlevelcommand_14_0= ruleHighLevelCommand ) ) (otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) ) )* otherlv_17= '}' )? ) ;
     public final EObject ruleCommands() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
+        Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_6=null;
         Token otherlv_8=null;
         Token otherlv_10=null;
         Token otherlv_11=null;
         Token otherlv_12=null;
-        Token otherlv_14=null;
-        Token otherlv_16=null;
+        Token otherlv_13=null;
+        Token otherlv_15=null;
         Token otherlv_17=null;
-        Enumerator lv_mergeStrategy_4_0 = null;
+        Enumerator lv_mergeStrategy_3_0 = null;
 
-        EObject lv_highlevelcommand_7_0 = null;
+        EObject lv_lowlevelcommand_7_0 = null;
 
-        EObject lv_highlevelcommand_9_0 = null;
+        EObject lv_lowlevelcommand_9_0 = null;
 
-        EObject lv_lowlevelcommand_13_0 = null;
+        EObject lv_highlevelcommand_14_0 = null;
 
-        EObject lv_lowlevelcommand_15_0 = null;
+        EObject lv_highlevelcommand_16_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:425:2: ( ( () otherlv_1= 'Commands' otherlv_2= '{' (otherlv_3= 'mergeStrategy' ( (lv_mergeStrategy_4_0= ruleMergeStrategy ) ) )? (otherlv_5= 'highlevelcommand' otherlv_6= '{' ( (lv_highlevelcommand_7_0= ruleHighLevelCommand ) ) (otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) ) )* otherlv_10= '}' )? (otherlv_11= 'lowlevelcommand' otherlv_12= '{' ( (lv_lowlevelcommand_13_0= ruleLowLevelCommand ) ) (otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) ) )* otherlv_16= '}' )? otherlv_17= '}' ) )
-            // InternalVcsFeatures.g:426:2: ( () otherlv_1= 'Commands' otherlv_2= '{' (otherlv_3= 'mergeStrategy' ( (lv_mergeStrategy_4_0= ruleMergeStrategy ) ) )? (otherlv_5= 'highlevelcommand' otherlv_6= '{' ( (lv_highlevelcommand_7_0= ruleHighLevelCommand ) ) (otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) ) )* otherlv_10= '}' )? (otherlv_11= 'lowlevelcommand' otherlv_12= '{' ( (lv_lowlevelcommand_13_0= ruleLowLevelCommand ) ) (otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) ) )* otherlv_16= '}' )? otherlv_17= '}' )
+            // InternalVcsFeatures.g:425:2: ( ( () otherlv_1= '-' (otherlv_2= 'mergeStrategy' ( (lv_mergeStrategy_3_0= ruleMergeStrategy ) ) )? otherlv_4= '-' (otherlv_5= 'lowlevelcommand' otherlv_6= '{' ( (lv_lowlevelcommand_7_0= ruleLowLevelCommand ) ) (otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) ) )* otherlv_10= '}' )? otherlv_11= '-' (otherlv_12= 'highlevelcommand' otherlv_13= '{' ( (lv_highlevelcommand_14_0= ruleHighLevelCommand ) ) (otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) ) )* otherlv_17= '}' )? ) )
+            // InternalVcsFeatures.g:426:2: ( () otherlv_1= '-' (otherlv_2= 'mergeStrategy' ( (lv_mergeStrategy_3_0= ruleMergeStrategy ) ) )? otherlv_4= '-' (otherlv_5= 'lowlevelcommand' otherlv_6= '{' ( (lv_lowlevelcommand_7_0= ruleLowLevelCommand ) ) (otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) ) )* otherlv_10= '}' )? otherlv_11= '-' (otherlv_12= 'highlevelcommand' otherlv_13= '{' ( (lv_highlevelcommand_14_0= ruleHighLevelCommand ) ) (otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) ) )* otherlv_17= '}' )? )
             {
-            // InternalVcsFeatures.g:426:2: ( () otherlv_1= 'Commands' otherlv_2= '{' (otherlv_3= 'mergeStrategy' ( (lv_mergeStrategy_4_0= ruleMergeStrategy ) ) )? (otherlv_5= 'highlevelcommand' otherlv_6= '{' ( (lv_highlevelcommand_7_0= ruleHighLevelCommand ) ) (otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) ) )* otherlv_10= '}' )? (otherlv_11= 'lowlevelcommand' otherlv_12= '{' ( (lv_lowlevelcommand_13_0= ruleLowLevelCommand ) ) (otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) ) )* otherlv_16= '}' )? otherlv_17= '}' )
-            // InternalVcsFeatures.g:427:3: () otherlv_1= 'Commands' otherlv_2= '{' (otherlv_3= 'mergeStrategy' ( (lv_mergeStrategy_4_0= ruleMergeStrategy ) ) )? (otherlv_5= 'highlevelcommand' otherlv_6= '{' ( (lv_highlevelcommand_7_0= ruleHighLevelCommand ) ) (otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) ) )* otherlv_10= '}' )? (otherlv_11= 'lowlevelcommand' otherlv_12= '{' ( (lv_lowlevelcommand_13_0= ruleLowLevelCommand ) ) (otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) ) )* otherlv_16= '}' )? otherlv_17= '}'
+            // InternalVcsFeatures.g:426:2: ( () otherlv_1= '-' (otherlv_2= 'mergeStrategy' ( (lv_mergeStrategy_3_0= ruleMergeStrategy ) ) )? otherlv_4= '-' (otherlv_5= 'lowlevelcommand' otherlv_6= '{' ( (lv_lowlevelcommand_7_0= ruleLowLevelCommand ) ) (otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) ) )* otherlv_10= '}' )? otherlv_11= '-' (otherlv_12= 'highlevelcommand' otherlv_13= '{' ( (lv_highlevelcommand_14_0= ruleHighLevelCommand ) ) (otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) ) )* otherlv_17= '}' )? )
+            // InternalVcsFeatures.g:427:3: () otherlv_1= '-' (otherlv_2= 'mergeStrategy' ( (lv_mergeStrategy_3_0= ruleMergeStrategy ) ) )? otherlv_4= '-' (otherlv_5= 'lowlevelcommand' otherlv_6= '{' ( (lv_lowlevelcommand_7_0= ruleLowLevelCommand ) ) (otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) ) )* otherlv_10= '}' )? otherlv_11= '-' (otherlv_12= 'highlevelcommand' otherlv_13= '{' ( (lv_highlevelcommand_14_0= ruleHighLevelCommand ) ) (otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) ) )* otherlv_17= '}' )?
             {
             // InternalVcsFeatures.g:427:3: ()
             // InternalVcsFeatures.g:428:4: 
@@ -984,15 +981,11 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,20,FOLLOW_4); 
+            otherlv_1=(Token)match(input,20,FOLLOW_14); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getCommandsAccess().getCommandsKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getCommandsAccess().getHyphenMinusKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_17); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getCommandsAccess().getLeftCurlyBracketKeyword_2());
-            		
-            // InternalVcsFeatures.g:442:3: (otherlv_3= 'mergeStrategy' ( (lv_mergeStrategy_4_0= ruleMergeStrategy ) ) )?
+            // InternalVcsFeatures.g:438:3: (otherlv_2= 'mergeStrategy' ( (lv_mergeStrategy_3_0= ruleMergeStrategy ) ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1001,23 +994,23 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalVcsFeatures.g:443:4: otherlv_3= 'mergeStrategy' ( (lv_mergeStrategy_4_0= ruleMergeStrategy ) )
+                    // InternalVcsFeatures.g:439:4: otherlv_2= 'mergeStrategy' ( (lv_mergeStrategy_3_0= ruleMergeStrategy ) )
                     {
-                    otherlv_3=(Token)match(input,21,FOLLOW_18); 
+                    otherlv_2=(Token)match(input,21,FOLLOW_15); 
 
-                    				newLeafNode(otherlv_3, grammarAccess.getCommandsAccess().getMergeStrategyKeyword_3_0());
+                    				newLeafNode(otherlv_2, grammarAccess.getCommandsAccess().getMergeStrategyKeyword_2_0());
                     			
-                    // InternalVcsFeatures.g:447:4: ( (lv_mergeStrategy_4_0= ruleMergeStrategy ) )
-                    // InternalVcsFeatures.g:448:5: (lv_mergeStrategy_4_0= ruleMergeStrategy )
+                    // InternalVcsFeatures.g:443:4: ( (lv_mergeStrategy_3_0= ruleMergeStrategy ) )
+                    // InternalVcsFeatures.g:444:5: (lv_mergeStrategy_3_0= ruleMergeStrategy )
                     {
-                    // InternalVcsFeatures.g:448:5: (lv_mergeStrategy_4_0= ruleMergeStrategy )
-                    // InternalVcsFeatures.g:449:6: lv_mergeStrategy_4_0= ruleMergeStrategy
+                    // InternalVcsFeatures.g:444:5: (lv_mergeStrategy_3_0= ruleMergeStrategy )
+                    // InternalVcsFeatures.g:445:6: lv_mergeStrategy_3_0= ruleMergeStrategy
                     {
 
-                    						newCompositeNode(grammarAccess.getCommandsAccess().getMergeStrategyMergeStrategyEnumRuleCall_3_1_0());
+                    						newCompositeNode(grammarAccess.getCommandsAccess().getMergeStrategyMergeStrategyEnumRuleCall_2_1_0());
                     					
-                    pushFollow(FOLLOW_19);
-                    lv_mergeStrategy_4_0=ruleMergeStrategy();
+                    pushFollow(FOLLOW_6);
+                    lv_mergeStrategy_3_0=ruleMergeStrategy();
 
                     state._fsp--;
 
@@ -1028,7 +1021,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"mergeStrategy",
-                    							lv_mergeStrategy_4_0,
+                    							lv_mergeStrategy_3_0,
                     							"diro.geodes.VcsFeatures.MergeStrategy");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1044,7 +1037,11 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalVcsFeatures.g:467:3: (otherlv_5= 'highlevelcommand' otherlv_6= '{' ( (lv_highlevelcommand_7_0= ruleHighLevelCommand ) ) (otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) ) )* otherlv_10= '}' )?
+            otherlv_4=(Token)match(input,20,FOLLOW_16); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getCommandsAccess().getHyphenMinusKeyword_3());
+            		
+            // InternalVcsFeatures.g:467:3: (otherlv_5= 'lowlevelcommand' otherlv_6= '{' ( (lv_lowlevelcommand_7_0= ruleLowLevelCommand ) ) (otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) ) )* otherlv_10= '}' )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -1053,27 +1050,27 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalVcsFeatures.g:468:4: otherlv_5= 'highlevelcommand' otherlv_6= '{' ( (lv_highlevelcommand_7_0= ruleHighLevelCommand ) ) (otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) ) )* otherlv_10= '}'
+                    // InternalVcsFeatures.g:468:4: otherlv_5= 'lowlevelcommand' otherlv_6= '{' ( (lv_lowlevelcommand_7_0= ruleLowLevelCommand ) ) (otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) ) )* otherlv_10= '}'
                     {
                     otherlv_5=(Token)match(input,22,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getCommandsAccess().getHighlevelcommandKeyword_4_0());
+                    				newLeafNode(otherlv_5, grammarAccess.getCommandsAccess().getLowlevelcommandKeyword_4_0());
                     			
-                    otherlv_6=(Token)match(input,12,FOLLOW_20); 
+                    otherlv_6=(Token)match(input,12,FOLLOW_17); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getCommandsAccess().getLeftCurlyBracketKeyword_4_1());
                     			
-                    // InternalVcsFeatures.g:476:4: ( (lv_highlevelcommand_7_0= ruleHighLevelCommand ) )
-                    // InternalVcsFeatures.g:477:5: (lv_highlevelcommand_7_0= ruleHighLevelCommand )
+                    // InternalVcsFeatures.g:476:4: ( (lv_lowlevelcommand_7_0= ruleLowLevelCommand ) )
+                    // InternalVcsFeatures.g:477:5: (lv_lowlevelcommand_7_0= ruleLowLevelCommand )
                     {
-                    // InternalVcsFeatures.g:477:5: (lv_highlevelcommand_7_0= ruleHighLevelCommand )
-                    // InternalVcsFeatures.g:478:6: lv_highlevelcommand_7_0= ruleHighLevelCommand
+                    // InternalVcsFeatures.g:477:5: (lv_lowlevelcommand_7_0= ruleLowLevelCommand )
+                    // InternalVcsFeatures.g:478:6: lv_lowlevelcommand_7_0= ruleLowLevelCommand
                     {
 
-                    						newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_4_2_0());
+                    						newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_4_2_0());
                     					
                     pushFollow(FOLLOW_7);
-                    lv_highlevelcommand_7_0=ruleHighLevelCommand();
+                    lv_lowlevelcommand_7_0=ruleLowLevelCommand();
 
                     state._fsp--;
 
@@ -1083,9 +1080,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						}
                     						add(
                     							current,
-                    							"highlevelcommand",
-                    							lv_highlevelcommand_7_0,
-                    							"diro.geodes.VcsFeatures.HighLevelCommand");
+                    							"lowlevelcommand",
+                    							lv_lowlevelcommand_7_0,
+                    							"diro.geodes.VcsFeatures.LowLevelCommand");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -1094,7 +1091,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalVcsFeatures.g:495:4: (otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) ) )*
+                    // InternalVcsFeatures.g:495:4: (otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) ) )*
                     loop12:
                     do {
                         int alt12=2;
@@ -1107,23 +1104,23 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                         switch (alt12) {
                     	case 1 :
-                    	    // InternalVcsFeatures.g:496:5: otherlv_8= ',' ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) )
+                    	    // InternalVcsFeatures.g:496:5: otherlv_8= ',' ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) )
                     	    {
-                    	    otherlv_8=(Token)match(input,14,FOLLOW_20); 
+                    	    otherlv_8=(Token)match(input,14,FOLLOW_17); 
 
                     	    					newLeafNode(otherlv_8, grammarAccess.getCommandsAccess().getCommaKeyword_4_3_0());
                     	    				
-                    	    // InternalVcsFeatures.g:500:5: ( (lv_highlevelcommand_9_0= ruleHighLevelCommand ) )
-                    	    // InternalVcsFeatures.g:501:6: (lv_highlevelcommand_9_0= ruleHighLevelCommand )
+                    	    // InternalVcsFeatures.g:500:5: ( (lv_lowlevelcommand_9_0= ruleLowLevelCommand ) )
+                    	    // InternalVcsFeatures.g:501:6: (lv_lowlevelcommand_9_0= ruleLowLevelCommand )
                     	    {
-                    	    // InternalVcsFeatures.g:501:6: (lv_highlevelcommand_9_0= ruleHighLevelCommand )
-                    	    // InternalVcsFeatures.g:502:7: lv_highlevelcommand_9_0= ruleHighLevelCommand
+                    	    // InternalVcsFeatures.g:501:6: (lv_lowlevelcommand_9_0= ruleLowLevelCommand )
+                    	    // InternalVcsFeatures.g:502:7: lv_lowlevelcommand_9_0= ruleLowLevelCommand
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_4_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_4_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_7);
-                    	    lv_highlevelcommand_9_0=ruleHighLevelCommand();
+                    	    lv_lowlevelcommand_9_0=ruleLowLevelCommand();
 
                     	    state._fsp--;
 
@@ -1133,9 +1130,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     	    							}
                     	    							add(
                     	    								current,
-                    	    								"highlevelcommand",
-                    	    								lv_highlevelcommand_9_0,
-                    	    								"diro.geodes.VcsFeatures.HighLevelCommand");
+                    	    								"lowlevelcommand",
+                    	    								lv_lowlevelcommand_9_0,
+                    	    								"diro.geodes.VcsFeatures.LowLevelCommand");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 
@@ -1153,7 +1150,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_10=(Token)match(input,15,FOLLOW_21); 
+                    otherlv_10=(Token)match(input,15,FOLLOW_6); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getCommandsAccess().getRightCurlyBracketKeyword_4_4());
                     			
@@ -1163,7 +1160,11 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalVcsFeatures.g:525:3: (otherlv_11= 'lowlevelcommand' otherlv_12= '{' ( (lv_lowlevelcommand_13_0= ruleLowLevelCommand ) ) (otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) ) )* otherlv_16= '}' )?
+            otherlv_11=(Token)match(input,20,FOLLOW_18); 
+
+            			newLeafNode(otherlv_11, grammarAccess.getCommandsAccess().getHyphenMinusKeyword_5());
+            		
+            // InternalVcsFeatures.g:529:3: (otherlv_12= 'highlevelcommand' otherlv_13= '{' ( (lv_highlevelcommand_14_0= ruleHighLevelCommand ) ) (otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) ) )* otherlv_17= '}' )?
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -1172,27 +1173,27 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalVcsFeatures.g:526:4: otherlv_11= 'lowlevelcommand' otherlv_12= '{' ( (lv_lowlevelcommand_13_0= ruleLowLevelCommand ) ) (otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) ) )* otherlv_16= '}'
+                    // InternalVcsFeatures.g:530:4: otherlv_12= 'highlevelcommand' otherlv_13= '{' ( (lv_highlevelcommand_14_0= ruleHighLevelCommand ) ) (otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) ) )* otherlv_17= '}'
                     {
-                    otherlv_11=(Token)match(input,23,FOLLOW_4); 
+                    otherlv_12=(Token)match(input,23,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_11, grammarAccess.getCommandsAccess().getLowlevelcommandKeyword_5_0());
+                    				newLeafNode(otherlv_12, grammarAccess.getCommandsAccess().getHighlevelcommandKeyword_6_0());
                     			
-                    otherlv_12=(Token)match(input,12,FOLLOW_22); 
+                    otherlv_13=(Token)match(input,12,FOLLOW_19); 
 
-                    				newLeafNode(otherlv_12, grammarAccess.getCommandsAccess().getLeftCurlyBracketKeyword_5_1());
+                    				newLeafNode(otherlv_13, grammarAccess.getCommandsAccess().getLeftCurlyBracketKeyword_6_1());
                     			
-                    // InternalVcsFeatures.g:534:4: ( (lv_lowlevelcommand_13_0= ruleLowLevelCommand ) )
-                    // InternalVcsFeatures.g:535:5: (lv_lowlevelcommand_13_0= ruleLowLevelCommand )
+                    // InternalVcsFeatures.g:538:4: ( (lv_highlevelcommand_14_0= ruleHighLevelCommand ) )
+                    // InternalVcsFeatures.g:539:5: (lv_highlevelcommand_14_0= ruleHighLevelCommand )
                     {
-                    // InternalVcsFeatures.g:535:5: (lv_lowlevelcommand_13_0= ruleLowLevelCommand )
-                    // InternalVcsFeatures.g:536:6: lv_lowlevelcommand_13_0= ruleLowLevelCommand
+                    // InternalVcsFeatures.g:539:5: (lv_highlevelcommand_14_0= ruleHighLevelCommand )
+                    // InternalVcsFeatures.g:540:6: lv_highlevelcommand_14_0= ruleHighLevelCommand
                     {
 
-                    						newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_5_2_0());
+                    						newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_6_2_0());
                     					
                     pushFollow(FOLLOW_7);
-                    lv_lowlevelcommand_13_0=ruleLowLevelCommand();
+                    lv_highlevelcommand_14_0=ruleHighLevelCommand();
 
                     state._fsp--;
 
@@ -1202,9 +1203,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						}
                     						add(
                     							current,
-                    							"lowlevelcommand",
-                    							lv_lowlevelcommand_13_0,
-                    							"diro.geodes.VcsFeatures.LowLevelCommand");
+                    							"highlevelcommand",
+                    							lv_highlevelcommand_14_0,
+                    							"diro.geodes.VcsFeatures.HighLevelCommand");
                     						afterParserOrEnumRuleCall();
                     					
 
@@ -1213,7 +1214,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalVcsFeatures.g:553:4: (otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) ) )*
+                    // InternalVcsFeatures.g:557:4: (otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) ) )*
                     loop14:
                     do {
                         int alt14=2;
@@ -1226,23 +1227,23 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                         switch (alt14) {
                     	case 1 :
-                    	    // InternalVcsFeatures.g:554:5: otherlv_14= ',' ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) )
+                    	    // InternalVcsFeatures.g:558:5: otherlv_15= ',' ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) )
                     	    {
-                    	    otherlv_14=(Token)match(input,14,FOLLOW_22); 
+                    	    otherlv_15=(Token)match(input,14,FOLLOW_19); 
 
-                    	    					newLeafNode(otherlv_14, grammarAccess.getCommandsAccess().getCommaKeyword_5_3_0());
+                    	    					newLeafNode(otherlv_15, grammarAccess.getCommandsAccess().getCommaKeyword_6_3_0());
                     	    				
-                    	    // InternalVcsFeatures.g:558:5: ( (lv_lowlevelcommand_15_0= ruleLowLevelCommand ) )
-                    	    // InternalVcsFeatures.g:559:6: (lv_lowlevelcommand_15_0= ruleLowLevelCommand )
+                    	    // InternalVcsFeatures.g:562:5: ( (lv_highlevelcommand_16_0= ruleHighLevelCommand ) )
+                    	    // InternalVcsFeatures.g:563:6: (lv_highlevelcommand_16_0= ruleHighLevelCommand )
                     	    {
-                    	    // InternalVcsFeatures.g:559:6: (lv_lowlevelcommand_15_0= ruleLowLevelCommand )
-                    	    // InternalVcsFeatures.g:560:7: lv_lowlevelcommand_15_0= ruleLowLevelCommand
+                    	    // InternalVcsFeatures.g:563:6: (lv_highlevelcommand_16_0= ruleHighLevelCommand )
+                    	    // InternalVcsFeatures.g:564:7: lv_highlevelcommand_16_0= ruleHighLevelCommand
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_5_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_6_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_7);
-                    	    lv_lowlevelcommand_15_0=ruleLowLevelCommand();
+                    	    lv_highlevelcommand_16_0=ruleHighLevelCommand();
 
                     	    state._fsp--;
 
@@ -1252,9 +1253,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     	    							}
                     	    							add(
                     	    								current,
-                    	    								"lowlevelcommand",
-                    	    								lv_lowlevelcommand_15_0,
-                    	    								"diro.geodes.VcsFeatures.LowLevelCommand");
+                    	    								"highlevelcommand",
+                    	    								lv_highlevelcommand_16_0,
+                    	    								"diro.geodes.VcsFeatures.HighLevelCommand");
                     	    							afterParserOrEnumRuleCall();
                     	    						
 
@@ -1272,9 +1273,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_16=(Token)match(input,15,FOLLOW_16); 
+                    otherlv_17=(Token)match(input,15,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_16, grammarAccess.getCommandsAccess().getRightCurlyBracketKeyword_5_4());
+                    				newLeafNode(otherlv_17, grammarAccess.getCommandsAccess().getRightCurlyBracketKeyword_6_4());
                     			
 
                     }
@@ -1282,10 +1283,6 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_17=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_17, grammarAccess.getCommandsAccess().getRightCurlyBracketKeyword_6());
-            		
 
             }
 
@@ -1345,32 +1342,32 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHistory"
-    // InternalVcsFeatures.g:598:1: ruleHistory returns [EObject current=null] : ( () otherlv_1= 'History' otherlv_2= '{' (otherlv_3= 'labelType' ( (lv_labelType_4_0= ruleLabelType ) ) )? (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? (otherlv_7= 'numberOfBranches' ( (lv_numberOfBranches_8_0= ruleEInt ) ) )? otherlv_9= '}' ) ;
+    // InternalVcsFeatures.g:598:1: ruleHistory returns [EObject current=null] : ( () otherlv_1= '-' (otherlv_2= 'labelType' ( (lv_labelType_3_0= ruleLabelType ) ) )? otherlv_4= '-' (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? otherlv_7= '-' (otherlv_8= 'numberOfBranches' ( (lv_numberOfBranches_9_0= ruleEInt ) ) )? ) ;
     public final EObject ruleHistory() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
+        Token otherlv_4=null;
         Token otherlv_5=null;
         Token otherlv_7=null;
-        Token otherlv_9=null;
-        Enumerator lv_labelType_4_0 = null;
+        Token otherlv_8=null;
+        Enumerator lv_labelType_3_0 = null;
 
         AntlrDatatypeRuleToken lv_commitHistoryRange_6_0 = null;
 
-        AntlrDatatypeRuleToken lv_numberOfBranches_8_0 = null;
+        AntlrDatatypeRuleToken lv_numberOfBranches_9_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:604:2: ( ( () otherlv_1= 'History' otherlv_2= '{' (otherlv_3= 'labelType' ( (lv_labelType_4_0= ruleLabelType ) ) )? (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? (otherlv_7= 'numberOfBranches' ( (lv_numberOfBranches_8_0= ruleEInt ) ) )? otherlv_9= '}' ) )
-            // InternalVcsFeatures.g:605:2: ( () otherlv_1= 'History' otherlv_2= '{' (otherlv_3= 'labelType' ( (lv_labelType_4_0= ruleLabelType ) ) )? (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? (otherlv_7= 'numberOfBranches' ( (lv_numberOfBranches_8_0= ruleEInt ) ) )? otherlv_9= '}' )
+            // InternalVcsFeatures.g:604:2: ( ( () otherlv_1= '-' (otherlv_2= 'labelType' ( (lv_labelType_3_0= ruleLabelType ) ) )? otherlv_4= '-' (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? otherlv_7= '-' (otherlv_8= 'numberOfBranches' ( (lv_numberOfBranches_9_0= ruleEInt ) ) )? ) )
+            // InternalVcsFeatures.g:605:2: ( () otherlv_1= '-' (otherlv_2= 'labelType' ( (lv_labelType_3_0= ruleLabelType ) ) )? otherlv_4= '-' (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? otherlv_7= '-' (otherlv_8= 'numberOfBranches' ( (lv_numberOfBranches_9_0= ruleEInt ) ) )? )
             {
-            // InternalVcsFeatures.g:605:2: ( () otherlv_1= 'History' otherlv_2= '{' (otherlv_3= 'labelType' ( (lv_labelType_4_0= ruleLabelType ) ) )? (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? (otherlv_7= 'numberOfBranches' ( (lv_numberOfBranches_8_0= ruleEInt ) ) )? otherlv_9= '}' )
-            // InternalVcsFeatures.g:606:3: () otherlv_1= 'History' otherlv_2= '{' (otherlv_3= 'labelType' ( (lv_labelType_4_0= ruleLabelType ) ) )? (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? (otherlv_7= 'numberOfBranches' ( (lv_numberOfBranches_8_0= ruleEInt ) ) )? otherlv_9= '}'
+            // InternalVcsFeatures.g:605:2: ( () otherlv_1= '-' (otherlv_2= 'labelType' ( (lv_labelType_3_0= ruleLabelType ) ) )? otherlv_4= '-' (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? otherlv_7= '-' (otherlv_8= 'numberOfBranches' ( (lv_numberOfBranches_9_0= ruleEInt ) ) )? )
+            // InternalVcsFeatures.g:606:3: () otherlv_1= '-' (otherlv_2= 'labelType' ( (lv_labelType_3_0= ruleLabelType ) ) )? otherlv_4= '-' (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )? otherlv_7= '-' (otherlv_8= 'numberOfBranches' ( (lv_numberOfBranches_9_0= ruleEInt ) ) )?
             {
             // InternalVcsFeatures.g:606:3: ()
             // InternalVcsFeatures.g:607:4: 
@@ -1383,40 +1380,36 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,24,FOLLOW_4); 
+            otherlv_1=(Token)match(input,20,FOLLOW_20); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getHistoryAccess().getHistoryKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getHistoryAccess().getHyphenMinusKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_23); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getHistoryAccess().getLeftCurlyBracketKeyword_2());
-            		
-            // InternalVcsFeatures.g:621:3: (otherlv_3= 'labelType' ( (lv_labelType_4_0= ruleLabelType ) ) )?
+            // InternalVcsFeatures.g:617:3: (otherlv_2= 'labelType' ( (lv_labelType_3_0= ruleLabelType ) ) )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==25) ) {
+            if ( (LA16_0==24) ) {
                 alt16=1;
             }
             switch (alt16) {
                 case 1 :
-                    // InternalVcsFeatures.g:622:4: otherlv_3= 'labelType' ( (lv_labelType_4_0= ruleLabelType ) )
+                    // InternalVcsFeatures.g:618:4: otherlv_2= 'labelType' ( (lv_labelType_3_0= ruleLabelType ) )
                     {
-                    otherlv_3=(Token)match(input,25,FOLLOW_24); 
+                    otherlv_2=(Token)match(input,24,FOLLOW_21); 
 
-                    				newLeafNode(otherlv_3, grammarAccess.getHistoryAccess().getLabelTypeKeyword_3_0());
+                    				newLeafNode(otherlv_2, grammarAccess.getHistoryAccess().getLabelTypeKeyword_2_0());
                     			
-                    // InternalVcsFeatures.g:626:4: ( (lv_labelType_4_0= ruleLabelType ) )
-                    // InternalVcsFeatures.g:627:5: (lv_labelType_4_0= ruleLabelType )
+                    // InternalVcsFeatures.g:622:4: ( (lv_labelType_3_0= ruleLabelType ) )
+                    // InternalVcsFeatures.g:623:5: (lv_labelType_3_0= ruleLabelType )
                     {
-                    // InternalVcsFeatures.g:627:5: (lv_labelType_4_0= ruleLabelType )
-                    // InternalVcsFeatures.g:628:6: lv_labelType_4_0= ruleLabelType
+                    // InternalVcsFeatures.g:623:5: (lv_labelType_3_0= ruleLabelType )
+                    // InternalVcsFeatures.g:624:6: lv_labelType_3_0= ruleLabelType
                     {
 
-                    						newCompositeNode(grammarAccess.getHistoryAccess().getLabelTypeLabelTypeEnumRuleCall_3_1_0());
+                    						newCompositeNode(grammarAccess.getHistoryAccess().getLabelTypeLabelTypeEnumRuleCall_2_1_0());
                     					
-                    pushFollow(FOLLOW_25);
-                    lv_labelType_4_0=ruleLabelType();
+                    pushFollow(FOLLOW_6);
+                    lv_labelType_3_0=ruleLabelType();
 
                     state._fsp--;
 
@@ -1427,7 +1420,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"labelType",
-                    							lv_labelType_4_0,
+                    							lv_labelType_3_0,
                     							"diro.geodes.VcsFeatures.LabelType");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1443,18 +1436,22 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
+            otherlv_4=(Token)match(input,20,FOLLOW_22); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getHistoryAccess().getHyphenMinusKeyword_3());
+            		
             // InternalVcsFeatures.g:646:3: (otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) ) )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==26) ) {
+            if ( (LA17_0==25) ) {
                 alt17=1;
             }
             switch (alt17) {
                 case 1 :
                     // InternalVcsFeatures.g:647:4: otherlv_5= 'commitHistoryRange' ( (lv_commitHistoryRange_6_0= ruleEInt ) )
                     {
-                    otherlv_5=(Token)match(input,26,FOLLOW_26); 
+                    otherlv_5=(Token)match(input,25,FOLLOW_23); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getHistoryAccess().getCommitHistoryRangeKeyword_4_0());
                     			
@@ -1467,7 +1464,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getHistoryAccess().getCommitHistoryRangeEIntParserRuleCall_4_1_0());
                     					
-                    pushFollow(FOLLOW_27);
+                    pushFollow(FOLLOW_6);
                     lv_commitHistoryRange_6_0=ruleEInt();
 
                     state._fsp--;
@@ -1495,32 +1492,36 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalVcsFeatures.g:671:3: (otherlv_7= 'numberOfBranches' ( (lv_numberOfBranches_8_0= ruleEInt ) ) )?
+            otherlv_7=(Token)match(input,20,FOLLOW_24); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getHistoryAccess().getHyphenMinusKeyword_5());
+            		
+            // InternalVcsFeatures.g:675:3: (otherlv_8= 'numberOfBranches' ( (lv_numberOfBranches_9_0= ruleEInt ) ) )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==27) ) {
+            if ( (LA18_0==26) ) {
                 alt18=1;
             }
             switch (alt18) {
                 case 1 :
-                    // InternalVcsFeatures.g:672:4: otherlv_7= 'numberOfBranches' ( (lv_numberOfBranches_8_0= ruleEInt ) )
+                    // InternalVcsFeatures.g:676:4: otherlv_8= 'numberOfBranches' ( (lv_numberOfBranches_9_0= ruleEInt ) )
                     {
-                    otherlv_7=(Token)match(input,27,FOLLOW_26); 
+                    otherlv_8=(Token)match(input,26,FOLLOW_23); 
 
-                    				newLeafNode(otherlv_7, grammarAccess.getHistoryAccess().getNumberOfBranchesKeyword_5_0());
+                    				newLeafNode(otherlv_8, grammarAccess.getHistoryAccess().getNumberOfBranchesKeyword_6_0());
                     			
-                    // InternalVcsFeatures.g:676:4: ( (lv_numberOfBranches_8_0= ruleEInt ) )
-                    // InternalVcsFeatures.g:677:5: (lv_numberOfBranches_8_0= ruleEInt )
+                    // InternalVcsFeatures.g:680:4: ( (lv_numberOfBranches_9_0= ruleEInt ) )
+                    // InternalVcsFeatures.g:681:5: (lv_numberOfBranches_9_0= ruleEInt )
                     {
-                    // InternalVcsFeatures.g:677:5: (lv_numberOfBranches_8_0= ruleEInt )
-                    // InternalVcsFeatures.g:678:6: lv_numberOfBranches_8_0= ruleEInt
+                    // InternalVcsFeatures.g:681:5: (lv_numberOfBranches_9_0= ruleEInt )
+                    // InternalVcsFeatures.g:682:6: lv_numberOfBranches_9_0= ruleEInt
                     {
 
-                    						newCompositeNode(grammarAccess.getHistoryAccess().getNumberOfBranchesEIntParserRuleCall_5_1_0());
+                    						newCompositeNode(grammarAccess.getHistoryAccess().getNumberOfBranchesEIntParserRuleCall_6_1_0());
                     					
-                    pushFollow(FOLLOW_16);
-                    lv_numberOfBranches_8_0=ruleEInt();
+                    pushFollow(FOLLOW_2);
+                    lv_numberOfBranches_9_0=ruleEInt();
 
                     state._fsp--;
 
@@ -1531,7 +1532,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"numberOfBranches",
-                    							lv_numberOfBranches_8_0,
+                    							lv_numberOfBranches_9_0,
                     							"diro.geodes.VcsFeatures.EInt");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1547,10 +1548,6 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getHistoryAccess().getRightCurlyBracketKeyword_6());
-            		
 
             }
 
@@ -1610,31 +1607,29 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVersionUnit"
-    // InternalVcsFeatures.g:711:1: ruleVersionUnit returns [EObject current=null] : ( () otherlv_1= 'VersionUnit' otherlv_2= '{' (otherlv_3= 'granularity' otherlv_4= '{' ( (lv_granularity_5_0= ruleVersionUnitType ) ) (otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) ;
+    // InternalVcsFeatures.g:711:1: ruleVersionUnit returns [EObject current=null] : ( () otherlv_1= '-' (otherlv_2= 'granularity' otherlv_3= '{' ( (lv_granularity_4_0= ruleVersionUnitType ) ) (otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) ) )* otherlv_7= '}' )? ) ;
     public final EObject ruleVersionUnit() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        Token otherlv_8=null;
-        Token otherlv_9=null;
-        Enumerator lv_granularity_5_0 = null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        Enumerator lv_granularity_4_0 = null;
 
-        Enumerator lv_granularity_7_0 = null;
+        Enumerator lv_granularity_6_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:717:2: ( ( () otherlv_1= 'VersionUnit' otherlv_2= '{' (otherlv_3= 'granularity' otherlv_4= '{' ( (lv_granularity_5_0= ruleVersionUnitType ) ) (otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) ) )* otherlv_8= '}' )? otherlv_9= '}' ) )
-            // InternalVcsFeatures.g:718:2: ( () otherlv_1= 'VersionUnit' otherlv_2= '{' (otherlv_3= 'granularity' otherlv_4= '{' ( (lv_granularity_5_0= ruleVersionUnitType ) ) (otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
+            // InternalVcsFeatures.g:717:2: ( ( () otherlv_1= '-' (otherlv_2= 'granularity' otherlv_3= '{' ( (lv_granularity_4_0= ruleVersionUnitType ) ) (otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) ) )* otherlv_7= '}' )? ) )
+            // InternalVcsFeatures.g:718:2: ( () otherlv_1= '-' (otherlv_2= 'granularity' otherlv_3= '{' ( (lv_granularity_4_0= ruleVersionUnitType ) ) (otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) ) )* otherlv_7= '}' )? )
             {
-            // InternalVcsFeatures.g:718:2: ( () otherlv_1= 'VersionUnit' otherlv_2= '{' (otherlv_3= 'granularity' otherlv_4= '{' ( (lv_granularity_5_0= ruleVersionUnitType ) ) (otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) ) )* otherlv_8= '}' )? otherlv_9= '}' )
-            // InternalVcsFeatures.g:719:3: () otherlv_1= 'VersionUnit' otherlv_2= '{' (otherlv_3= 'granularity' otherlv_4= '{' ( (lv_granularity_5_0= ruleVersionUnitType ) ) (otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) ) )* otherlv_8= '}' )? otherlv_9= '}'
+            // InternalVcsFeatures.g:718:2: ( () otherlv_1= '-' (otherlv_2= 'granularity' otherlv_3= '{' ( (lv_granularity_4_0= ruleVersionUnitType ) ) (otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) ) )* otherlv_7= '}' )? )
+            // InternalVcsFeatures.g:719:3: () otherlv_1= '-' (otherlv_2= 'granularity' otherlv_3= '{' ( (lv_granularity_4_0= ruleVersionUnitType ) ) (otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) ) )* otherlv_7= '}' )?
             {
             // InternalVcsFeatures.g:719:3: ()
             // InternalVcsFeatures.g:720:4: 
@@ -1647,44 +1642,40 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,28,FOLLOW_4); 
+            otherlv_1=(Token)match(input,20,FOLLOW_25); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getVersionUnitAccess().getVersionUnitKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getVersionUnitAccess().getHyphenMinusKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_28); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getVersionUnitAccess().getLeftCurlyBracketKeyword_2());
-            		
-            // InternalVcsFeatures.g:734:3: (otherlv_3= 'granularity' otherlv_4= '{' ( (lv_granularity_5_0= ruleVersionUnitType ) ) (otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) ) )* otherlv_8= '}' )?
+            // InternalVcsFeatures.g:730:3: (otherlv_2= 'granularity' otherlv_3= '{' ( (lv_granularity_4_0= ruleVersionUnitType ) ) (otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) ) )* otherlv_7= '}' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
-            if ( (LA20_0==29) ) {
+            if ( (LA20_0==27) ) {
                 alt20=1;
             }
             switch (alt20) {
                 case 1 :
-                    // InternalVcsFeatures.g:735:4: otherlv_3= 'granularity' otherlv_4= '{' ( (lv_granularity_5_0= ruleVersionUnitType ) ) (otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) ) )* otherlv_8= '}'
+                    // InternalVcsFeatures.g:731:4: otherlv_2= 'granularity' otherlv_3= '{' ( (lv_granularity_4_0= ruleVersionUnitType ) ) (otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) ) )* otherlv_7= '}'
                     {
-                    otherlv_3=(Token)match(input,29,FOLLOW_4); 
+                    otherlv_2=(Token)match(input,27,FOLLOW_4); 
 
-                    				newLeafNode(otherlv_3, grammarAccess.getVersionUnitAccess().getGranularityKeyword_3_0());
+                    				newLeafNode(otherlv_2, grammarAccess.getVersionUnitAccess().getGranularityKeyword_2_0());
                     			
-                    otherlv_4=(Token)match(input,12,FOLLOW_29); 
+                    otherlv_3=(Token)match(input,12,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getVersionUnitAccess().getLeftCurlyBracketKeyword_3_1());
+                    				newLeafNode(otherlv_3, grammarAccess.getVersionUnitAccess().getLeftCurlyBracketKeyword_2_1());
                     			
-                    // InternalVcsFeatures.g:743:4: ( (lv_granularity_5_0= ruleVersionUnitType ) )
-                    // InternalVcsFeatures.g:744:5: (lv_granularity_5_0= ruleVersionUnitType )
+                    // InternalVcsFeatures.g:739:4: ( (lv_granularity_4_0= ruleVersionUnitType ) )
+                    // InternalVcsFeatures.g:740:5: (lv_granularity_4_0= ruleVersionUnitType )
                     {
-                    // InternalVcsFeatures.g:744:5: (lv_granularity_5_0= ruleVersionUnitType )
-                    // InternalVcsFeatures.g:745:6: lv_granularity_5_0= ruleVersionUnitType
+                    // InternalVcsFeatures.g:740:5: (lv_granularity_4_0= ruleVersionUnitType )
+                    // InternalVcsFeatures.g:741:6: lv_granularity_4_0= ruleVersionUnitType
                     {
 
-                    						newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_3_2_0());
+                    						newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_2_2_0());
                     					
                     pushFollow(FOLLOW_7);
-                    lv_granularity_5_0=ruleVersionUnitType();
+                    lv_granularity_4_0=ruleVersionUnitType();
 
                     state._fsp--;
 
@@ -1695,7 +1686,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"granularity",
-                    							lv_granularity_5_0,
+                    							lv_granularity_4_0,
                     							"diro.geodes.VcsFeatures.VersionUnitType");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1705,7 +1696,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalVcsFeatures.g:762:4: (otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) ) )*
+                    // InternalVcsFeatures.g:758:4: (otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) ) )*
                     loop19:
                     do {
                         int alt19=2;
@@ -1718,23 +1709,23 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                         switch (alt19) {
                     	case 1 :
-                    	    // InternalVcsFeatures.g:763:5: otherlv_6= ',' ( (lv_granularity_7_0= ruleVersionUnitType ) )
+                    	    // InternalVcsFeatures.g:759:5: otherlv_5= ',' ( (lv_granularity_6_0= ruleVersionUnitType ) )
                     	    {
-                    	    otherlv_6=(Token)match(input,14,FOLLOW_29); 
+                    	    otherlv_5=(Token)match(input,14,FOLLOW_26); 
 
-                    	    					newLeafNode(otherlv_6, grammarAccess.getVersionUnitAccess().getCommaKeyword_3_3_0());
+                    	    					newLeafNode(otherlv_5, grammarAccess.getVersionUnitAccess().getCommaKeyword_2_3_0());
                     	    				
-                    	    // InternalVcsFeatures.g:767:5: ( (lv_granularity_7_0= ruleVersionUnitType ) )
-                    	    // InternalVcsFeatures.g:768:6: (lv_granularity_7_0= ruleVersionUnitType )
+                    	    // InternalVcsFeatures.g:763:5: ( (lv_granularity_6_0= ruleVersionUnitType ) )
+                    	    // InternalVcsFeatures.g:764:6: (lv_granularity_6_0= ruleVersionUnitType )
                     	    {
-                    	    // InternalVcsFeatures.g:768:6: (lv_granularity_7_0= ruleVersionUnitType )
-                    	    // InternalVcsFeatures.g:769:7: lv_granularity_7_0= ruleVersionUnitType
+                    	    // InternalVcsFeatures.g:764:6: (lv_granularity_6_0= ruleVersionUnitType )
+                    	    // InternalVcsFeatures.g:765:7: lv_granularity_6_0= ruleVersionUnitType
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_3_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_2_3_1_0());
                     	    						
                     	    pushFollow(FOLLOW_7);
-                    	    lv_granularity_7_0=ruleVersionUnitType();
+                    	    lv_granularity_6_0=ruleVersionUnitType();
 
                     	    state._fsp--;
 
@@ -1745,7 +1736,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     	    							add(
                     	    								current,
                     	    								"granularity",
-                    	    								lv_granularity_7_0,
+                    	    								lv_granularity_6_0,
                     	    								"diro.geodes.VcsFeatures.VersionUnitType");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -1764,9 +1755,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_8=(Token)match(input,15,FOLLOW_16); 
+                    otherlv_7=(Token)match(input,15,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_8, grammarAccess.getVersionUnitAccess().getRightCurlyBracketKeyword_3_4());
+                    				newLeafNode(otherlv_7, grammarAccess.getVersionUnitAccess().getRightCurlyBracketKeyword_2_4());
                     			
 
                     }
@@ -1774,10 +1765,6 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_9, grammarAccess.getVersionUnitAccess().getRightCurlyBracketKeyword_4());
-            		
 
             }
 
@@ -1801,7 +1788,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCollaborationStyle"
-    // InternalVcsFeatures.g:800:1: entryRuleCollaborationStyle returns [EObject current=null] : iv_ruleCollaborationStyle= ruleCollaborationStyle EOF ;
+    // InternalVcsFeatures.g:792:1: entryRuleCollaborationStyle returns [EObject current=null] : iv_ruleCollaborationStyle= ruleCollaborationStyle EOF ;
     public final EObject entryRuleCollaborationStyle() throws RecognitionException {
         EObject current = null;
 
@@ -1809,8 +1796,8 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVcsFeatures.g:800:59: (iv_ruleCollaborationStyle= ruleCollaborationStyle EOF )
-            // InternalVcsFeatures.g:801:2: iv_ruleCollaborationStyle= ruleCollaborationStyle EOF
+            // InternalVcsFeatures.g:792:59: (iv_ruleCollaborationStyle= ruleCollaborationStyle EOF )
+            // InternalVcsFeatures.g:793:2: iv_ruleCollaborationStyle= ruleCollaborationStyle EOF
             {
              newCompositeNode(grammarAccess.getCollaborationStyleRule()); 
             pushFollow(FOLLOW_1);
@@ -1837,29 +1824,27 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCollaborationStyle"
-    // InternalVcsFeatures.g:807:1: ruleCollaborationStyle returns [EObject current=null] : ( () otherlv_1= 'CollaborationStyle' otherlv_2= '{' (otherlv_3= 'collabStyle' ( (lv_collabStyle_4_0= ruleCollaborationStyleType ) ) )? otherlv_5= '}' ) ;
+    // InternalVcsFeatures.g:799:1: ruleCollaborationStyle returns [EObject current=null] : ( () otherlv_1= '-' (otherlv_2= 'collabStyle' ( (lv_collabStyle_3_0= ruleCollaborationStyleType ) ) )? ) ;
     public final EObject ruleCollaborationStyle() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
-        Enumerator lv_collabStyle_4_0 = null;
+        Enumerator lv_collabStyle_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:813:2: ( ( () otherlv_1= 'CollaborationStyle' otherlv_2= '{' (otherlv_3= 'collabStyle' ( (lv_collabStyle_4_0= ruleCollaborationStyleType ) ) )? otherlv_5= '}' ) )
-            // InternalVcsFeatures.g:814:2: ( () otherlv_1= 'CollaborationStyle' otherlv_2= '{' (otherlv_3= 'collabStyle' ( (lv_collabStyle_4_0= ruleCollaborationStyleType ) ) )? otherlv_5= '}' )
+            // InternalVcsFeatures.g:805:2: ( ( () otherlv_1= '-' (otherlv_2= 'collabStyle' ( (lv_collabStyle_3_0= ruleCollaborationStyleType ) ) )? ) )
+            // InternalVcsFeatures.g:806:2: ( () otherlv_1= '-' (otherlv_2= 'collabStyle' ( (lv_collabStyle_3_0= ruleCollaborationStyleType ) ) )? )
             {
-            // InternalVcsFeatures.g:814:2: ( () otherlv_1= 'CollaborationStyle' otherlv_2= '{' (otherlv_3= 'collabStyle' ( (lv_collabStyle_4_0= ruleCollaborationStyleType ) ) )? otherlv_5= '}' )
-            // InternalVcsFeatures.g:815:3: () otherlv_1= 'CollaborationStyle' otherlv_2= '{' (otherlv_3= 'collabStyle' ( (lv_collabStyle_4_0= ruleCollaborationStyleType ) ) )? otherlv_5= '}'
+            // InternalVcsFeatures.g:806:2: ( () otherlv_1= '-' (otherlv_2= 'collabStyle' ( (lv_collabStyle_3_0= ruleCollaborationStyleType ) ) )? )
+            // InternalVcsFeatures.g:807:3: () otherlv_1= '-' (otherlv_2= 'collabStyle' ( (lv_collabStyle_3_0= ruleCollaborationStyleType ) ) )?
             {
-            // InternalVcsFeatures.g:815:3: ()
-            // InternalVcsFeatures.g:816:4: 
+            // InternalVcsFeatures.g:807:3: ()
+            // InternalVcsFeatures.g:808:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1869,40 +1854,36 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,30,FOLLOW_4); 
+            otherlv_1=(Token)match(input,20,FOLLOW_27); 
 
-            			newLeafNode(otherlv_1, grammarAccess.getCollaborationStyleAccess().getCollaborationStyleKeyword_1());
+            			newLeafNode(otherlv_1, grammarAccess.getCollaborationStyleAccess().getHyphenMinusKeyword_1());
             		
-            otherlv_2=(Token)match(input,12,FOLLOW_30); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getCollaborationStyleAccess().getLeftCurlyBracketKeyword_2());
-            		
-            // InternalVcsFeatures.g:830:3: (otherlv_3= 'collabStyle' ( (lv_collabStyle_4_0= ruleCollaborationStyleType ) ) )?
+            // InternalVcsFeatures.g:818:3: (otherlv_2= 'collabStyle' ( (lv_collabStyle_3_0= ruleCollaborationStyleType ) ) )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
-            if ( (LA21_0==31) ) {
+            if ( (LA21_0==28) ) {
                 alt21=1;
             }
             switch (alt21) {
                 case 1 :
-                    // InternalVcsFeatures.g:831:4: otherlv_3= 'collabStyle' ( (lv_collabStyle_4_0= ruleCollaborationStyleType ) )
+                    // InternalVcsFeatures.g:819:4: otherlv_2= 'collabStyle' ( (lv_collabStyle_3_0= ruleCollaborationStyleType ) )
                     {
-                    otherlv_3=(Token)match(input,31,FOLLOW_31); 
+                    otherlv_2=(Token)match(input,28,FOLLOW_28); 
 
-                    				newLeafNode(otherlv_3, grammarAccess.getCollaborationStyleAccess().getCollabStyleKeyword_3_0());
+                    				newLeafNode(otherlv_2, grammarAccess.getCollaborationStyleAccess().getCollabStyleKeyword_2_0());
                     			
-                    // InternalVcsFeatures.g:835:4: ( (lv_collabStyle_4_0= ruleCollaborationStyleType ) )
-                    // InternalVcsFeatures.g:836:5: (lv_collabStyle_4_0= ruleCollaborationStyleType )
+                    // InternalVcsFeatures.g:823:4: ( (lv_collabStyle_3_0= ruleCollaborationStyleType ) )
+                    // InternalVcsFeatures.g:824:5: (lv_collabStyle_3_0= ruleCollaborationStyleType )
                     {
-                    // InternalVcsFeatures.g:836:5: (lv_collabStyle_4_0= ruleCollaborationStyleType )
-                    // InternalVcsFeatures.g:837:6: lv_collabStyle_4_0= ruleCollaborationStyleType
+                    // InternalVcsFeatures.g:824:5: (lv_collabStyle_3_0= ruleCollaborationStyleType )
+                    // InternalVcsFeatures.g:825:6: lv_collabStyle_3_0= ruleCollaborationStyleType
                     {
 
-                    						newCompositeNode(grammarAccess.getCollaborationStyleAccess().getCollabStyleCollaborationStyleTypeEnumRuleCall_3_1_0());
+                    						newCompositeNode(grammarAccess.getCollaborationStyleAccess().getCollabStyleCollaborationStyleTypeEnumRuleCall_2_1_0());
                     					
-                    pushFollow(FOLLOW_16);
-                    lv_collabStyle_4_0=ruleCollaborationStyleType();
+                    pushFollow(FOLLOW_2);
+                    lv_collabStyle_3_0=ruleCollaborationStyleType();
 
                     state._fsp--;
 
@@ -1913,7 +1894,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"collabStyle",
-                    							lv_collabStyle_4_0,
+                    							lv_collabStyle_3_0,
                     							"diro.geodes.VcsFeatures.CollaborationStyleType");
                     						afterParserOrEnumRuleCall();
                     					
@@ -1929,10 +1910,6 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getCollaborationStyleAccess().getRightCurlyBracketKeyword_4());
-            		
 
             }
 
@@ -1956,7 +1933,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDatabase"
-    // InternalVcsFeatures.g:863:1: entryRuleDatabase returns [EObject current=null] : iv_ruleDatabase= ruleDatabase EOF ;
+    // InternalVcsFeatures.g:847:1: entryRuleDatabase returns [EObject current=null] : iv_ruleDatabase= ruleDatabase EOF ;
     public final EObject entryRuleDatabase() throws RecognitionException {
         EObject current = null;
 
@@ -1964,8 +1941,8 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVcsFeatures.g:863:49: (iv_ruleDatabase= ruleDatabase EOF )
-            // InternalVcsFeatures.g:864:2: iv_ruleDatabase= ruleDatabase EOF
+            // InternalVcsFeatures.g:847:49: (iv_ruleDatabase= ruleDatabase EOF )
+            // InternalVcsFeatures.g:848:2: iv_ruleDatabase= ruleDatabase EOF
             {
              newCompositeNode(grammarAccess.getDatabaseRule()); 
             pushFollow(FOLLOW_1);
@@ -1992,31 +1969,32 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDatabase"
-    // InternalVcsFeatures.g:870:1: ruleDatabase returns [EObject current=null] : ( () otherlv_1= 'Database' ( (lv_connectionString_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'DatabaseType' ( (lv_DatabaseType_5_0= ruleDatabaseType ) ) )? otherlv_6= '}' ) ;
+    // InternalVcsFeatures.g:854:1: ruleDatabase returns [EObject current=null] : ( () otherlv_1= 'Database' otherlv_2= '-' otherlv_3= 'ConnectionString' ( (lv_connectionString_4_0= ruleEString ) ) otherlv_5= '-' (otherlv_6= 'DatabaseType' ( (lv_DatabaseType_7_0= ruleDatabaseType ) ) )? ) ;
     public final EObject ruleDatabase() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
+        Token otherlv_2=null;
         Token otherlv_3=null;
-        Token otherlv_4=null;
+        Token otherlv_5=null;
         Token otherlv_6=null;
-        AntlrDatatypeRuleToken lv_connectionString_2_0 = null;
+        AntlrDatatypeRuleToken lv_connectionString_4_0 = null;
 
-        Enumerator lv_DatabaseType_5_0 = null;
+        Enumerator lv_DatabaseType_7_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:876:2: ( ( () otherlv_1= 'Database' ( (lv_connectionString_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'DatabaseType' ( (lv_DatabaseType_5_0= ruleDatabaseType ) ) )? otherlv_6= '}' ) )
-            // InternalVcsFeatures.g:877:2: ( () otherlv_1= 'Database' ( (lv_connectionString_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'DatabaseType' ( (lv_DatabaseType_5_0= ruleDatabaseType ) ) )? otherlv_6= '}' )
+            // InternalVcsFeatures.g:860:2: ( ( () otherlv_1= 'Database' otherlv_2= '-' otherlv_3= 'ConnectionString' ( (lv_connectionString_4_0= ruleEString ) ) otherlv_5= '-' (otherlv_6= 'DatabaseType' ( (lv_DatabaseType_7_0= ruleDatabaseType ) ) )? ) )
+            // InternalVcsFeatures.g:861:2: ( () otherlv_1= 'Database' otherlv_2= '-' otherlv_3= 'ConnectionString' ( (lv_connectionString_4_0= ruleEString ) ) otherlv_5= '-' (otherlv_6= 'DatabaseType' ( (lv_DatabaseType_7_0= ruleDatabaseType ) ) )? )
             {
-            // InternalVcsFeatures.g:877:2: ( () otherlv_1= 'Database' ( (lv_connectionString_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'DatabaseType' ( (lv_DatabaseType_5_0= ruleDatabaseType ) ) )? otherlv_6= '}' )
-            // InternalVcsFeatures.g:878:3: () otherlv_1= 'Database' ( (lv_connectionString_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'DatabaseType' ( (lv_DatabaseType_5_0= ruleDatabaseType ) ) )? otherlv_6= '}'
+            // InternalVcsFeatures.g:861:2: ( () otherlv_1= 'Database' otherlv_2= '-' otherlv_3= 'ConnectionString' ( (lv_connectionString_4_0= ruleEString ) ) otherlv_5= '-' (otherlv_6= 'DatabaseType' ( (lv_DatabaseType_7_0= ruleDatabaseType ) ) )? )
+            // InternalVcsFeatures.g:862:3: () otherlv_1= 'Database' otherlv_2= '-' otherlv_3= 'ConnectionString' ( (lv_connectionString_4_0= ruleEString ) ) otherlv_5= '-' (otherlv_6= 'DatabaseType' ( (lv_DatabaseType_7_0= ruleDatabaseType ) ) )?
             {
-            // InternalVcsFeatures.g:878:3: ()
-            // InternalVcsFeatures.g:879:4: 
+            // InternalVcsFeatures.g:862:3: ()
+            // InternalVcsFeatures.g:863:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2026,21 +2004,29 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,32,FOLLOW_3); 
+            otherlv_1=(Token)match(input,29,FOLLOW_6); 
 
             			newLeafNode(otherlv_1, grammarAccess.getDatabaseAccess().getDatabaseKeyword_1());
             		
-            // InternalVcsFeatures.g:889:3: ( (lv_connectionString_2_0= ruleEString ) )
-            // InternalVcsFeatures.g:890:4: (lv_connectionString_2_0= ruleEString )
+            otherlv_2=(Token)match(input,20,FOLLOW_29); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getDatabaseAccess().getHyphenMinusKeyword_2());
+            		
+            otherlv_3=(Token)match(input,30,FOLLOW_3); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getDatabaseAccess().getConnectionStringKeyword_3());
+            		
+            // InternalVcsFeatures.g:881:3: ( (lv_connectionString_4_0= ruleEString ) )
+            // InternalVcsFeatures.g:882:4: (lv_connectionString_4_0= ruleEString )
             {
-            // InternalVcsFeatures.g:890:4: (lv_connectionString_2_0= ruleEString )
-            // InternalVcsFeatures.g:891:5: lv_connectionString_2_0= ruleEString
+            // InternalVcsFeatures.g:882:4: (lv_connectionString_4_0= ruleEString )
+            // InternalVcsFeatures.g:883:5: lv_connectionString_4_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getDatabaseAccess().getConnectionStringEStringParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getDatabaseAccess().getConnectionStringEStringParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_4);
-            lv_connectionString_2_0=ruleEString();
+            pushFollow(FOLLOW_6);
+            lv_connectionString_4_0=ruleEString();
 
             state._fsp--;
 
@@ -2051,7 +2037,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"connectionString",
-            						lv_connectionString_2_0,
+            						lv_connectionString_4_0,
             						"diro.geodes.VcsFeatures.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -2061,36 +2047,36 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_32); 
+            otherlv_5=(Token)match(input,20,FOLLOW_30); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getDatabaseAccess().getLeftCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_5, grammarAccess.getDatabaseAccess().getHyphenMinusKeyword_5());
             		
-            // InternalVcsFeatures.g:912:3: (otherlv_4= 'DatabaseType' ( (lv_DatabaseType_5_0= ruleDatabaseType ) ) )?
+            // InternalVcsFeatures.g:904:3: (otherlv_6= 'DatabaseType' ( (lv_DatabaseType_7_0= ruleDatabaseType ) ) )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==33) ) {
+            if ( (LA22_0==31) ) {
                 alt22=1;
             }
             switch (alt22) {
                 case 1 :
-                    // InternalVcsFeatures.g:913:4: otherlv_4= 'DatabaseType' ( (lv_DatabaseType_5_0= ruleDatabaseType ) )
+                    // InternalVcsFeatures.g:905:4: otherlv_6= 'DatabaseType' ( (lv_DatabaseType_7_0= ruleDatabaseType ) )
                     {
-                    otherlv_4=(Token)match(input,33,FOLLOW_33); 
+                    otherlv_6=(Token)match(input,31,FOLLOW_31); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getDatabaseAccess().getDatabaseTypeKeyword_4_0());
+                    				newLeafNode(otherlv_6, grammarAccess.getDatabaseAccess().getDatabaseTypeKeyword_6_0());
                     			
-                    // InternalVcsFeatures.g:917:4: ( (lv_DatabaseType_5_0= ruleDatabaseType ) )
-                    // InternalVcsFeatures.g:918:5: (lv_DatabaseType_5_0= ruleDatabaseType )
+                    // InternalVcsFeatures.g:909:4: ( (lv_DatabaseType_7_0= ruleDatabaseType ) )
+                    // InternalVcsFeatures.g:910:5: (lv_DatabaseType_7_0= ruleDatabaseType )
                     {
-                    // InternalVcsFeatures.g:918:5: (lv_DatabaseType_5_0= ruleDatabaseType )
-                    // InternalVcsFeatures.g:919:6: lv_DatabaseType_5_0= ruleDatabaseType
+                    // InternalVcsFeatures.g:910:5: (lv_DatabaseType_7_0= ruleDatabaseType )
+                    // InternalVcsFeatures.g:911:6: lv_DatabaseType_7_0= ruleDatabaseType
                     {
 
-                    						newCompositeNode(grammarAccess.getDatabaseAccess().getDatabaseTypeDatabaseTypeEnumRuleCall_4_1_0());
+                    						newCompositeNode(grammarAccess.getDatabaseAccess().getDatabaseTypeDatabaseTypeEnumRuleCall_6_1_0());
                     					
-                    pushFollow(FOLLOW_16);
-                    lv_DatabaseType_5_0=ruleDatabaseType();
+                    pushFollow(FOLLOW_2);
+                    lv_DatabaseType_7_0=ruleDatabaseType();
 
                     state._fsp--;
 
@@ -2101,7 +2087,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"DatabaseType",
-                    							lv_DatabaseType_5_0,
+                    							lv_DatabaseType_7_0,
                     							"diro.geodes.VcsFeatures.DatabaseType");
                     						afterParserOrEnumRuleCall();
                     					
@@ -2117,10 +2103,6 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getDatabaseAccess().getRightCurlyBracketKeyword_5());
-            		
 
             }
 
@@ -2144,7 +2126,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEString"
-    // InternalVcsFeatures.g:945:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
+    // InternalVcsFeatures.g:933:1: entryRuleEString returns [String current=null] : iv_ruleEString= ruleEString EOF ;
     public final String entryRuleEString() throws RecognitionException {
         String current = null;
 
@@ -2152,8 +2134,8 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVcsFeatures.g:945:47: (iv_ruleEString= ruleEString EOF )
-            // InternalVcsFeatures.g:946:2: iv_ruleEString= ruleEString EOF
+            // InternalVcsFeatures.g:933:47: (iv_ruleEString= ruleEString EOF )
+            // InternalVcsFeatures.g:934:2: iv_ruleEString= ruleEString EOF
             {
              newCompositeNode(grammarAccess.getEStringRule()); 
             pushFollow(FOLLOW_1);
@@ -2180,7 +2162,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEString"
-    // InternalVcsFeatures.g:952:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
+    // InternalVcsFeatures.g:940:1: ruleEString returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) ;
     public final AntlrDatatypeRuleToken ruleEString() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2191,10 +2173,10 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:958:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
-            // InternalVcsFeatures.g:959:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalVcsFeatures.g:946:2: ( (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID ) )
+            // InternalVcsFeatures.g:947:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
-            // InternalVcsFeatures.g:959:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
+            // InternalVcsFeatures.g:947:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -2212,7 +2194,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
             }
             switch (alt23) {
                 case 1 :
-                    // InternalVcsFeatures.g:960:3: this_STRING_0= RULE_STRING
+                    // InternalVcsFeatures.g:948:3: this_STRING_0= RULE_STRING
                     {
                     this_STRING_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -2225,7 +2207,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVcsFeatures.g:968:3: this_ID_1= RULE_ID
+                    // InternalVcsFeatures.g:956:3: this_ID_1= RULE_ID
                     {
                     this_ID_1=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2260,7 +2242,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHighLevelCommand"
-    // InternalVcsFeatures.g:979:1: entryRuleHighLevelCommand returns [EObject current=null] : iv_ruleHighLevelCommand= ruleHighLevelCommand EOF ;
+    // InternalVcsFeatures.g:967:1: entryRuleHighLevelCommand returns [EObject current=null] : iv_ruleHighLevelCommand= ruleHighLevelCommand EOF ;
     public final EObject entryRuleHighLevelCommand() throws RecognitionException {
         EObject current = null;
 
@@ -2268,8 +2250,8 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVcsFeatures.g:979:57: (iv_ruleHighLevelCommand= ruleHighLevelCommand EOF )
-            // InternalVcsFeatures.g:980:2: iv_ruleHighLevelCommand= ruleHighLevelCommand EOF
+            // InternalVcsFeatures.g:967:57: (iv_ruleHighLevelCommand= ruleHighLevelCommand EOF )
+            // InternalVcsFeatures.g:968:2: iv_ruleHighLevelCommand= ruleHighLevelCommand EOF
             {
              newCompositeNode(grammarAccess.getHighLevelCommandRule()); 
             pushFollow(FOLLOW_1);
@@ -2296,17 +2278,15 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHighLevelCommand"
-    // InternalVcsFeatures.g:986:1: ruleHighLevelCommand returns [EObject current=null] : ( () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'lowlevelcommand' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? otherlv_10= '}' ) ;
+    // InternalVcsFeatures.g:974:1: ruleHighLevelCommand returns [EObject current=null] : ( () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'lowlevelcommand' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? ) ;
     public final EObject ruleHighLevelCommand() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_3=null;
         Token otherlv_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
+        Token otherlv_6=null;
+        Token otherlv_8=null;
         AntlrDatatypeRuleToken lv_name_2_0 = null;
 
 
@@ -2314,14 +2294,14 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:992:2: ( ( () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'lowlevelcommand' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? otherlv_10= '}' ) )
-            // InternalVcsFeatures.g:993:2: ( () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'lowlevelcommand' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? otherlv_10= '}' )
+            // InternalVcsFeatures.g:980:2: ( ( () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'lowlevelcommand' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? ) )
+            // InternalVcsFeatures.g:981:2: ( () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'lowlevelcommand' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? )
             {
-            // InternalVcsFeatures.g:993:2: ( () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'lowlevelcommand' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? otherlv_10= '}' )
-            // InternalVcsFeatures.g:994:3: () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'lowlevelcommand' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )? otherlv_10= '}'
+            // InternalVcsFeatures.g:981:2: ( () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'lowlevelcommand' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )? )
+            // InternalVcsFeatures.g:982:3: () otherlv_1= 'HighLevelCommand' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'lowlevelcommand' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
             {
-            // InternalVcsFeatures.g:994:3: ()
-            // InternalVcsFeatures.g:995:4: 
+            // InternalVcsFeatures.g:982:3: ()
+            // InternalVcsFeatures.g:983:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2331,20 +2311,20 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_3); 
+            otherlv_1=(Token)match(input,32,FOLLOW_3); 
 
             			newLeafNode(otherlv_1, grammarAccess.getHighLevelCommandAccess().getHighLevelCommandKeyword_1());
             		
-            // InternalVcsFeatures.g:1005:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalVcsFeatures.g:1006:4: (lv_name_2_0= ruleEString )
+            // InternalVcsFeatures.g:993:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalVcsFeatures.g:994:4: (lv_name_2_0= ruleEString )
             {
-            // InternalVcsFeatures.g:1006:4: (lv_name_2_0= ruleEString )
-            // InternalVcsFeatures.g:1007:5: lv_name_2_0= ruleEString
+            // InternalVcsFeatures.g:994:4: (lv_name_2_0= ruleEString )
+            // InternalVcsFeatures.g:995:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getHighLevelCommandAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_32);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -2366,34 +2346,30 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,12,FOLLOW_21); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getHighLevelCommandAccess().getLeftCurlyBracketKeyword_3());
-            		
-            // InternalVcsFeatures.g:1028:3: (otherlv_4= 'lowlevelcommand' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')' )?
+            // InternalVcsFeatures.g:1012:3: (otherlv_3= 'lowlevelcommand' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')' )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
-            if ( (LA25_0==23) ) {
+            if ( (LA25_0==22) ) {
                 alt25=1;
             }
             switch (alt25) {
                 case 1 :
-                    // InternalVcsFeatures.g:1029:4: otherlv_4= 'lowlevelcommand' otherlv_5= '(' ( ( ruleEString ) ) (otherlv_7= ',' ( ( ruleEString ) ) )* otherlv_9= ')'
+                    // InternalVcsFeatures.g:1013:4: otherlv_3= 'lowlevelcommand' otherlv_4= '(' ( ( ruleEString ) ) (otherlv_6= ',' ( ( ruleEString ) ) )* otherlv_8= ')'
                     {
-                    otherlv_4=(Token)match(input,23,FOLLOW_34); 
+                    otherlv_3=(Token)match(input,22,FOLLOW_33); 
 
-                    				newLeafNode(otherlv_4, grammarAccess.getHighLevelCommandAccess().getLowlevelcommandKeyword_4_0());
+                    				newLeafNode(otherlv_3, grammarAccess.getHighLevelCommandAccess().getLowlevelcommandKeyword_3_0());
                     			
-                    otherlv_5=(Token)match(input,35,FOLLOW_3); 
+                    otherlv_4=(Token)match(input,33,FOLLOW_3); 
 
-                    				newLeafNode(otherlv_5, grammarAccess.getHighLevelCommandAccess().getLeftParenthesisKeyword_4_1());
+                    				newLeafNode(otherlv_4, grammarAccess.getHighLevelCommandAccess().getLeftParenthesisKeyword_3_1());
                     			
-                    // InternalVcsFeatures.g:1037:4: ( ( ruleEString ) )
-                    // InternalVcsFeatures.g:1038:5: ( ruleEString )
+                    // InternalVcsFeatures.g:1021:4: ( ( ruleEString ) )
+                    // InternalVcsFeatures.g:1022:5: ( ruleEString )
                     {
-                    // InternalVcsFeatures.g:1038:5: ( ruleEString )
-                    // InternalVcsFeatures.g:1039:6: ruleEString
+                    // InternalVcsFeatures.g:1022:5: ( ruleEString )
+                    // InternalVcsFeatures.g:1023:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -2401,9 +2377,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     						}
                     					
 
-                    						newCompositeNode(grammarAccess.getHighLevelCommandAccess().getLowlevelcommandLowLevelCommandCrossReference_4_2_0());
+                    						newCompositeNode(grammarAccess.getHighLevelCommandAccess().getLowlevelcommandLowLevelCommandCrossReference_3_2_0());
                     					
-                    pushFollow(FOLLOW_35);
+                    pushFollow(FOLLOW_34);
                     ruleEString();
 
                     state._fsp--;
@@ -2417,7 +2393,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalVcsFeatures.g:1053:4: (otherlv_7= ',' ( ( ruleEString ) ) )*
+                    // InternalVcsFeatures.g:1037:4: (otherlv_6= ',' ( ( ruleEString ) ) )*
                     loop24:
                     do {
                         int alt24=2;
@@ -2430,17 +2406,17 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
                         switch (alt24) {
                     	case 1 :
-                    	    // InternalVcsFeatures.g:1054:5: otherlv_7= ',' ( ( ruleEString ) )
+                    	    // InternalVcsFeatures.g:1038:5: otherlv_6= ',' ( ( ruleEString ) )
                     	    {
-                    	    otherlv_7=(Token)match(input,14,FOLLOW_3); 
+                    	    otherlv_6=(Token)match(input,14,FOLLOW_3); 
 
-                    	    					newLeafNode(otherlv_7, grammarAccess.getHighLevelCommandAccess().getCommaKeyword_4_3_0());
+                    	    					newLeafNode(otherlv_6, grammarAccess.getHighLevelCommandAccess().getCommaKeyword_3_3_0());
                     	    				
-                    	    // InternalVcsFeatures.g:1058:5: ( ( ruleEString ) )
-                    	    // InternalVcsFeatures.g:1059:6: ( ruleEString )
+                    	    // InternalVcsFeatures.g:1042:5: ( ( ruleEString ) )
+                    	    // InternalVcsFeatures.g:1043:6: ( ruleEString )
                     	    {
-                    	    // InternalVcsFeatures.g:1059:6: ( ruleEString )
-                    	    // InternalVcsFeatures.g:1060:7: ruleEString
+                    	    // InternalVcsFeatures.g:1043:6: ( ruleEString )
+                    	    // InternalVcsFeatures.g:1044:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -2448,9 +2424,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     	    							}
                     	    						
 
-                    	    							newCompositeNode(grammarAccess.getHighLevelCommandAccess().getLowlevelcommandLowLevelCommandCrossReference_4_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getHighLevelCommandAccess().getLowlevelcommandLowLevelCommandCrossReference_3_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_35);
+                    	    pushFollow(FOLLOW_34);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -2473,9 +2449,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_9=(Token)match(input,36,FOLLOW_16); 
+                    otherlv_8=(Token)match(input,34,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getHighLevelCommandAccess().getRightParenthesisKeyword_4_4());
+                    				newLeafNode(otherlv_8, grammarAccess.getHighLevelCommandAccess().getRightParenthesisKeyword_3_4());
                     			
 
                     }
@@ -2483,10 +2459,6 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_10, grammarAccess.getHighLevelCommandAccess().getRightCurlyBracketKeyword_5());
-            		
 
             }
 
@@ -2510,7 +2482,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLowLevelCommand"
-    // InternalVcsFeatures.g:1088:1: entryRuleLowLevelCommand returns [EObject current=null] : iv_ruleLowLevelCommand= ruleLowLevelCommand EOF ;
+    // InternalVcsFeatures.g:1068:1: entryRuleLowLevelCommand returns [EObject current=null] : iv_ruleLowLevelCommand= ruleLowLevelCommand EOF ;
     public final EObject entryRuleLowLevelCommand() throws RecognitionException {
         EObject current = null;
 
@@ -2518,8 +2490,8 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVcsFeatures.g:1088:56: (iv_ruleLowLevelCommand= ruleLowLevelCommand EOF )
-            // InternalVcsFeatures.g:1089:2: iv_ruleLowLevelCommand= ruleLowLevelCommand EOF
+            // InternalVcsFeatures.g:1068:56: (iv_ruleLowLevelCommand= ruleLowLevelCommand EOF )
+            // InternalVcsFeatures.g:1069:2: iv_ruleLowLevelCommand= ruleLowLevelCommand EOF
             {
              newCompositeNode(grammarAccess.getLowLevelCommandRule()); 
             pushFollow(FOLLOW_1);
@@ -2546,7 +2518,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLowLevelCommand"
-    // InternalVcsFeatures.g:1095:1: ruleLowLevelCommand returns [EObject current=null] : (otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= '}' ) ;
+    // InternalVcsFeatures.g:1075:1: ruleLowLevelCommand returns [EObject current=null] : (otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '(' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= ')' ) ;
     public final EObject ruleLowLevelCommand() throws RecognitionException {
         EObject current = null;
 
@@ -2563,26 +2535,26 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:1101:2: ( (otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= '}' ) )
-            // InternalVcsFeatures.g:1102:2: (otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= '}' )
+            // InternalVcsFeatures.g:1081:2: ( (otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '(' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= ')' ) )
+            // InternalVcsFeatures.g:1082:2: (otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '(' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= ')' )
             {
-            // InternalVcsFeatures.g:1102:2: (otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= '}' )
-            // InternalVcsFeatures.g:1103:3: otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '{' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= '}'
+            // InternalVcsFeatures.g:1082:2: (otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '(' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= ')' )
+            // InternalVcsFeatures.g:1083:3: otherlv_0= 'LowLevelCommand' ( (lv_name_1_0= ruleEString ) ) otherlv_2= '(' otherlv_3= 'command' ( (lv_command_4_0= ruleLowCommands ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,37,FOLLOW_3); 
+            otherlv_0=(Token)match(input,35,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLowLevelCommandAccess().getLowLevelCommandKeyword_0());
             		
-            // InternalVcsFeatures.g:1107:3: ( (lv_name_1_0= ruleEString ) )
-            // InternalVcsFeatures.g:1108:4: (lv_name_1_0= ruleEString )
+            // InternalVcsFeatures.g:1087:3: ( (lv_name_1_0= ruleEString ) )
+            // InternalVcsFeatures.g:1088:4: (lv_name_1_0= ruleEString )
             {
-            // InternalVcsFeatures.g:1108:4: (lv_name_1_0= ruleEString )
-            // InternalVcsFeatures.g:1109:5: lv_name_1_0= ruleEString
+            // InternalVcsFeatures.g:1088:4: (lv_name_1_0= ruleEString )
+            // InternalVcsFeatures.g:1089:5: lv_name_1_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getLowLevelCommandAccess().getNameEStringParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_33);
             lv_name_1_0=ruleEString();
 
             state._fsp--;
@@ -2604,24 +2576,24 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_36); 
+            otherlv_2=(Token)match(input,33,FOLLOW_35); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getLowLevelCommandAccess().getLeftCurlyBracketKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getLowLevelCommandAccess().getLeftParenthesisKeyword_2());
             		
-            otherlv_3=(Token)match(input,38,FOLLOW_37); 
+            otherlv_3=(Token)match(input,36,FOLLOW_36); 
 
             			newLeafNode(otherlv_3, grammarAccess.getLowLevelCommandAccess().getCommandKeyword_3());
             		
-            // InternalVcsFeatures.g:1134:3: ( (lv_command_4_0= ruleLowCommands ) )
-            // InternalVcsFeatures.g:1135:4: (lv_command_4_0= ruleLowCommands )
+            // InternalVcsFeatures.g:1114:3: ( (lv_command_4_0= ruleLowCommands ) )
+            // InternalVcsFeatures.g:1115:4: (lv_command_4_0= ruleLowCommands )
             {
-            // InternalVcsFeatures.g:1135:4: (lv_command_4_0= ruleLowCommands )
-            // InternalVcsFeatures.g:1136:5: lv_command_4_0= ruleLowCommands
+            // InternalVcsFeatures.g:1115:4: (lv_command_4_0= ruleLowCommands )
+            // InternalVcsFeatures.g:1116:5: lv_command_4_0= ruleLowCommands
             {
 
             					newCompositeNode(grammarAccess.getLowLevelCommandAccess().getCommandLowCommandsEnumRuleCall_4_0());
             				
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_37);
             lv_command_4_0=ruleLowCommands();
 
             state._fsp--;
@@ -2643,9 +2615,9 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,15,FOLLOW_2); 
+            otherlv_5=(Token)match(input,34,FOLLOW_2); 
 
-            			newLeafNode(otherlv_5, grammarAccess.getLowLevelCommandAccess().getRightCurlyBracketKeyword_5());
+            			newLeafNode(otherlv_5, grammarAccess.getLowLevelCommandAccess().getRightParenthesisKeyword_5());
             		
 
             }
@@ -2670,7 +2642,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEInt"
-    // InternalVcsFeatures.g:1161:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
+    // InternalVcsFeatures.g:1141:1: entryRuleEInt returns [String current=null] : iv_ruleEInt= ruleEInt EOF ;
     public final String entryRuleEInt() throws RecognitionException {
         String current = null;
 
@@ -2678,8 +2650,8 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalVcsFeatures.g:1161:44: (iv_ruleEInt= ruleEInt EOF )
-            // InternalVcsFeatures.g:1162:2: iv_ruleEInt= ruleEInt EOF
+            // InternalVcsFeatures.g:1141:44: (iv_ruleEInt= ruleEInt EOF )
+            // InternalVcsFeatures.g:1142:2: iv_ruleEInt= ruleEInt EOF
             {
              newCompositeNode(grammarAccess.getEIntRule()); 
             pushFollow(FOLLOW_1);
@@ -2706,7 +2678,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEInt"
-    // InternalVcsFeatures.g:1168:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
+    // InternalVcsFeatures.g:1148:1: ruleEInt returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT ) ;
     public final AntlrDatatypeRuleToken ruleEInt() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2717,24 +2689,24 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:1174:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
-            // InternalVcsFeatures.g:1175:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalVcsFeatures.g:1154:2: ( ( (kw= '-' )? this_INT_1= RULE_INT ) )
+            // InternalVcsFeatures.g:1155:2: ( (kw= '-' )? this_INT_1= RULE_INT )
             {
-            // InternalVcsFeatures.g:1175:2: ( (kw= '-' )? this_INT_1= RULE_INT )
-            // InternalVcsFeatures.g:1176:3: (kw= '-' )? this_INT_1= RULE_INT
+            // InternalVcsFeatures.g:1155:2: ( (kw= '-' )? this_INT_1= RULE_INT )
+            // InternalVcsFeatures.g:1156:3: (kw= '-' )? this_INT_1= RULE_INT
             {
-            // InternalVcsFeatures.g:1176:3: (kw= '-' )?
+            // InternalVcsFeatures.g:1156:3: (kw= '-' )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( (LA26_0==39) ) {
+            if ( (LA26_0==20) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
-                    // InternalVcsFeatures.g:1177:4: kw= '-'
+                    // InternalVcsFeatures.g:1157:4: kw= '-'
                     {
-                    kw=(Token)match(input,39,FOLLOW_38); 
+                    kw=(Token)match(input,20,FOLLOW_38); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getEIntAccess().getHyphenMinusKeyword_0());
@@ -2775,7 +2747,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMergeStrategy"
-    // InternalVcsFeatures.g:1194:1: ruleMergeStrategy returns [Enumerator current=null] : ( (enumLiteral_0= 'DSMCompare' ) | (enumLiteral_1= 'GitDiff' ) ) ;
+    // InternalVcsFeatures.g:1174:1: ruleMergeStrategy returns [Enumerator current=null] : ( (enumLiteral_0= 'DSMCompare' ) | (enumLiteral_1= 'GitDiff' ) ) ;
     public final Enumerator ruleMergeStrategy() throws RecognitionException {
         Enumerator current = null;
 
@@ -2786,17 +2758,17 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:1200:2: ( ( (enumLiteral_0= 'DSMCompare' ) | (enumLiteral_1= 'GitDiff' ) ) )
-            // InternalVcsFeatures.g:1201:2: ( (enumLiteral_0= 'DSMCompare' ) | (enumLiteral_1= 'GitDiff' ) )
+            // InternalVcsFeatures.g:1180:2: ( ( (enumLiteral_0= 'DSMCompare' ) | (enumLiteral_1= 'GitDiff' ) ) )
+            // InternalVcsFeatures.g:1181:2: ( (enumLiteral_0= 'DSMCompare' ) | (enumLiteral_1= 'GitDiff' ) )
             {
-            // InternalVcsFeatures.g:1201:2: ( (enumLiteral_0= 'DSMCompare' ) | (enumLiteral_1= 'GitDiff' ) )
+            // InternalVcsFeatures.g:1181:2: ( (enumLiteral_0= 'DSMCompare' ) | (enumLiteral_1= 'GitDiff' ) )
             int alt27=2;
             int LA27_0 = input.LA(1);
 
-            if ( (LA27_0==40) ) {
+            if ( (LA27_0==37) ) {
                 alt27=1;
             }
-            else if ( (LA27_0==41) ) {
+            else if ( (LA27_0==38) ) {
                 alt27=2;
             }
             else {
@@ -2807,12 +2779,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
             }
             switch (alt27) {
                 case 1 :
-                    // InternalVcsFeatures.g:1202:3: (enumLiteral_0= 'DSMCompare' )
+                    // InternalVcsFeatures.g:1182:3: (enumLiteral_0= 'DSMCompare' )
                     {
-                    // InternalVcsFeatures.g:1202:3: (enumLiteral_0= 'DSMCompare' )
-                    // InternalVcsFeatures.g:1203:4: enumLiteral_0= 'DSMCompare'
+                    // InternalVcsFeatures.g:1182:3: (enumLiteral_0= 'DSMCompare' )
+                    // InternalVcsFeatures.g:1183:4: enumLiteral_0= 'DSMCompare'
                     {
-                    enumLiteral_0=(Token)match(input,40,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,37,FOLLOW_2); 
 
                     				current = grammarAccess.getMergeStrategyAccess().getDSMCompareEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getMergeStrategyAccess().getDSMCompareEnumLiteralDeclaration_0());
@@ -2824,12 +2796,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVcsFeatures.g:1210:3: (enumLiteral_1= 'GitDiff' )
+                    // InternalVcsFeatures.g:1190:3: (enumLiteral_1= 'GitDiff' )
                     {
-                    // InternalVcsFeatures.g:1210:3: (enumLiteral_1= 'GitDiff' )
-                    // InternalVcsFeatures.g:1211:4: enumLiteral_1= 'GitDiff'
+                    // InternalVcsFeatures.g:1190:3: (enumLiteral_1= 'GitDiff' )
+                    // InternalVcsFeatures.g:1191:4: enumLiteral_1= 'GitDiff'
                     {
-                    enumLiteral_1=(Token)match(input,41,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,38,FOLLOW_2); 
 
                     				current = grammarAccess.getMergeStrategyAccess().getGitDiffEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getMergeStrategyAccess().getGitDiffEnumLiteralDeclaration_1());
@@ -2863,7 +2835,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLowCommands"
-    // InternalVcsFeatures.g:1221:1: ruleLowCommands returns [Enumerator current=null] : ( (enumLiteral_0= 'Add' ) | (enumLiteral_1= 'Checkout' ) | (enumLiteral_2= 'CheckoutCreate' ) | (enumLiteral_3= 'Clone' ) | (enumLiteral_4= 'Commit' ) | (enumLiteral_5= 'CherryPick' ) | (enumLiteral_6= 'CreateBranch' ) | (enumLiteral_7= 'Fetch' ) | (enumLiteral_8= 'Init' ) | (enumLiteral_9= 'Pull' ) | (enumLiteral_10= 'Push' ) | (enumLiteral_11= 'RemoteAdd' ) | (enumLiteral_12= 'Rm' ) | (enumLiteral_13= 'Log' ) | (enumLiteral_14= 'Open' ) ) ;
+    // InternalVcsFeatures.g:1201:1: ruleLowCommands returns [Enumerator current=null] : ( (enumLiteral_0= 'Add' ) | (enumLiteral_1= 'Checkout' ) | (enumLiteral_2= 'CheckoutCreate' ) | (enumLiteral_3= 'Clone' ) | (enumLiteral_4= 'Commit' ) | (enumLiteral_5= 'CherryPick' ) | (enumLiteral_6= 'CreateBranch' ) | (enumLiteral_7= 'Fetch' ) | (enumLiteral_8= 'Init' ) | (enumLiteral_9= 'Pull' ) | (enumLiteral_10= 'Push' ) | (enumLiteral_11= 'RemoteAdd' ) | (enumLiteral_12= 'Rm' ) | (enumLiteral_13= 'Log' ) | (enumLiteral_14= 'Open' ) ) ;
     public final Enumerator ruleLowCommands() throws RecognitionException {
         Enumerator current = null;
 
@@ -2887,83 +2859,83 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:1227:2: ( ( (enumLiteral_0= 'Add' ) | (enumLiteral_1= 'Checkout' ) | (enumLiteral_2= 'CheckoutCreate' ) | (enumLiteral_3= 'Clone' ) | (enumLiteral_4= 'Commit' ) | (enumLiteral_5= 'CherryPick' ) | (enumLiteral_6= 'CreateBranch' ) | (enumLiteral_7= 'Fetch' ) | (enumLiteral_8= 'Init' ) | (enumLiteral_9= 'Pull' ) | (enumLiteral_10= 'Push' ) | (enumLiteral_11= 'RemoteAdd' ) | (enumLiteral_12= 'Rm' ) | (enumLiteral_13= 'Log' ) | (enumLiteral_14= 'Open' ) ) )
-            // InternalVcsFeatures.g:1228:2: ( (enumLiteral_0= 'Add' ) | (enumLiteral_1= 'Checkout' ) | (enumLiteral_2= 'CheckoutCreate' ) | (enumLiteral_3= 'Clone' ) | (enumLiteral_4= 'Commit' ) | (enumLiteral_5= 'CherryPick' ) | (enumLiteral_6= 'CreateBranch' ) | (enumLiteral_7= 'Fetch' ) | (enumLiteral_8= 'Init' ) | (enumLiteral_9= 'Pull' ) | (enumLiteral_10= 'Push' ) | (enumLiteral_11= 'RemoteAdd' ) | (enumLiteral_12= 'Rm' ) | (enumLiteral_13= 'Log' ) | (enumLiteral_14= 'Open' ) )
+            // InternalVcsFeatures.g:1207:2: ( ( (enumLiteral_0= 'Add' ) | (enumLiteral_1= 'Checkout' ) | (enumLiteral_2= 'CheckoutCreate' ) | (enumLiteral_3= 'Clone' ) | (enumLiteral_4= 'Commit' ) | (enumLiteral_5= 'CherryPick' ) | (enumLiteral_6= 'CreateBranch' ) | (enumLiteral_7= 'Fetch' ) | (enumLiteral_8= 'Init' ) | (enumLiteral_9= 'Pull' ) | (enumLiteral_10= 'Push' ) | (enumLiteral_11= 'RemoteAdd' ) | (enumLiteral_12= 'Rm' ) | (enumLiteral_13= 'Log' ) | (enumLiteral_14= 'Open' ) ) )
+            // InternalVcsFeatures.g:1208:2: ( (enumLiteral_0= 'Add' ) | (enumLiteral_1= 'Checkout' ) | (enumLiteral_2= 'CheckoutCreate' ) | (enumLiteral_3= 'Clone' ) | (enumLiteral_4= 'Commit' ) | (enumLiteral_5= 'CherryPick' ) | (enumLiteral_6= 'CreateBranch' ) | (enumLiteral_7= 'Fetch' ) | (enumLiteral_8= 'Init' ) | (enumLiteral_9= 'Pull' ) | (enumLiteral_10= 'Push' ) | (enumLiteral_11= 'RemoteAdd' ) | (enumLiteral_12= 'Rm' ) | (enumLiteral_13= 'Log' ) | (enumLiteral_14= 'Open' ) )
             {
-            // InternalVcsFeatures.g:1228:2: ( (enumLiteral_0= 'Add' ) | (enumLiteral_1= 'Checkout' ) | (enumLiteral_2= 'CheckoutCreate' ) | (enumLiteral_3= 'Clone' ) | (enumLiteral_4= 'Commit' ) | (enumLiteral_5= 'CherryPick' ) | (enumLiteral_6= 'CreateBranch' ) | (enumLiteral_7= 'Fetch' ) | (enumLiteral_8= 'Init' ) | (enumLiteral_9= 'Pull' ) | (enumLiteral_10= 'Push' ) | (enumLiteral_11= 'RemoteAdd' ) | (enumLiteral_12= 'Rm' ) | (enumLiteral_13= 'Log' ) | (enumLiteral_14= 'Open' ) )
+            // InternalVcsFeatures.g:1208:2: ( (enumLiteral_0= 'Add' ) | (enumLiteral_1= 'Checkout' ) | (enumLiteral_2= 'CheckoutCreate' ) | (enumLiteral_3= 'Clone' ) | (enumLiteral_4= 'Commit' ) | (enumLiteral_5= 'CherryPick' ) | (enumLiteral_6= 'CreateBranch' ) | (enumLiteral_7= 'Fetch' ) | (enumLiteral_8= 'Init' ) | (enumLiteral_9= 'Pull' ) | (enumLiteral_10= 'Push' ) | (enumLiteral_11= 'RemoteAdd' ) | (enumLiteral_12= 'Rm' ) | (enumLiteral_13= 'Log' ) | (enumLiteral_14= 'Open' ) )
             int alt28=15;
             switch ( input.LA(1) ) {
-            case 42:
+            case 39:
                 {
                 alt28=1;
                 }
                 break;
-            case 43:
+            case 40:
                 {
                 alt28=2;
                 }
                 break;
-            case 44:
+            case 41:
                 {
                 alt28=3;
                 }
                 break;
-            case 45:
+            case 42:
                 {
                 alt28=4;
                 }
                 break;
-            case 46:
+            case 43:
                 {
                 alt28=5;
                 }
                 break;
-            case 47:
+            case 44:
                 {
                 alt28=6;
                 }
                 break;
-            case 48:
+            case 45:
                 {
                 alt28=7;
                 }
                 break;
-            case 49:
+            case 46:
                 {
                 alt28=8;
                 }
                 break;
-            case 50:
+            case 47:
                 {
                 alt28=9;
                 }
                 break;
-            case 51:
+            case 48:
                 {
                 alt28=10;
                 }
                 break;
-            case 52:
+            case 49:
                 {
                 alt28=11;
                 }
                 break;
-            case 53:
+            case 50:
                 {
                 alt28=12;
                 }
                 break;
-            case 54:
+            case 51:
                 {
                 alt28=13;
                 }
                 break;
-            case 55:
+            case 52:
                 {
                 alt28=14;
                 }
                 break;
-            case 56:
+            case 53:
                 {
                 alt28=15;
                 }
@@ -2977,12 +2949,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             switch (alt28) {
                 case 1 :
-                    // InternalVcsFeatures.g:1229:3: (enumLiteral_0= 'Add' )
+                    // InternalVcsFeatures.g:1209:3: (enumLiteral_0= 'Add' )
                     {
-                    // InternalVcsFeatures.g:1229:3: (enumLiteral_0= 'Add' )
-                    // InternalVcsFeatures.g:1230:4: enumLiteral_0= 'Add'
+                    // InternalVcsFeatures.g:1209:3: (enumLiteral_0= 'Add' )
+                    // InternalVcsFeatures.g:1210:4: enumLiteral_0= 'Add'
                     {
-                    enumLiteral_0=(Token)match(input,42,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,39,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getAddEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getLowCommandsAccess().getAddEnumLiteralDeclaration_0());
@@ -2994,12 +2966,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVcsFeatures.g:1237:3: (enumLiteral_1= 'Checkout' )
+                    // InternalVcsFeatures.g:1217:3: (enumLiteral_1= 'Checkout' )
                     {
-                    // InternalVcsFeatures.g:1237:3: (enumLiteral_1= 'Checkout' )
-                    // InternalVcsFeatures.g:1238:4: enumLiteral_1= 'Checkout'
+                    // InternalVcsFeatures.g:1217:3: (enumLiteral_1= 'Checkout' )
+                    // InternalVcsFeatures.g:1218:4: enumLiteral_1= 'Checkout'
                     {
-                    enumLiteral_1=(Token)match(input,43,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,40,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getCheckoutEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getLowCommandsAccess().getCheckoutEnumLiteralDeclaration_1());
@@ -3011,12 +2983,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalVcsFeatures.g:1245:3: (enumLiteral_2= 'CheckoutCreate' )
+                    // InternalVcsFeatures.g:1225:3: (enumLiteral_2= 'CheckoutCreate' )
                     {
-                    // InternalVcsFeatures.g:1245:3: (enumLiteral_2= 'CheckoutCreate' )
-                    // InternalVcsFeatures.g:1246:4: enumLiteral_2= 'CheckoutCreate'
+                    // InternalVcsFeatures.g:1225:3: (enumLiteral_2= 'CheckoutCreate' )
+                    // InternalVcsFeatures.g:1226:4: enumLiteral_2= 'CheckoutCreate'
                     {
-                    enumLiteral_2=(Token)match(input,44,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,41,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getCheckoutCreateEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getLowCommandsAccess().getCheckoutCreateEnumLiteralDeclaration_2());
@@ -3028,12 +3000,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalVcsFeatures.g:1253:3: (enumLiteral_3= 'Clone' )
+                    // InternalVcsFeatures.g:1233:3: (enumLiteral_3= 'Clone' )
                     {
-                    // InternalVcsFeatures.g:1253:3: (enumLiteral_3= 'Clone' )
-                    // InternalVcsFeatures.g:1254:4: enumLiteral_3= 'Clone'
+                    // InternalVcsFeatures.g:1233:3: (enumLiteral_3= 'Clone' )
+                    // InternalVcsFeatures.g:1234:4: enumLiteral_3= 'Clone'
                     {
-                    enumLiteral_3=(Token)match(input,45,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,42,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getCloneEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getLowCommandsAccess().getCloneEnumLiteralDeclaration_3());
@@ -3045,12 +3017,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalVcsFeatures.g:1261:3: (enumLiteral_4= 'Commit' )
+                    // InternalVcsFeatures.g:1241:3: (enumLiteral_4= 'Commit' )
                     {
-                    // InternalVcsFeatures.g:1261:3: (enumLiteral_4= 'Commit' )
-                    // InternalVcsFeatures.g:1262:4: enumLiteral_4= 'Commit'
+                    // InternalVcsFeatures.g:1241:3: (enumLiteral_4= 'Commit' )
+                    // InternalVcsFeatures.g:1242:4: enumLiteral_4= 'Commit'
                     {
-                    enumLiteral_4=(Token)match(input,46,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,43,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getCommitEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getLowCommandsAccess().getCommitEnumLiteralDeclaration_4());
@@ -3062,12 +3034,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalVcsFeatures.g:1269:3: (enumLiteral_5= 'CherryPick' )
+                    // InternalVcsFeatures.g:1249:3: (enumLiteral_5= 'CherryPick' )
                     {
-                    // InternalVcsFeatures.g:1269:3: (enumLiteral_5= 'CherryPick' )
-                    // InternalVcsFeatures.g:1270:4: enumLiteral_5= 'CherryPick'
+                    // InternalVcsFeatures.g:1249:3: (enumLiteral_5= 'CherryPick' )
+                    // InternalVcsFeatures.g:1250:4: enumLiteral_5= 'CherryPick'
                     {
-                    enumLiteral_5=(Token)match(input,47,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,44,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getCherryPickEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getLowCommandsAccess().getCherryPickEnumLiteralDeclaration_5());
@@ -3079,12 +3051,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalVcsFeatures.g:1277:3: (enumLiteral_6= 'CreateBranch' )
+                    // InternalVcsFeatures.g:1257:3: (enumLiteral_6= 'CreateBranch' )
                     {
-                    // InternalVcsFeatures.g:1277:3: (enumLiteral_6= 'CreateBranch' )
-                    // InternalVcsFeatures.g:1278:4: enumLiteral_6= 'CreateBranch'
+                    // InternalVcsFeatures.g:1257:3: (enumLiteral_6= 'CreateBranch' )
+                    // InternalVcsFeatures.g:1258:4: enumLiteral_6= 'CreateBranch'
                     {
-                    enumLiteral_6=(Token)match(input,48,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,45,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getCreateBranchEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getLowCommandsAccess().getCreateBranchEnumLiteralDeclaration_6());
@@ -3096,12 +3068,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalVcsFeatures.g:1285:3: (enumLiteral_7= 'Fetch' )
+                    // InternalVcsFeatures.g:1265:3: (enumLiteral_7= 'Fetch' )
                     {
-                    // InternalVcsFeatures.g:1285:3: (enumLiteral_7= 'Fetch' )
-                    // InternalVcsFeatures.g:1286:4: enumLiteral_7= 'Fetch'
+                    // InternalVcsFeatures.g:1265:3: (enumLiteral_7= 'Fetch' )
+                    // InternalVcsFeatures.g:1266:4: enumLiteral_7= 'Fetch'
                     {
-                    enumLiteral_7=(Token)match(input,49,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,46,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getFetchEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getLowCommandsAccess().getFetchEnumLiteralDeclaration_7());
@@ -3113,12 +3085,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalVcsFeatures.g:1293:3: (enumLiteral_8= 'Init' )
+                    // InternalVcsFeatures.g:1273:3: (enumLiteral_8= 'Init' )
                     {
-                    // InternalVcsFeatures.g:1293:3: (enumLiteral_8= 'Init' )
-                    // InternalVcsFeatures.g:1294:4: enumLiteral_8= 'Init'
+                    // InternalVcsFeatures.g:1273:3: (enumLiteral_8= 'Init' )
+                    // InternalVcsFeatures.g:1274:4: enumLiteral_8= 'Init'
                     {
-                    enumLiteral_8=(Token)match(input,50,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,47,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getInitEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_8, grammarAccess.getLowCommandsAccess().getInitEnumLiteralDeclaration_8());
@@ -3130,12 +3102,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalVcsFeatures.g:1301:3: (enumLiteral_9= 'Pull' )
+                    // InternalVcsFeatures.g:1281:3: (enumLiteral_9= 'Pull' )
                     {
-                    // InternalVcsFeatures.g:1301:3: (enumLiteral_9= 'Pull' )
-                    // InternalVcsFeatures.g:1302:4: enumLiteral_9= 'Pull'
+                    // InternalVcsFeatures.g:1281:3: (enumLiteral_9= 'Pull' )
+                    // InternalVcsFeatures.g:1282:4: enumLiteral_9= 'Pull'
                     {
-                    enumLiteral_9=(Token)match(input,51,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,48,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getPullEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_9, grammarAccess.getLowCommandsAccess().getPullEnumLiteralDeclaration_9());
@@ -3147,12 +3119,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalVcsFeatures.g:1309:3: (enumLiteral_10= 'Push' )
+                    // InternalVcsFeatures.g:1289:3: (enumLiteral_10= 'Push' )
                     {
-                    // InternalVcsFeatures.g:1309:3: (enumLiteral_10= 'Push' )
-                    // InternalVcsFeatures.g:1310:4: enumLiteral_10= 'Push'
+                    // InternalVcsFeatures.g:1289:3: (enumLiteral_10= 'Push' )
+                    // InternalVcsFeatures.g:1290:4: enumLiteral_10= 'Push'
                     {
-                    enumLiteral_10=(Token)match(input,52,FOLLOW_2); 
+                    enumLiteral_10=(Token)match(input,49,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getPushEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_10, grammarAccess.getLowCommandsAccess().getPushEnumLiteralDeclaration_10());
@@ -3164,12 +3136,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalVcsFeatures.g:1317:3: (enumLiteral_11= 'RemoteAdd' )
+                    // InternalVcsFeatures.g:1297:3: (enumLiteral_11= 'RemoteAdd' )
                     {
-                    // InternalVcsFeatures.g:1317:3: (enumLiteral_11= 'RemoteAdd' )
-                    // InternalVcsFeatures.g:1318:4: enumLiteral_11= 'RemoteAdd'
+                    // InternalVcsFeatures.g:1297:3: (enumLiteral_11= 'RemoteAdd' )
+                    // InternalVcsFeatures.g:1298:4: enumLiteral_11= 'RemoteAdd'
                     {
-                    enumLiteral_11=(Token)match(input,53,FOLLOW_2); 
+                    enumLiteral_11=(Token)match(input,50,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getRemoteAddEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_11, grammarAccess.getLowCommandsAccess().getRemoteAddEnumLiteralDeclaration_11());
@@ -3181,12 +3153,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalVcsFeatures.g:1325:3: (enumLiteral_12= 'Rm' )
+                    // InternalVcsFeatures.g:1305:3: (enumLiteral_12= 'Rm' )
                     {
-                    // InternalVcsFeatures.g:1325:3: (enumLiteral_12= 'Rm' )
-                    // InternalVcsFeatures.g:1326:4: enumLiteral_12= 'Rm'
+                    // InternalVcsFeatures.g:1305:3: (enumLiteral_12= 'Rm' )
+                    // InternalVcsFeatures.g:1306:4: enumLiteral_12= 'Rm'
                     {
-                    enumLiteral_12=(Token)match(input,54,FOLLOW_2); 
+                    enumLiteral_12=(Token)match(input,51,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getRmEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_12, grammarAccess.getLowCommandsAccess().getRmEnumLiteralDeclaration_12());
@@ -3198,12 +3170,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalVcsFeatures.g:1333:3: (enumLiteral_13= 'Log' )
+                    // InternalVcsFeatures.g:1313:3: (enumLiteral_13= 'Log' )
                     {
-                    // InternalVcsFeatures.g:1333:3: (enumLiteral_13= 'Log' )
-                    // InternalVcsFeatures.g:1334:4: enumLiteral_13= 'Log'
+                    // InternalVcsFeatures.g:1313:3: (enumLiteral_13= 'Log' )
+                    // InternalVcsFeatures.g:1314:4: enumLiteral_13= 'Log'
                     {
-                    enumLiteral_13=(Token)match(input,55,FOLLOW_2); 
+                    enumLiteral_13=(Token)match(input,52,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getLogEnumLiteralDeclaration_13().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_13, grammarAccess.getLowCommandsAccess().getLogEnumLiteralDeclaration_13());
@@ -3215,12 +3187,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalVcsFeatures.g:1341:3: (enumLiteral_14= 'Open' )
+                    // InternalVcsFeatures.g:1321:3: (enumLiteral_14= 'Open' )
                     {
-                    // InternalVcsFeatures.g:1341:3: (enumLiteral_14= 'Open' )
-                    // InternalVcsFeatures.g:1342:4: enumLiteral_14= 'Open'
+                    // InternalVcsFeatures.g:1321:3: (enumLiteral_14= 'Open' )
+                    // InternalVcsFeatures.g:1322:4: enumLiteral_14= 'Open'
                     {
-                    enumLiteral_14=(Token)match(input,56,FOLLOW_2); 
+                    enumLiteral_14=(Token)match(input,53,FOLLOW_2); 
 
                     				current = grammarAccess.getLowCommandsAccess().getOpenEnumLiteralDeclaration_14().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_14, grammarAccess.getLowCommandsAccess().getOpenEnumLiteralDeclaration_14());
@@ -3254,7 +3226,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLabelType"
-    // InternalVcsFeatures.g:1352:1: ruleLabelType returns [Enumerator current=null] : ( (enumLiteral_0= 'Unique' ) | (enumLiteral_1= 'CommitHash' ) | (enumLiteral_2= 'Label' ) ) ;
+    // InternalVcsFeatures.g:1332:1: ruleLabelType returns [Enumerator current=null] : ( (enumLiteral_0= 'Unique' ) | (enumLiteral_1= 'CommitHash' ) | (enumLiteral_2= 'Label' ) ) ;
     public final Enumerator ruleLabelType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3266,23 +3238,23 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:1358:2: ( ( (enumLiteral_0= 'Unique' ) | (enumLiteral_1= 'CommitHash' ) | (enumLiteral_2= 'Label' ) ) )
-            // InternalVcsFeatures.g:1359:2: ( (enumLiteral_0= 'Unique' ) | (enumLiteral_1= 'CommitHash' ) | (enumLiteral_2= 'Label' ) )
+            // InternalVcsFeatures.g:1338:2: ( ( (enumLiteral_0= 'Unique' ) | (enumLiteral_1= 'CommitHash' ) | (enumLiteral_2= 'Label' ) ) )
+            // InternalVcsFeatures.g:1339:2: ( (enumLiteral_0= 'Unique' ) | (enumLiteral_1= 'CommitHash' ) | (enumLiteral_2= 'Label' ) )
             {
-            // InternalVcsFeatures.g:1359:2: ( (enumLiteral_0= 'Unique' ) | (enumLiteral_1= 'CommitHash' ) | (enumLiteral_2= 'Label' ) )
+            // InternalVcsFeatures.g:1339:2: ( (enumLiteral_0= 'Unique' ) | (enumLiteral_1= 'CommitHash' ) | (enumLiteral_2= 'Label' ) )
             int alt29=3;
             switch ( input.LA(1) ) {
-            case 57:
+            case 54:
                 {
                 alt29=1;
                 }
                 break;
-            case 58:
+            case 55:
                 {
                 alt29=2;
                 }
                 break;
-            case 59:
+            case 56:
                 {
                 alt29=3;
                 }
@@ -3296,12 +3268,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             switch (alt29) {
                 case 1 :
-                    // InternalVcsFeatures.g:1360:3: (enumLiteral_0= 'Unique' )
+                    // InternalVcsFeatures.g:1340:3: (enumLiteral_0= 'Unique' )
                     {
-                    // InternalVcsFeatures.g:1360:3: (enumLiteral_0= 'Unique' )
-                    // InternalVcsFeatures.g:1361:4: enumLiteral_0= 'Unique'
+                    // InternalVcsFeatures.g:1340:3: (enumLiteral_0= 'Unique' )
+                    // InternalVcsFeatures.g:1341:4: enumLiteral_0= 'Unique'
                     {
-                    enumLiteral_0=(Token)match(input,57,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,54,FOLLOW_2); 
 
                     				current = grammarAccess.getLabelTypeAccess().getUniqueEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getLabelTypeAccess().getUniqueEnumLiteralDeclaration_0());
@@ -3313,12 +3285,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVcsFeatures.g:1368:3: (enumLiteral_1= 'CommitHash' )
+                    // InternalVcsFeatures.g:1348:3: (enumLiteral_1= 'CommitHash' )
                     {
-                    // InternalVcsFeatures.g:1368:3: (enumLiteral_1= 'CommitHash' )
-                    // InternalVcsFeatures.g:1369:4: enumLiteral_1= 'CommitHash'
+                    // InternalVcsFeatures.g:1348:3: (enumLiteral_1= 'CommitHash' )
+                    // InternalVcsFeatures.g:1349:4: enumLiteral_1= 'CommitHash'
                     {
-                    enumLiteral_1=(Token)match(input,58,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,55,FOLLOW_2); 
 
                     				current = grammarAccess.getLabelTypeAccess().getCommitHashEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getLabelTypeAccess().getCommitHashEnumLiteralDeclaration_1());
@@ -3330,12 +3302,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalVcsFeatures.g:1376:3: (enumLiteral_2= 'Label' )
+                    // InternalVcsFeatures.g:1356:3: (enumLiteral_2= 'Label' )
                     {
-                    // InternalVcsFeatures.g:1376:3: (enumLiteral_2= 'Label' )
-                    // InternalVcsFeatures.g:1377:4: enumLiteral_2= 'Label'
+                    // InternalVcsFeatures.g:1356:3: (enumLiteral_2= 'Label' )
+                    // InternalVcsFeatures.g:1357:4: enumLiteral_2= 'Label'
                     {
-                    enumLiteral_2=(Token)match(input,59,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,56,FOLLOW_2); 
 
                     				current = grammarAccess.getLabelTypeAccess().getLabelEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getLabelTypeAccess().getLabelEnumLiteralDeclaration_2());
@@ -3369,7 +3341,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVersionUnitType"
-    // InternalVcsFeatures.g:1387:1: ruleVersionUnitType returns [Enumerator current=null] : ( (enumLiteral_0= 'Line' ) | (enumLiteral_1= 'Semantic' ) | (enumLiteral_2= 'File' ) | (enumLiteral_3= 'Element' ) ) ;
+    // InternalVcsFeatures.g:1367:1: ruleVersionUnitType returns [Enumerator current=null] : ( (enumLiteral_0= 'Line' ) | (enumLiteral_1= 'Semantic' ) | (enumLiteral_2= 'File' ) | (enumLiteral_3= 'Element' ) ) ;
     public final Enumerator ruleVersionUnitType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3382,28 +3354,28 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:1393:2: ( ( (enumLiteral_0= 'Line' ) | (enumLiteral_1= 'Semantic' ) | (enumLiteral_2= 'File' ) | (enumLiteral_3= 'Element' ) ) )
-            // InternalVcsFeatures.g:1394:2: ( (enumLiteral_0= 'Line' ) | (enumLiteral_1= 'Semantic' ) | (enumLiteral_2= 'File' ) | (enumLiteral_3= 'Element' ) )
+            // InternalVcsFeatures.g:1373:2: ( ( (enumLiteral_0= 'Line' ) | (enumLiteral_1= 'Semantic' ) | (enumLiteral_2= 'File' ) | (enumLiteral_3= 'Element' ) ) )
+            // InternalVcsFeatures.g:1374:2: ( (enumLiteral_0= 'Line' ) | (enumLiteral_1= 'Semantic' ) | (enumLiteral_2= 'File' ) | (enumLiteral_3= 'Element' ) )
             {
-            // InternalVcsFeatures.g:1394:2: ( (enumLiteral_0= 'Line' ) | (enumLiteral_1= 'Semantic' ) | (enumLiteral_2= 'File' ) | (enumLiteral_3= 'Element' ) )
+            // InternalVcsFeatures.g:1374:2: ( (enumLiteral_0= 'Line' ) | (enumLiteral_1= 'Semantic' ) | (enumLiteral_2= 'File' ) | (enumLiteral_3= 'Element' ) )
             int alt30=4;
             switch ( input.LA(1) ) {
-            case 60:
+            case 57:
                 {
                 alt30=1;
                 }
                 break;
-            case 61:
+            case 58:
                 {
                 alt30=2;
                 }
                 break;
-            case 62:
+            case 59:
                 {
                 alt30=3;
                 }
                 break;
-            case 63:
+            case 60:
                 {
                 alt30=4;
                 }
@@ -3417,12 +3389,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             switch (alt30) {
                 case 1 :
-                    // InternalVcsFeatures.g:1395:3: (enumLiteral_0= 'Line' )
+                    // InternalVcsFeatures.g:1375:3: (enumLiteral_0= 'Line' )
                     {
-                    // InternalVcsFeatures.g:1395:3: (enumLiteral_0= 'Line' )
-                    // InternalVcsFeatures.g:1396:4: enumLiteral_0= 'Line'
+                    // InternalVcsFeatures.g:1375:3: (enumLiteral_0= 'Line' )
+                    // InternalVcsFeatures.g:1376:4: enumLiteral_0= 'Line'
                     {
-                    enumLiteral_0=(Token)match(input,60,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,57,FOLLOW_2); 
 
                     				current = grammarAccess.getVersionUnitTypeAccess().getLineEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getVersionUnitTypeAccess().getLineEnumLiteralDeclaration_0());
@@ -3434,12 +3406,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVcsFeatures.g:1403:3: (enumLiteral_1= 'Semantic' )
+                    // InternalVcsFeatures.g:1383:3: (enumLiteral_1= 'Semantic' )
                     {
-                    // InternalVcsFeatures.g:1403:3: (enumLiteral_1= 'Semantic' )
-                    // InternalVcsFeatures.g:1404:4: enumLiteral_1= 'Semantic'
+                    // InternalVcsFeatures.g:1383:3: (enumLiteral_1= 'Semantic' )
+                    // InternalVcsFeatures.g:1384:4: enumLiteral_1= 'Semantic'
                     {
-                    enumLiteral_1=(Token)match(input,61,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,58,FOLLOW_2); 
 
                     				current = grammarAccess.getVersionUnitTypeAccess().getSemanticEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getVersionUnitTypeAccess().getSemanticEnumLiteralDeclaration_1());
@@ -3451,12 +3423,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalVcsFeatures.g:1411:3: (enumLiteral_2= 'File' )
+                    // InternalVcsFeatures.g:1391:3: (enumLiteral_2= 'File' )
                     {
-                    // InternalVcsFeatures.g:1411:3: (enumLiteral_2= 'File' )
-                    // InternalVcsFeatures.g:1412:4: enumLiteral_2= 'File'
+                    // InternalVcsFeatures.g:1391:3: (enumLiteral_2= 'File' )
+                    // InternalVcsFeatures.g:1392:4: enumLiteral_2= 'File'
                     {
-                    enumLiteral_2=(Token)match(input,62,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,59,FOLLOW_2); 
 
                     				current = grammarAccess.getVersionUnitTypeAccess().getFileEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getVersionUnitTypeAccess().getFileEnumLiteralDeclaration_2());
@@ -3468,12 +3440,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalVcsFeatures.g:1419:3: (enumLiteral_3= 'Element' )
+                    // InternalVcsFeatures.g:1399:3: (enumLiteral_3= 'Element' )
                     {
-                    // InternalVcsFeatures.g:1419:3: (enumLiteral_3= 'Element' )
-                    // InternalVcsFeatures.g:1420:4: enumLiteral_3= 'Element'
+                    // InternalVcsFeatures.g:1399:3: (enumLiteral_3= 'Element' )
+                    // InternalVcsFeatures.g:1400:4: enumLiteral_3= 'Element'
                     {
-                    enumLiteral_3=(Token)match(input,63,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,60,FOLLOW_2); 
 
                     				current = grammarAccess.getVersionUnitTypeAccess().getElementEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getVersionUnitTypeAccess().getElementEnumLiteralDeclaration_3());
@@ -3507,7 +3479,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCollaborationStyleType"
-    // InternalVcsFeatures.g:1430:1: ruleCollaborationStyleType returns [Enumerator current=null] : ( (enumLiteral_0= 'LocalOnly' ) | (enumLiteral_1= 'Remote' ) ) ;
+    // InternalVcsFeatures.g:1410:1: ruleCollaborationStyleType returns [Enumerator current=null] : ( (enumLiteral_0= 'LocalOnly' ) | (enumLiteral_1= 'Remote' ) ) ;
     public final Enumerator ruleCollaborationStyleType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3518,17 +3490,17 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:1436:2: ( ( (enumLiteral_0= 'LocalOnly' ) | (enumLiteral_1= 'Remote' ) ) )
-            // InternalVcsFeatures.g:1437:2: ( (enumLiteral_0= 'LocalOnly' ) | (enumLiteral_1= 'Remote' ) )
+            // InternalVcsFeatures.g:1416:2: ( ( (enumLiteral_0= 'LocalOnly' ) | (enumLiteral_1= 'Remote' ) ) )
+            // InternalVcsFeatures.g:1417:2: ( (enumLiteral_0= 'LocalOnly' ) | (enumLiteral_1= 'Remote' ) )
             {
-            // InternalVcsFeatures.g:1437:2: ( (enumLiteral_0= 'LocalOnly' ) | (enumLiteral_1= 'Remote' ) )
+            // InternalVcsFeatures.g:1417:2: ( (enumLiteral_0= 'LocalOnly' ) | (enumLiteral_1= 'Remote' ) )
             int alt31=2;
             int LA31_0 = input.LA(1);
 
-            if ( (LA31_0==64) ) {
+            if ( (LA31_0==61) ) {
                 alt31=1;
             }
-            else if ( (LA31_0==65) ) {
+            else if ( (LA31_0==62) ) {
                 alt31=2;
             }
             else {
@@ -3539,12 +3511,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
             }
             switch (alt31) {
                 case 1 :
-                    // InternalVcsFeatures.g:1438:3: (enumLiteral_0= 'LocalOnly' )
+                    // InternalVcsFeatures.g:1418:3: (enumLiteral_0= 'LocalOnly' )
                     {
-                    // InternalVcsFeatures.g:1438:3: (enumLiteral_0= 'LocalOnly' )
-                    // InternalVcsFeatures.g:1439:4: enumLiteral_0= 'LocalOnly'
+                    // InternalVcsFeatures.g:1418:3: (enumLiteral_0= 'LocalOnly' )
+                    // InternalVcsFeatures.g:1419:4: enumLiteral_0= 'LocalOnly'
                     {
-                    enumLiteral_0=(Token)match(input,64,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,61,FOLLOW_2); 
 
                     				current = grammarAccess.getCollaborationStyleTypeAccess().getLocalOnlyEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getCollaborationStyleTypeAccess().getLocalOnlyEnumLiteralDeclaration_0());
@@ -3556,12 +3528,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVcsFeatures.g:1446:3: (enumLiteral_1= 'Remote' )
+                    // InternalVcsFeatures.g:1426:3: (enumLiteral_1= 'Remote' )
                     {
-                    // InternalVcsFeatures.g:1446:3: (enumLiteral_1= 'Remote' )
-                    // InternalVcsFeatures.g:1447:4: enumLiteral_1= 'Remote'
+                    // InternalVcsFeatures.g:1426:3: (enumLiteral_1= 'Remote' )
+                    // InternalVcsFeatures.g:1427:4: enumLiteral_1= 'Remote'
                     {
-                    enumLiteral_1=(Token)match(input,65,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,62,FOLLOW_2); 
 
                     				current = grammarAccess.getCollaborationStyleTypeAccess().getRemoteEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getCollaborationStyleTypeAccess().getRemoteEnumLiteralDeclaration_1());
@@ -3595,7 +3567,7 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDatabaseType"
-    // InternalVcsFeatures.g:1457:1: ruleDatabaseType returns [Enumerator current=null] : ( (enumLiteral_0= 'MongoDB' ) | (enumLiteral_1= 'XMI' ) | (enumLiteral_2= 'Neo4J' ) | (enumLiteral_3= 'SQL' ) ) ;
+    // InternalVcsFeatures.g:1437:1: ruleDatabaseType returns [Enumerator current=null] : ( (enumLiteral_0= 'MongoDB' ) | (enumLiteral_1= 'XMI' ) | (enumLiteral_2= 'Neo4J' ) | (enumLiteral_3= 'SQL' ) ) ;
     public final Enumerator ruleDatabaseType() throws RecognitionException {
         Enumerator current = null;
 
@@ -3608,28 +3580,28 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalVcsFeatures.g:1463:2: ( ( (enumLiteral_0= 'MongoDB' ) | (enumLiteral_1= 'XMI' ) | (enumLiteral_2= 'Neo4J' ) | (enumLiteral_3= 'SQL' ) ) )
-            // InternalVcsFeatures.g:1464:2: ( (enumLiteral_0= 'MongoDB' ) | (enumLiteral_1= 'XMI' ) | (enumLiteral_2= 'Neo4J' ) | (enumLiteral_3= 'SQL' ) )
+            // InternalVcsFeatures.g:1443:2: ( ( (enumLiteral_0= 'MongoDB' ) | (enumLiteral_1= 'XMI' ) | (enumLiteral_2= 'Neo4J' ) | (enumLiteral_3= 'SQL' ) ) )
+            // InternalVcsFeatures.g:1444:2: ( (enumLiteral_0= 'MongoDB' ) | (enumLiteral_1= 'XMI' ) | (enumLiteral_2= 'Neo4J' ) | (enumLiteral_3= 'SQL' ) )
             {
-            // InternalVcsFeatures.g:1464:2: ( (enumLiteral_0= 'MongoDB' ) | (enumLiteral_1= 'XMI' ) | (enumLiteral_2= 'Neo4J' ) | (enumLiteral_3= 'SQL' ) )
+            // InternalVcsFeatures.g:1444:2: ( (enumLiteral_0= 'MongoDB' ) | (enumLiteral_1= 'XMI' ) | (enumLiteral_2= 'Neo4J' ) | (enumLiteral_3= 'SQL' ) )
             int alt32=4;
             switch ( input.LA(1) ) {
-            case 66:
+            case 63:
                 {
                 alt32=1;
                 }
                 break;
-            case 67:
+            case 64:
                 {
                 alt32=2;
                 }
                 break;
-            case 68:
+            case 65:
                 {
                 alt32=3;
                 }
                 break;
-            case 69:
+            case 66:
                 {
                 alt32=4;
                 }
@@ -3643,12 +3615,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
 
             switch (alt32) {
                 case 1 :
-                    // InternalVcsFeatures.g:1465:3: (enumLiteral_0= 'MongoDB' )
+                    // InternalVcsFeatures.g:1445:3: (enumLiteral_0= 'MongoDB' )
                     {
-                    // InternalVcsFeatures.g:1465:3: (enumLiteral_0= 'MongoDB' )
-                    // InternalVcsFeatures.g:1466:4: enumLiteral_0= 'MongoDB'
+                    // InternalVcsFeatures.g:1445:3: (enumLiteral_0= 'MongoDB' )
+                    // InternalVcsFeatures.g:1446:4: enumLiteral_0= 'MongoDB'
                     {
-                    enumLiteral_0=(Token)match(input,66,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,63,FOLLOW_2); 
 
                     				current = grammarAccess.getDatabaseTypeAccess().getMongoDBEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getDatabaseTypeAccess().getMongoDBEnumLiteralDeclaration_0());
@@ -3660,12 +3632,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalVcsFeatures.g:1473:3: (enumLiteral_1= 'XMI' )
+                    // InternalVcsFeatures.g:1453:3: (enumLiteral_1= 'XMI' )
                     {
-                    // InternalVcsFeatures.g:1473:3: (enumLiteral_1= 'XMI' )
-                    // InternalVcsFeatures.g:1474:4: enumLiteral_1= 'XMI'
+                    // InternalVcsFeatures.g:1453:3: (enumLiteral_1= 'XMI' )
+                    // InternalVcsFeatures.g:1454:4: enumLiteral_1= 'XMI'
                     {
-                    enumLiteral_1=(Token)match(input,67,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,64,FOLLOW_2); 
 
                     				current = grammarAccess.getDatabaseTypeAccess().getXMIEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getDatabaseTypeAccess().getXMIEnumLiteralDeclaration_1());
@@ -3677,12 +3649,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalVcsFeatures.g:1481:3: (enumLiteral_2= 'Neo4J' )
+                    // InternalVcsFeatures.g:1461:3: (enumLiteral_2= 'Neo4J' )
                     {
-                    // InternalVcsFeatures.g:1481:3: (enumLiteral_2= 'Neo4J' )
-                    // InternalVcsFeatures.g:1482:4: enumLiteral_2= 'Neo4J'
+                    // InternalVcsFeatures.g:1461:3: (enumLiteral_2= 'Neo4J' )
+                    // InternalVcsFeatures.g:1462:4: enumLiteral_2= 'Neo4J'
                     {
-                    enumLiteral_2=(Token)match(input,68,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,65,FOLLOW_2); 
 
                     				current = grammarAccess.getDatabaseTypeAccess().getNeo4JEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getDatabaseTypeAccess().getNeo4JEnumLiteralDeclaration_2());
@@ -3694,12 +3666,12 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalVcsFeatures.g:1489:3: (enumLiteral_3= 'SQL' )
+                    // InternalVcsFeatures.g:1469:3: (enumLiteral_3= 'SQL' )
                     {
-                    // InternalVcsFeatures.g:1489:3: (enumLiteral_3= 'SQL' )
-                    // InternalVcsFeatures.g:1490:4: enumLiteral_3= 'SQL'
+                    // InternalVcsFeatures.g:1469:3: (enumLiteral_3= 'SQL' )
+                    // InternalVcsFeatures.g:1470:4: enumLiteral_3= 'SQL'
                     {
-                    enumLiteral_3=(Token)match(input,69,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,66,FOLLOW_2); 
 
                     				current = grammarAccess.getDatabaseTypeAccess().getSQLEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getDatabaseTypeAccess().getSQLEnumLiteralDeclaration_3());
@@ -3744,35 +3716,35 @@ public class InternalVcsFeaturesParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000000000000C000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000000F8000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000000E8000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000000C8000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000088000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000E08000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000030000000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000C08000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000808000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x000000000E008000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0E00000000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x000000000C008000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000008000000040L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000008008000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000020008000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0xF000000000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000080008000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000200008000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x000000000000003CL});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000001000004000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x01FFFC0000000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000E8000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00000000000C8000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000088000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000006000000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000500000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x01C0000000000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000002100000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000100040L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x1E00000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x6000000000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000007L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000400004000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x003FFF8000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000040L});
 
 }
