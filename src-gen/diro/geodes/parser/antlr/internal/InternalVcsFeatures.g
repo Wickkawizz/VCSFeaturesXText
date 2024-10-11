@@ -107,25 +107,21 @@ ruleVCSFeatures returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_3='{'
+		otherlv_3='#'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getVCSFeaturesAccess().getNumberSignKeyword_3());
 		}
 		(
-			otherlv_4='commands'
+			otherlv_4='COMMANDS'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getVCSFeaturesAccess().getCommandsKeyword_4_0());
-			}
-			otherlv_5='{'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_4_1());
+				newLeafNode(otherlv_4, grammarAccess.getVCSFeaturesAccess().getCOMMANDSKeyword_4_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getCommandsCommandsParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getCommandsCommandsParserRuleCall_4_1_0());
 					}
-					lv_commands_6_0=ruleCommands
+					lv_commands_5_0=ruleCommands
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -133,23 +129,23 @@ ruleVCSFeatures returns [EObject current=null]
 						add(
 							$current,
 							"commands",
-							lv_commands_6_0,
+							lv_commands_5_0,
 							"diro.geodes.VcsFeatures.Commands");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_7=','
+				otherlv_6=','
 				{
-					newLeafNode(otherlv_7, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_4_3_0());
+					newLeafNode(otherlv_6, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_4_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getCommandsCommandsParserRuleCall_4_3_1_0());
+							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getCommandsCommandsParserRuleCall_4_2_1_0());
 						}
-						lv_commands_8_0=ruleCommands
+						lv_commands_7_0=ruleCommands
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -157,33 +153,29 @@ ruleVCSFeatures returns [EObject current=null]
 							add(
 								$current,
 								"commands",
-								lv_commands_8_0,
+								lv_commands_7_0,
 								"diro.geodes.VcsFeatures.Commands");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_9='}'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_4_4());
-			}
 		)?
+		otherlv_8='#'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getVCSFeaturesAccess().getNumberSignKeyword_5());
+		}
 		(
-			otherlv_10='history'
+			otherlv_9='HISTORY'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getVCSFeaturesAccess().getHistoryKeyword_5_0());
-			}
-			otherlv_11='{'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_5_1());
+				newLeafNode(otherlv_9, grammarAccess.getVCSFeaturesAccess().getHISTORYKeyword_6_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getHistoryHistoryParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getHistoryHistoryParserRuleCall_6_1_0());
 					}
-					lv_history_12_0=ruleHistory
+					lv_history_10_0=ruleHistory
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -191,23 +183,23 @@ ruleVCSFeatures returns [EObject current=null]
 						add(
 							$current,
 							"history",
-							lv_history_12_0,
+							lv_history_10_0,
 							"diro.geodes.VcsFeatures.History");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_13=','
+				otherlv_11=','
 				{
-					newLeafNode(otherlv_13, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_5_3_0());
+					newLeafNode(otherlv_11, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_6_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getHistoryHistoryParserRuleCall_5_3_1_0());
+							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getHistoryHistoryParserRuleCall_6_2_1_0());
 						}
-						lv_history_14_0=ruleHistory
+						lv_history_12_0=ruleHistory
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -215,33 +207,29 @@ ruleVCSFeatures returns [EObject current=null]
 							add(
 								$current,
 								"history",
-								lv_history_14_0,
+								lv_history_12_0,
 								"diro.geodes.VcsFeatures.History");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_15='}'
-			{
-				newLeafNode(otherlv_15, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_5_4());
-			}
 		)?
+		otherlv_13='#'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getVCSFeaturesAccess().getNumberSignKeyword_7());
+		}
 		(
-			otherlv_16='versionunit'
+			otherlv_14='VERSIONNING'
 			{
-				newLeafNode(otherlv_16, grammarAccess.getVCSFeaturesAccess().getVersionunitKeyword_6_0());
-			}
-			otherlv_17='{'
-			{
-				newLeafNode(otherlv_17, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_6_1());
+				newLeafNode(otherlv_14, grammarAccess.getVCSFeaturesAccess().getVERSIONNINGKeyword_8_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getVersionunitVersionUnitParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getVersionunitVersionUnitParserRuleCall_8_1_0());
 					}
-					lv_versionunit_18_0=ruleVersionUnit
+					lv_versionunit_15_0=ruleVersionUnit
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -249,23 +237,23 @@ ruleVCSFeatures returns [EObject current=null]
 						add(
 							$current,
 							"versionunit",
-							lv_versionunit_18_0,
+							lv_versionunit_15_0,
 							"diro.geodes.VcsFeatures.VersionUnit");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_19=','
+				otherlv_16=','
 				{
-					newLeafNode(otherlv_19, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_6_3_0());
+					newLeafNode(otherlv_16, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_8_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getVersionunitVersionUnitParserRuleCall_6_3_1_0());
+							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getVersionunitVersionUnitParserRuleCall_8_2_1_0());
 						}
-						lv_versionunit_20_0=ruleVersionUnit
+						lv_versionunit_17_0=ruleVersionUnit
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -273,33 +261,33 @@ ruleVCSFeatures returns [EObject current=null]
 							add(
 								$current,
 								"versionunit",
-								lv_versionunit_20_0,
+								lv_versionunit_17_0,
 								"diro.geodes.VcsFeatures.VersionUnit");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_21='}'
-			{
-				newLeafNode(otherlv_21, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_6_4());
-			}
 		)?
+		otherlv_18='#'
+		{
+			newLeafNode(otherlv_18, grammarAccess.getVCSFeaturesAccess().getNumberSignKeyword_9());
+		}
 		(
-			otherlv_22='collaborationstyle'
+			otherlv_19='COLLABORATION'
 			{
-				newLeafNode(otherlv_22, grammarAccess.getVCSFeaturesAccess().getCollaborationstyleKeyword_7_0());
+				newLeafNode(otherlv_19, grammarAccess.getVCSFeaturesAccess().getCOLLABORATIONKeyword_10_0());
 			}
-			otherlv_23='{'
+			otherlv_20='STYLE'
 			{
-				newLeafNode(otherlv_23, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_7_1());
+				newLeafNode(otherlv_20, grammarAccess.getVCSFeaturesAccess().getSTYLEKeyword_10_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getCollaborationstyleCollaborationStyleParserRuleCall_7_2_0());
+						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getCollaborationstyleCollaborationStyleParserRuleCall_10_2_0());
 					}
-					lv_collaborationstyle_24_0=ruleCollaborationStyle
+					lv_collaborationstyle_21_0=ruleCollaborationStyle
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -307,23 +295,23 @@ ruleVCSFeatures returns [EObject current=null]
 						add(
 							$current,
 							"collaborationstyle",
-							lv_collaborationstyle_24_0,
+							lv_collaborationstyle_21_0,
 							"diro.geodes.VcsFeatures.CollaborationStyle");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_25=','
+				otherlv_22=','
 				{
-					newLeafNode(otherlv_25, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_7_3_0());
+					newLeafNode(otherlv_22, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_10_3_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getCollaborationstyleCollaborationStyleParserRuleCall_7_3_1_0());
+							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getCollaborationstyleCollaborationStyleParserRuleCall_10_3_1_0());
 						}
-						lv_collaborationstyle_26_0=ruleCollaborationStyle
+						lv_collaborationstyle_23_0=ruleCollaborationStyle
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -331,33 +319,29 @@ ruleVCSFeatures returns [EObject current=null]
 							add(
 								$current,
 								"collaborationstyle",
-								lv_collaborationstyle_26_0,
+								lv_collaborationstyle_23_0,
 								"diro.geodes.VcsFeatures.CollaborationStyle");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_27='}'
-			{
-				newLeafNode(otherlv_27, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_7_4());
-			}
 		)?
+		otherlv_24='#'
+		{
+			newLeafNode(otherlv_24, grammarAccess.getVCSFeaturesAccess().getNumberSignKeyword_11());
+		}
 		(
-			otherlv_28='database'
+			otherlv_25='DATABASES'
 			{
-				newLeafNode(otherlv_28, grammarAccess.getVCSFeaturesAccess().getDatabaseKeyword_8_0());
-			}
-			otherlv_29='{'
-			{
-				newLeafNode(otherlv_29, grammarAccess.getVCSFeaturesAccess().getLeftCurlyBracketKeyword_8_1());
+				newLeafNode(otherlv_25, grammarAccess.getVCSFeaturesAccess().getDATABASESKeyword_12_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getDatabaseDatabaseParserRuleCall_8_2_0());
+						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getDatabaseDatabaseParserRuleCall_12_1_0());
 					}
-					lv_database_30_0=ruleDatabase
+					lv_database_26_0=ruleDatabase
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -365,23 +349,23 @@ ruleVCSFeatures returns [EObject current=null]
 						add(
 							$current,
 							"database",
-							lv_database_30_0,
+							lv_database_26_0,
 							"diro.geodes.VcsFeatures.Database");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_31=','
+				otherlv_27=','
 				{
-					newLeafNode(otherlv_31, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_8_3_0());
+					newLeafNode(otherlv_27, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_12_2_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getDatabaseDatabaseParserRuleCall_8_3_1_0());
+							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getDatabaseDatabaseParserRuleCall_12_2_1_0());
 						}
-						lv_database_32_0=ruleDatabase
+						lv_database_28_0=ruleDatabase
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
@@ -389,22 +373,14 @@ ruleVCSFeatures returns [EObject current=null]
 							add(
 								$current,
 								"database",
-								lv_database_32_0,
+								lv_database_28_0,
 								"diro.geodes.VcsFeatures.Database");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_33='}'
-			{
-				newLeafNode(otherlv_33, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_8_4());
-			}
 		)?
-		otherlv_34='}'
-		{
-			newLeafNode(otherlv_34, grammarAccess.getVCSFeaturesAccess().getRightCurlyBracketKeyword_9());
-		}
 	)
 ;
 
@@ -431,19 +407,19 @@ ruleCommands returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='-'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getCommandsAccess().getHyphenMinusKeyword_1());
-		}
 		(
-			otherlv_2='mergeStrategy'
+			otherlv_1='Merge'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getCommandsAccess().getMergeStrategyKeyword_2_0());
+				newLeafNode(otherlv_1, grammarAccess.getCommandsAccess().getMergeKeyword_1_0());
+			}
+			otherlv_2='tool:'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getCommandsAccess().getToolKeyword_1_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommandsAccess().getMergeStrategyMergeStrategyEnumRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getCommandsAccess().getMergeStrategyMergeStrategyEnumRuleCall_1_2_0());
 					}
 					lv_mergeStrategy_3_0=ruleMergeStrategy
 					{
@@ -460,23 +436,23 @@ ruleCommands returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_4='-'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getCommandsAccess().getHyphenMinusKeyword_3());
-		}
 		(
-			otherlv_5='lowlevelcommand'
+			otherlv_4='Basic'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getCommandsAccess().getLowlevelcommandKeyword_4_0());
+				newLeafNode(otherlv_4, grammarAccess.getCommandsAccess().getBasicKeyword_2_0());
 			}
-			otherlv_6='{'
+			otherlv_5='command'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getCommandsAccess().getLeftCurlyBracketKeyword_4_1());
+				newLeafNode(otherlv_5, grammarAccess.getCommandsAccess().getCommandKeyword_2_1());
+			}
+			otherlv_6='declaration:'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getCommandsAccess().getDeclarationKeyword_2_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_4_2_0());
+						newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_2_3_0());
 					}
 					lv_lowlevelcommand_7_0=ruleLowLevelCommand
 					{
@@ -495,12 +471,12 @@ ruleCommands returns [EObject current=null]
 			(
 				otherlv_8=','
 				{
-					newLeafNode(otherlv_8, grammarAccess.getCommandsAccess().getCommaKeyword_4_3_0());
+					newLeafNode(otherlv_8, grammarAccess.getCommandsAccess().getCommaKeyword_2_4_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_4_3_1_0());
+							newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_2_4_1_0());
 						}
 						lv_lowlevelcommand_9_0=ruleLowLevelCommand
 						{
@@ -517,30 +493,26 @@ ruleCommands returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_10='}'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getCommandsAccess().getRightCurlyBracketKeyword_4_4());
-			}
 		)?
-		otherlv_11='-'
-		{
-			newLeafNode(otherlv_11, grammarAccess.getCommandsAccess().getHyphenMinusKeyword_5());
-		}
 		(
-			otherlv_12='highlevelcommand'
+			otherlv_10='Super'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getCommandsAccess().getHighlevelcommandKeyword_6_0());
+				newLeafNode(otherlv_10, grammarAccess.getCommandsAccess().getSuperKeyword_3_0());
 			}
-			otherlv_13='{'
+			otherlv_11='command'
 			{
-				newLeafNode(otherlv_13, grammarAccess.getCommandsAccess().getLeftCurlyBracketKeyword_6_1());
+				newLeafNode(otherlv_11, grammarAccess.getCommandsAccess().getCommandKeyword_3_1());
+			}
+			otherlv_12='declaration:'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getCommandsAccess().getDeclarationKeyword_3_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_3_3_0());
 					}
-					lv_highlevelcommand_14_0=ruleHighLevelCommand
+					lv_highlevelcommand_13_0=ruleHighLevelCommand
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCommandsRule());
@@ -548,23 +520,23 @@ ruleCommands returns [EObject current=null]
 						add(
 							$current,
 							"highlevelcommand",
-							lv_highlevelcommand_14_0,
+							lv_highlevelcommand_13_0,
 							"diro.geodes.VcsFeatures.HighLevelCommand");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_15=','
+				otherlv_14=','
 				{
-					newLeafNode(otherlv_15, grammarAccess.getCommandsAccess().getCommaKeyword_6_3_0());
+					newLeafNode(otherlv_14, grammarAccess.getCommandsAccess().getCommaKeyword_3_4_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_6_3_1_0());
+							newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_3_4_1_0());
 						}
-						lv_highlevelcommand_16_0=ruleHighLevelCommand
+						lv_highlevelcommand_15_0=ruleHighLevelCommand
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getCommandsRule());
@@ -572,17 +544,13 @@ ruleCommands returns [EObject current=null]
 							add(
 								$current,
 								"highlevelcommand",
-								lv_highlevelcommand_16_0,
+								lv_highlevelcommand_15_0,
 								"diro.geodes.VcsFeatures.HighLevelCommand");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_17='}'
-			{
-				newLeafNode(otherlv_17, grammarAccess.getCommandsAccess().getRightCurlyBracketKeyword_6_4());
-			}
 		)?
 	)
 ;
@@ -610,19 +578,19 @@ ruleHistory returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='-'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getHistoryAccess().getHyphenMinusKeyword_1());
-		}
 		(
-			otherlv_2='labelType'
+			otherlv_1='Identifying'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getHistoryAccess().getLabelTypeKeyword_2_0());
+				newLeafNode(otherlv_1, grammarAccess.getHistoryAccess().getIdentifyingKeyword_1_0());
+			}
+			otherlv_2='label:'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getHistoryAccess().getLabelKeyword_1_1());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHistoryAccess().getLabelTypeLabelTypeEnumRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getHistoryAccess().getLabelTypeLabelTypeEnumRuleCall_1_2_0());
 					}
 					lv_labelType_3_0=ruleLabelType
 					{
@@ -639,21 +607,25 @@ ruleHistory returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_4='-'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getHistoryAccess().getHyphenMinusKeyword_3());
-		}
 		(
-			otherlv_5='commitHistoryRange'
+			otherlv_4='Version'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getHistoryAccess().getCommitHistoryRangeKeyword_4_0());
+				newLeafNode(otherlv_4, grammarAccess.getHistoryAccess().getVersionKeyword_2_0());
+			}
+			otherlv_5='history'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getHistoryAccess().getHistoryKeyword_2_1());
+			}
+			otherlv_6='backlog:'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getHistoryAccess().getBacklogKeyword_2_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHistoryAccess().getCommitHistoryRangeEIntParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getHistoryAccess().getCommitHistoryRangeEIntParserRuleCall_2_3_0());
 					}
-					lv_commitHistoryRange_6_0=ruleEInt
+					lv_commitHistoryRange_7_0=ruleEInt
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHistoryRule());
@@ -661,28 +633,36 @@ ruleHistory returns [EObject current=null]
 						set(
 							$current,
 							"commitHistoryRange",
-							lv_commitHistoryRange_6_0,
+							lv_commitHistoryRange_7_0,
 							"diro.geodes.VcsFeatures.EInt");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_7='-'
-		{
-			newLeafNode(otherlv_7, grammarAccess.getHistoryAccess().getHyphenMinusKeyword_5());
-		}
 		(
-			otherlv_8='numberOfBranches'
+			otherlv_8='Maximum'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getHistoryAccess().getNumberOfBranchesKeyword_6_0());
+				newLeafNode(otherlv_8, grammarAccess.getHistoryAccess().getMaximumKeyword_3_0());
+			}
+			otherlv_9='number'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getHistoryAccess().getNumberKeyword_3_1());
+			}
+			otherlv_10='of'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getHistoryAccess().getOfKeyword_3_2());
+			}
+			otherlv_11='branches:'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getHistoryAccess().getBranchesKeyword_3_3());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getHistoryAccess().getNumberOfBranchesEIntParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getHistoryAccess().getNumberOfBranchesEIntParserRuleCall_3_4_0());
 					}
-					lv_numberOfBranches_9_0=ruleEInt
+					lv_numberOfBranches_12_0=ruleEInt
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getHistoryRule());
@@ -690,7 +670,7 @@ ruleHistory returns [EObject current=null]
 						set(
 							$current,
 							"numberOfBranches",
-							lv_numberOfBranches_9_0,
+							lv_numberOfBranches_12_0,
 							"diro.geodes.VcsFeatures.EInt");
 						afterParserOrEnumRuleCall();
 					}
@@ -723,25 +703,21 @@ ruleVersionUnit returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='-'
+		otherlv_1='Detail'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getVersionUnitAccess().getHyphenMinusKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getVersionUnitAccess().getDetailKeyword_1());
+		}
+		otherlv_2='level:'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getVersionUnitAccess().getLevelKeyword_2());
 		}
 		(
-			otherlv_2='granularity'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getVersionUnitAccess().getGranularityKeyword_2_0());
-			}
-			otherlv_3='{'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getVersionUnitAccess().getLeftCurlyBracketKeyword_2_1());
-			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_3_0_0());
 					}
-					lv_granularity_4_0=ruleVersionUnitType
+					lv_granularity_3_0=ruleVersionUnitType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getVersionUnitRule());
@@ -749,23 +725,23 @@ ruleVersionUnit returns [EObject current=null]
 						add(
 							$current,
 							"granularity",
-							lv_granularity_4_0,
+							lv_granularity_3_0,
 							"diro.geodes.VcsFeatures.VersionUnitType");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 			(
-				otherlv_5=','
+				otherlv_4=','
 				{
-					newLeafNode(otherlv_5, grammarAccess.getVersionUnitAccess().getCommaKeyword_2_3_0());
+					newLeafNode(otherlv_4, grammarAccess.getVersionUnitAccess().getCommaKeyword_3_1_0());
 				}
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_2_3_1_0());
+							newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_3_1_1_0());
 						}
-						lv_granularity_6_0=ruleVersionUnitType
+						lv_granularity_5_0=ruleVersionUnitType
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getVersionUnitRule());
@@ -773,17 +749,13 @@ ruleVersionUnit returns [EObject current=null]
 							add(
 								$current,
 								"granularity",
-								lv_granularity_6_0,
+								lv_granularity_5_0,
 								"diro.geodes.VcsFeatures.VersionUnitType");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
 			)*
-			otherlv_7='}'
-			{
-				newLeafNode(otherlv_7, grammarAccess.getVersionUnitAccess().getRightCurlyBracketKeyword_2_4());
-			}
 		)?
 	)
 ;
@@ -811,35 +783,29 @@ ruleCollaborationStyle returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='-'
+		otherlv_1='Working:'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getCollaborationStyleAccess().getHyphenMinusKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getCollaborationStyleAccess().getWorkingKeyword_1());
 		}
 		(
-			otherlv_2='collabStyle'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getCollaborationStyleAccess().getCollabStyleKeyword_2_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCollaborationStyleAccess().getCollabStyleCollaborationStyleTypeEnumRuleCall_2_1_0());
+				{
+					newCompositeNode(grammarAccess.getCollaborationStyleAccess().getCollabStyleCollaborationStyleTypeEnumRuleCall_2_0());
+				}
+				lv_collabStyle_2_0=ruleCollaborationStyleType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCollaborationStyleRule());
 					}
-					lv_collabStyle_3_0=ruleCollaborationStyleType
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCollaborationStyleRule());
-						}
-						set(
-							$current,
-							"collabStyle",
-							lv_collabStyle_3_0,
-							"diro.geodes.VcsFeatures.CollaborationStyleType");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"collabStyle",
+						lv_collabStyle_2_0,
+						"diro.geodes.VcsFeatures.CollaborationStyleType");
+					afterParserOrEnumRuleCall();
+				}
 			)
-		)?
+		)
 	)
 ;
 
@@ -866,17 +832,32 @@ ruleDatabase returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='Database'
+		otherlv_1='DB'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getDatabaseAccess().getDatabaseKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getDatabaseAccess().getDBKeyword_1());
 		}
-		otherlv_2='-'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDatabaseAccess().getDatabaseTypeDatabaseTypeEnumRuleCall_2_0());
+				}
+				lv_DatabaseType_2_0=ruleDatabaseType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDatabaseRule());
+					}
+					set(
+						$current,
+						"DatabaseType",
+						lv_DatabaseType_2_0,
+						"diro.geodes.VcsFeatures.DatabaseType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='@'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getDatabaseAccess().getHyphenMinusKeyword_2());
-		}
-		otherlv_3='ConnectionString'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getDatabaseAccess().getConnectionStringKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getDatabaseAccess().getCommercialAtKeyword_3());
 		}
 		(
 			(
@@ -897,35 +878,6 @@ ruleDatabase returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_5='-'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getDatabaseAccess().getHyphenMinusKeyword_5());
-		}
-		(
-			otherlv_6='DatabaseType'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getDatabaseAccess().getDatabaseTypeKeyword_6_0());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getDatabaseAccess().getDatabaseTypeDatabaseTypeEnumRuleCall_6_1_0());
-					}
-					lv_DatabaseType_7_0=ruleDatabaseType
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getDatabaseRule());
-						}
-						set(
-							$current,
-							"DatabaseType",
-							lv_DatabaseType_7_0,
-							"diro.geodes.VcsFeatures.DatabaseType");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
 	)
 ;
 
@@ -986,16 +938,24 @@ ruleHighLevelCommand returns [EObject current=null]
 					$current);
 			}
 		)
-		otherlv_1='HighLevelCommand'
+		otherlv_1='-'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getHighLevelCommandAccess().getHighLevelCommandKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getHighLevelCommandAccess().getHyphenMinusKeyword_1());
+		}
+		otherlv_2='Super'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getHighLevelCommandAccess().getSuperKeyword_2());
+		}
+		otherlv_3='command'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getHighLevelCommandAccess().getCommandKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getHighLevelCommandAccess().getNameEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getHighLevelCommandAccess().getNameEStringParserRuleCall_4_0());
 				}
-				lv_name_2_0=ruleEString
+				lv_name_4_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getHighLevelCommandRule());
@@ -1003,20 +963,16 @@ ruleHighLevelCommand returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_4_0,
 						"diro.geodes.VcsFeatures.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_3='lowlevelcommand'
+			otherlv_5='with'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getHighLevelCommandAccess().getLowlevelcommandKeyword_3_0());
-			}
-			otherlv_4='('
-			{
-				newLeafNode(otherlv_4, grammarAccess.getHighLevelCommandAccess().getLeftParenthesisKeyword_3_1());
+				newLeafNode(otherlv_5, grammarAccess.getHighLevelCommandAccess().getWithKeyword_5_0());
 			}
 			(
 				(
@@ -1026,7 +982,7 @@ ruleHighLevelCommand returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getHighLevelCommandAccess().getLowlevelcommandLowLevelCommandCrossReference_3_2_0());
+						newCompositeNode(grammarAccess.getHighLevelCommandAccess().getLowlevelcommandLowLevelCommandCrossReference_5_1_0());
 					}
 					ruleEString
 					{
@@ -1035,9 +991,9 @@ ruleHighLevelCommand returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_6=','
+				otherlv_7='->'
 				{
-					newLeafNode(otherlv_6, grammarAccess.getHighLevelCommandAccess().getCommaKeyword_3_3_0());
+					newLeafNode(otherlv_7, grammarAccess.getHighLevelCommandAccess().getHyphenMinusGreaterThanSignKeyword_5_2_0());
 				}
 				(
 					(
@@ -1047,7 +1003,7 @@ ruleHighLevelCommand returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getHighLevelCommandAccess().getLowlevelcommandLowLevelCommandCrossReference_3_3_1_0());
+							newCompositeNode(grammarAccess.getHighLevelCommandAccess().getLowlevelcommandLowLevelCommandCrossReference_5_2_1_0());
 						}
 						ruleEString
 						{
@@ -1056,10 +1012,6 @@ ruleHighLevelCommand returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_8=')'
-			{
-				newLeafNode(otherlv_8, grammarAccess.getHighLevelCommandAccess().getRightParenthesisKeyword_3_4());
-			}
 		)?
 	)
 ;
@@ -1080,43 +1032,24 @@ ruleLowLevelCommand returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='LowLevelCommand'
+		otherlv_0='-'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getLowLevelCommandAccess().getLowLevelCommandKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getLowLevelCommandAccess().getHyphenMinusKeyword_0());
+		}
+		otherlv_1='Command'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getLowLevelCommandAccess().getCommandKeyword_1());
+		}
+		otherlv_2='use'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getLowLevelCommandAccess().getUseKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLowLevelCommandAccess().getNameEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getLowLevelCommandAccess().getCommandLowCommandsEnumRuleCall_3_0());
 				}
-				lv_name_1_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getLowLevelCommandRule());
-					}
-					set(
-						$current,
-						"name",
-						lv_name_1_0,
-						"diro.geodes.VcsFeatures.EString");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_2='('
-		{
-			newLeafNode(otherlv_2, grammarAccess.getLowLevelCommandAccess().getLeftParenthesisKeyword_2());
-		}
-		otherlv_3='command'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getLowLevelCommandAccess().getCommandKeyword_3());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getLowLevelCommandAccess().getCommandLowCommandsEnumRuleCall_4_0());
-				}
-				lv_command_4_0=ruleLowCommands
+				lv_command_3_0=ruleLowCommands
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getLowLevelCommandRule());
@@ -1124,16 +1057,35 @@ ruleLowLevelCommand returns [EObject current=null]
 					set(
 						$current,
 						"command",
-						lv_command_4_0,
+						lv_command_3_0,
 						"diro.geodes.VcsFeatures.LowCommands");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5=')'
+		otherlv_4='as'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getLowLevelCommandAccess().getRightParenthesisKeyword_5());
+			newLeafNode(otherlv_4, grammarAccess.getLowLevelCommandAccess().getAsKeyword_4());
 		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLowLevelCommandAccess().getNameEStringParserRuleCall_5_0());
+				}
+				lv_name_5_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLowLevelCommandRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_5_0,
+						"diro.geodes.VcsFeatures.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

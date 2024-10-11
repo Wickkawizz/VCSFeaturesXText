@@ -8,13 +8,13 @@ VCSFeatures returns VCSFeatures:
 	{VCSFeatures}
 	'VCSFeatures'
 	name=EString
-	'{'
-		('commands' '{' commands+=Commands ( "," commands+=Commands)* '}' )?
-		('history' '{' history+=History ( "," history+=History)* '}' )?
-		('versionunit' '{' versionunit+=VersionUnit ( "," versionunit+=VersionUnit)* '}' )?
-		('collaborationstyle' '{' collaborationstyle+=CollaborationStyle ( "," collaborationstyle+=CollaborationStyle)* '}' )?
-		('database' '{' database+=Database ( "," database+=Database)* '}' )?
-	'}';
+	
+		'#' ('COMMANDS'  commands+=Commands ( "," commands+=Commands)*  )?
+		'#' ('HISTORY'  history+=History ( "," history+=History)*  )?
+		'#' ('VERSIONNING'  versionunit+=VersionUnit ( "," versionunit+=VersionUnit)*  )?
+		'#' ('COLLABORATION' 'STYLE'  collaborationstyle+=CollaborationStyle ( "," collaborationstyle+=CollaborationStyle)* )?
+		'#' ('DATABASES'  database+=Database ( "," database+=Database)*  )?
+	;
 
 
 
@@ -25,34 +25,32 @@ VCSFeatures returns VCSFeatures:
 
 Commands returns Commands:
 	{Commands}
-		'-' ('mergeStrategy' mergeStrategy=MergeStrategy)?
-		'-' ('lowlevelcommand' '{' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* '}' )?
-		'-' ('highlevelcommand' '{' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* '}' )?
+		 ('Merge' 'tool:' mergeStrategy=MergeStrategy)?
+		 ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* )?
+		 ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* )?
 		;
 
 History returns History:
 	{History}
 
-		'-' ('labelType' labelType=LabelType)?
-		'-' ('commitHistoryRange' commitHistoryRange=EInt)?
-		'-' ('numberOfBranches' numberOfBranches=EInt)?
+		('Identifying' 'label:' labelType=LabelType)?
+		('Version' 'history' 'backlog:' commitHistoryRange=EInt)?
+		('Maximum' 'number' 'of' 'branches:' numberOfBranches=EInt)?
 		;
 
 VersionUnit returns VersionUnit:
 	{VersionUnit}
-		'-' ('granularity' '(' granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* ')' )?
+		'Detail' 'level:' (granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* )?
 		;
 
 CollaborationStyle returns CollaborationStyle:
 	{CollaborationStyle}
-		'-' ('collabStyle' collabStyle=CollaborationStyleType)?
+		'Working:' collabStyle=CollaborationStyleType
 		;
 
 Database returns Database:
 	{Database}
-	'Database' '('
-	'-' 'ConnectionString' connectionString=EString
-	'-' ('DatabaseType' DatabaseType=DatabaseType)? ')'
+	'DB' DatabaseType=DatabaseType '@' connectionString=EString
 		;
 
 EString returns ecore::EString:
@@ -63,15 +61,11 @@ enum MergeStrategy returns MergeStrategy:
 
 HighLevelCommand returns HighLevelCommand:
 	{HighLevelCommand}
-	'HighLevelCommand'
-	name=EString
-		('lowlevelcommand' '(' lowlevelcommand+=[LowLevelCommand|EString] ( "," lowlevelcommand+=[LowLevelCommand|EString])* ')' )?
+	'-' 'Super' 'command' name=EString ( 'with' lowlevelcommand+=[LowLevelCommand|EString] ( "->" lowlevelcommand+=[LowLevelCommand|EString])* )?
 		;
 
 LowLevelCommand returns LowLevelCommand:
-	'LowLevelCommand'
-	 name=EString
-		'(' 'command' command=LowCommands ')'
+	'-' 'Command' 'use' command=LowCommands 'as' name=EString
 		;
 
 enum LowCommands returns LowCommands:

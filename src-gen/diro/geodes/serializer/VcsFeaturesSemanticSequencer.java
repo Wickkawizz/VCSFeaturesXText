@@ -74,11 +74,17 @@ public class VcsFeaturesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     CollaborationStyle returns CollaborationStyle
 	 *
 	 * Constraint:
-	 *     collabStyle=CollaborationStyleType?
+	 *     collabStyle=CollaborationStyleType
 	 * </pre>
 	 */
 	protected void sequence_CollaborationStyle(ISerializationContext context, CollaborationStyle semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, VcsFeaturesMMPackage.Literals.COLLABORATION_STYLE__COLLAB_STYLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VcsFeaturesMMPackage.Literals.COLLABORATION_STYLE__COLLAB_STYLE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCollaborationStyleAccess().getCollabStyleCollaborationStyleTypeEnumRuleCall_2_0(), semanticObject.getCollabStyle());
+		feeder.finish();
 	}
 	
 	
@@ -106,11 +112,20 @@ public class VcsFeaturesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Database returns Database
 	 *
 	 * Constraint:
-	 *     (connectionString=EString DatabaseType=DatabaseType?)
+	 *     (DatabaseType=DatabaseType connectionString=EString)
 	 * </pre>
 	 */
 	protected void sequence_Database(ISerializationContext context, Database semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, VcsFeaturesMMPackage.Literals.DATABASE__DATABASE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VcsFeaturesMMPackage.Literals.DATABASE__DATABASE_TYPE));
+			if (transientValues.isValueTransient(semanticObject, VcsFeaturesMMPackage.Literals.DATABASE__CONNECTION_STRING) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VcsFeaturesMMPackage.Literals.DATABASE__CONNECTION_STRING));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDatabaseAccess().getDatabaseTypeDatabaseTypeEnumRuleCall_2_0(), semanticObject.getDatabaseType());
+		feeder.accept(grammarAccess.getDatabaseAccess().getConnectionStringEStringParserRuleCall_4_0(), semanticObject.getConnectionString());
+		feeder.finish();
 	}
 	
 	
@@ -148,19 +163,19 @@ public class VcsFeaturesSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     LowLevelCommand returns LowLevelCommand
 	 *
 	 * Constraint:
-	 *     (name=EString command=LowCommands)
+	 *     (command=LowCommands name=EString)
 	 * </pre>
 	 */
 	protected void sequence_LowLevelCommand(ISerializationContext context, LowLevelCommand semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, VcsFeaturesMMPackage.Literals.LOW_LEVEL_COMMAND__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VcsFeaturesMMPackage.Literals.LOW_LEVEL_COMMAND__NAME));
 			if (transientValues.isValueTransient(semanticObject, VcsFeaturesMMPackage.Literals.LOW_LEVEL_COMMAND__COMMAND) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VcsFeaturesMMPackage.Literals.LOW_LEVEL_COMMAND__COMMAND));
+			if (transientValues.isValueTransient(semanticObject, VcsFeaturesMMPackage.Literals.LOW_LEVEL_COMMAND__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, VcsFeaturesMMPackage.Literals.LOW_LEVEL_COMMAND__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLowLevelCommandAccess().getNameEStringParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getLowLevelCommandAccess().getCommandLowCommandsEnumRuleCall_4_0(), semanticObject.getCommand());
+		feeder.accept(grammarAccess.getLowLevelCommandAccess().getCommandLowCommandsEnumRuleCall_3_0(), semanticObject.getCommand());
+		feeder.accept(grammarAccess.getLowLevelCommandAccess().getNameEStringParserRuleCall_5_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
