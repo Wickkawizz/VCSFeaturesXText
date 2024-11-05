@@ -13,7 +13,7 @@ VCSFeatures returns VCSFeatures:
 		'#' ('HISTORY'  history+=History ( "," history+=History)*  )?
 		'#' ('VERSIONNING'  versionunit+=VersionUnit ( "," versionunit+=VersionUnit)*  )?
 		'#' ('COLLABORATION' 'STYLE'  collaborationstyle+=CollaborationStyle ( "," collaborationstyle+=CollaborationStyle)* )?
-		'#' ('DATABASES'  database+=Database ( "," database+=Database)*  )?
+		'#' ('DATABASES'  database+=Database (database+=Database)*  )?
 	;
 
 
@@ -26,8 +26,8 @@ VCSFeatures returns VCSFeatures:
 Commands returns Commands:
 	{Commands}
 		 ('Merge' 'tool:' mergeStrategy=MergeStrategy)?
-		 ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* )?
-		 ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* )?
+		 ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand (lowlevelcommand+=LowLevelCommand)* )?
+		 ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand (highlevelcommand+=HighLevelCommand)* )?
 		;
 
 History returns History:
@@ -40,7 +40,7 @@ History returns History:
 
 VersionUnit returns VersionUnit:
 	{VersionUnit}
-		'Detail' 'level:' (granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* )?
+		'Detail' 'level:' (granularity+=VersionUnitType (granularity+=VersionUnitType)* )?
 		;
 
 CollaborationStyle returns CollaborationStyle:

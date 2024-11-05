@@ -75,10 +75,8 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cDATABASESKeyword_12_0 = (Keyword)cGroup_12.eContents().get(0);
 		private final Assignment cDatabaseAssignment_12_1 = (Assignment)cGroup_12.eContents().get(1);
 		private final RuleCall cDatabaseDatabaseParserRuleCall_12_1_0 = (RuleCall)cDatabaseAssignment_12_1.eContents().get(0);
-		private final Group cGroup_12_2 = (Group)cGroup_12.eContents().get(2);
-		private final Keyword cCommaKeyword_12_2_0 = (Keyword)cGroup_12_2.eContents().get(0);
-		private final Assignment cDatabaseAssignment_12_2_1 = (Assignment)cGroup_12_2.eContents().get(1);
-		private final RuleCall cDatabaseDatabaseParserRuleCall_12_2_1_0 = (RuleCall)cDatabaseAssignment_12_2_1.eContents().get(0);
+		private final Assignment cDatabaseAssignment_12_2 = (Assignment)cGroup_12.eContents().get(2);
+		private final RuleCall cDatabaseDatabaseParserRuleCall_12_2_0 = (RuleCall)cDatabaseAssignment_12_2.eContents().get(0);
 		
 		//VCSFeatures returns VCSFeatures:
 		//    {VCSFeatures}
@@ -88,7 +86,7 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//        '#' ('HISTORY'  history+=History ( "," history+=History)*  )?
 		//        '#' ('VERSIONNING'  versionunit+=VersionUnit ( "," versionunit+=VersionUnit)*  )?
 		//        '#' ('COLLABORATION' 'STYLE'  collaborationstyle+=CollaborationStyle ( "," collaborationstyle+=CollaborationStyle)* )?
-		//        '#' ('DATABASES'  database+=Database ( "," database+=Database)*  )?
+		//        '#' ('DATABASES'  database+=Database (database+=Database)*  )?
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -99,7 +97,7 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//    '#' ('HISTORY'  history+=History ( "," history+=History)*  )?
 		//    '#' ('VERSIONNING'  versionunit+=VersionUnit ( "," versionunit+=VersionUnit)*  )?
 		//    '#' ('COLLABORATION' 'STYLE'  collaborationstyle+=CollaborationStyle ( "," collaborationstyle+=CollaborationStyle)* )?
-		//    '#' ('DATABASES'  database+=Database ( "," database+=Database)*  )?
+		//    '#' ('DATABASES'  database+=Database (database+=Database)*  )?
 		public Group getGroup() { return cGroup; }
 		
 		//{VCSFeatures}
@@ -228,7 +226,7 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'#'
 		public Keyword getNumberSignKeyword_11() { return cNumberSignKeyword_11; }
 		
-		//('DATABASES'  database+=Database ( "," database+=Database)*  )?
+		//('DATABASES'  database+=Database (database+=Database)*  )?
 		public Group getGroup_12() { return cGroup_12; }
 		
 		//'DATABASES'
@@ -240,17 +238,11 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//Database
 		public RuleCall getDatabaseDatabaseParserRuleCall_12_1_0() { return cDatabaseDatabaseParserRuleCall_12_1_0; }
 		
-		//( "," database+=Database)*
-		public Group getGroup_12_2() { return cGroup_12_2; }
-		
-		//","
-		public Keyword getCommaKeyword_12_2_0() { return cCommaKeyword_12_2_0; }
-		
-		//database+=Database
-		public Assignment getDatabaseAssignment_12_2_1() { return cDatabaseAssignment_12_2_1; }
+		//(database+=Database)*
+		public Assignment getDatabaseAssignment_12_2() { return cDatabaseAssignment_12_2; }
 		
 		//Database
-		public RuleCall getDatabaseDatabaseParserRuleCall_12_2_1_0() { return cDatabaseDatabaseParserRuleCall_12_2_1_0; }
+		public RuleCall getDatabaseDatabaseParserRuleCall_12_2_0() { return cDatabaseDatabaseParserRuleCall_12_2_0; }
 	}
 	public class CommandsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "diro.geodes.VcsFeatures.Commands");
@@ -267,33 +259,29 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cDeclarationKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		private final Assignment cLowlevelcommandAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
 		private final RuleCall cLowlevelcommandLowLevelCommandParserRuleCall_2_3_0 = (RuleCall)cLowlevelcommandAssignment_2_3.eContents().get(0);
-		private final Group cGroup_2_4 = (Group)cGroup_2.eContents().get(4);
-		private final Keyword cCommaKeyword_2_4_0 = (Keyword)cGroup_2_4.eContents().get(0);
-		private final Assignment cLowlevelcommandAssignment_2_4_1 = (Assignment)cGroup_2_4.eContents().get(1);
-		private final RuleCall cLowlevelcommandLowLevelCommandParserRuleCall_2_4_1_0 = (RuleCall)cLowlevelcommandAssignment_2_4_1.eContents().get(0);
+		private final Assignment cLowlevelcommandAssignment_2_4 = (Assignment)cGroup_2.eContents().get(4);
+		private final RuleCall cLowlevelcommandLowLevelCommandParserRuleCall_2_4_0 = (RuleCall)cLowlevelcommandAssignment_2_4.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cSuperKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Keyword cCommandKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Keyword cDeclarationKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
 		private final Assignment cHighlevelcommandAssignment_3_3 = (Assignment)cGroup_3.eContents().get(3);
 		private final RuleCall cHighlevelcommandHighLevelCommandParserRuleCall_3_3_0 = (RuleCall)cHighlevelcommandAssignment_3_3.eContents().get(0);
-		private final Group cGroup_3_4 = (Group)cGroup_3.eContents().get(4);
-		private final Keyword cCommaKeyword_3_4_0 = (Keyword)cGroup_3_4.eContents().get(0);
-		private final Assignment cHighlevelcommandAssignment_3_4_1 = (Assignment)cGroup_3_4.eContents().get(1);
-		private final RuleCall cHighlevelcommandHighLevelCommandParserRuleCall_3_4_1_0 = (RuleCall)cHighlevelcommandAssignment_3_4_1.eContents().get(0);
+		private final Assignment cHighlevelcommandAssignment_3_4 = (Assignment)cGroup_3.eContents().get(4);
+		private final RuleCall cHighlevelcommandHighLevelCommandParserRuleCall_3_4_0 = (RuleCall)cHighlevelcommandAssignment_3_4.eContents().get(0);
 		
 		//Commands returns Commands:
 		//    {Commands}
 		//         ('Merge' 'tool:' mergeStrategy=MergeStrategy)?
-		//         ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* )?
-		//         ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* )?
+		//         ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand (lowlevelcommand+=LowLevelCommand)* )?
+		//         ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand (highlevelcommand+=HighLevelCommand)* )?
 		//        ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Commands}
 		//     ('Merge' 'tool:' mergeStrategy=MergeStrategy)?
-		//     ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* )?
-		//     ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* )?
+		//     ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand (lowlevelcommand+=LowLevelCommand)* )?
+		//     ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand (highlevelcommand+=HighLevelCommand)* )?
 		public Group getGroup() { return cGroup; }
 		
 		//{Commands}
@@ -314,7 +302,7 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//MergeStrategy
 		public RuleCall getMergeStrategyMergeStrategyEnumRuleCall_1_2_0() { return cMergeStrategyMergeStrategyEnumRuleCall_1_2_0; }
 		
-		//('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* )?
+		//('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand (lowlevelcommand+=LowLevelCommand)* )?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//'Basic'
@@ -332,19 +320,13 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//LowLevelCommand
 		public RuleCall getLowlevelcommandLowLevelCommandParserRuleCall_2_3_0() { return cLowlevelcommandLowLevelCommandParserRuleCall_2_3_0; }
 		
-		//( "," lowlevelcommand+=LowLevelCommand)*
-		public Group getGroup_2_4() { return cGroup_2_4; }
-		
-		//","
-		public Keyword getCommaKeyword_2_4_0() { return cCommaKeyword_2_4_0; }
-		
-		//lowlevelcommand+=LowLevelCommand
-		public Assignment getLowlevelcommandAssignment_2_4_1() { return cLowlevelcommandAssignment_2_4_1; }
+		//(lowlevelcommand+=LowLevelCommand)*
+		public Assignment getLowlevelcommandAssignment_2_4() { return cLowlevelcommandAssignment_2_4; }
 		
 		//LowLevelCommand
-		public RuleCall getLowlevelcommandLowLevelCommandParserRuleCall_2_4_1_0() { return cLowlevelcommandLowLevelCommandParserRuleCall_2_4_1_0; }
+		public RuleCall getLowlevelcommandLowLevelCommandParserRuleCall_2_4_0() { return cLowlevelcommandLowLevelCommandParserRuleCall_2_4_0; }
 		
-		//('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* )?
+		//('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand (highlevelcommand+=HighLevelCommand)* )?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'Super'
@@ -362,17 +344,11 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//HighLevelCommand
 		public RuleCall getHighlevelcommandHighLevelCommandParserRuleCall_3_3_0() { return cHighlevelcommandHighLevelCommandParserRuleCall_3_3_0; }
 		
-		//( "," highlevelcommand+=HighLevelCommand)*
-		public Group getGroup_3_4() { return cGroup_3_4; }
-		
-		//","
-		public Keyword getCommaKeyword_3_4_0() { return cCommaKeyword_3_4_0; }
-		
-		//highlevelcommand+=HighLevelCommand
-		public Assignment getHighlevelcommandAssignment_3_4_1() { return cHighlevelcommandAssignment_3_4_1; }
+		//(highlevelcommand+=HighLevelCommand)*
+		public Assignment getHighlevelcommandAssignment_3_4() { return cHighlevelcommandAssignment_3_4; }
 		
 		//HighLevelCommand
-		public RuleCall getHighlevelcommandHighLevelCommandParserRuleCall_3_4_1_0() { return cHighlevelcommandHighLevelCommandParserRuleCall_3_4_1_0; }
+		public RuleCall getHighlevelcommandHighLevelCommandParserRuleCall_3_4_0() { return cHighlevelcommandHighLevelCommandParserRuleCall_3_4_0; }
 	}
 	public class HistoryElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "diro.geodes.VcsFeatures.History");
@@ -477,19 +453,17 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Assignment cGranularityAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
 		private final RuleCall cGranularityVersionUnitTypeEnumRuleCall_3_0_0 = (RuleCall)cGranularityAssignment_3_0.eContents().get(0);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Keyword cCommaKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cGranularityAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cGranularityVersionUnitTypeEnumRuleCall_3_1_1_0 = (RuleCall)cGranularityAssignment_3_1_1.eContents().get(0);
+		private final Assignment cGranularityAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cGranularityVersionUnitTypeEnumRuleCall_3_1_0 = (RuleCall)cGranularityAssignment_3_1.eContents().get(0);
 		
 		//VersionUnit returns VersionUnit:
 		//    {VersionUnit}
-		//        'Detail' 'level:' (granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* )?
+		//        'Detail' 'level:' (granularity+=VersionUnitType (granularity+=VersionUnitType)* )?
 		//        ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{VersionUnit}
-		//    'Detail' 'level:' (granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* )?
+		//    'Detail' 'level:' (granularity+=VersionUnitType (granularity+=VersionUnitType)* )?
 		public Group getGroup() { return cGroup; }
 		
 		//{VersionUnit}
@@ -501,7 +475,7 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'level:'
 		public Keyword getLevelKeyword_2() { return cLevelKeyword_2; }
 		
-		//(granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* )?
+		//(granularity+=VersionUnitType (granularity+=VersionUnitType)* )?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//granularity+=VersionUnitType
@@ -510,17 +484,11 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//VersionUnitType
 		public RuleCall getGranularityVersionUnitTypeEnumRuleCall_3_0_0() { return cGranularityVersionUnitTypeEnumRuleCall_3_0_0; }
 		
-		//( "," granularity+=VersionUnitType)*
-		public Group getGroup_3_1() { return cGroup_3_1; }
-		
-		//","
-		public Keyword getCommaKeyword_3_1_0() { return cCommaKeyword_3_1_0; }
-		
-		//granularity+=VersionUnitType
-		public Assignment getGranularityAssignment_3_1_1() { return cGranularityAssignment_3_1_1; }
+		//(granularity+=VersionUnitType)*
+		public Assignment getGranularityAssignment_3_1() { return cGranularityAssignment_3_1; }
 		
 		//VersionUnitType
-		public RuleCall getGranularityVersionUnitTypeEnumRuleCall_3_1_1_0() { return cGranularityVersionUnitTypeEnumRuleCall_3_1_1_0; }
+		public RuleCall getGranularityVersionUnitTypeEnumRuleCall_3_1_0() { return cGranularityVersionUnitTypeEnumRuleCall_3_1_0; }
 	}
 	public class CollaborationStyleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "diro.geodes.VcsFeatures.CollaborationStyle");
@@ -1141,7 +1109,7 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 	//        '#' ('HISTORY'  history+=History ( "," history+=History)*  )?
 	//        '#' ('VERSIONNING'  versionunit+=VersionUnit ( "," versionunit+=VersionUnit)*  )?
 	//        '#' ('COLLABORATION' 'STYLE'  collaborationstyle+=CollaborationStyle ( "," collaborationstyle+=CollaborationStyle)* )?
-	//        '#' ('DATABASES'  database+=Database ( "," database+=Database)*  )?
+	//        '#' ('DATABASES'  database+=Database (database+=Database)*  )?
 	//    ;
 	public VCSFeaturesElements getVCSFeaturesAccess() {
 		return pVCSFeatures;
@@ -1154,8 +1122,8 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 	//Commands returns Commands:
 	//    {Commands}
 	//         ('Merge' 'tool:' mergeStrategy=MergeStrategy)?
-	//         ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand ( "," lowlevelcommand+=LowLevelCommand)* )?
-	//         ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand ( "," highlevelcommand+=HighLevelCommand)* )?
+	//         ('Basic' 'command' 'declaration:' lowlevelcommand+=LowLevelCommand (lowlevelcommand+=LowLevelCommand)* )?
+	//         ('Super' 'command' 'declaration:' highlevelcommand+=HighLevelCommand (highlevelcommand+=HighLevelCommand)* )?
 	//        ;
 	public CommandsElements getCommandsAccess() {
 		return pCommands;
@@ -1181,7 +1149,7 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	//VersionUnit returns VersionUnit:
 	//    {VersionUnit}
-	//        'Detail' 'level:' (granularity+=VersionUnitType ( "," granularity+=VersionUnitType)* )?
+	//        'Detail' 'level:' (granularity+=VersionUnitType (granularity+=VersionUnitType)* )?
 	//        ;
 	public VersionUnitElements getVersionUnitAccess() {
 		return pVersionUnit;

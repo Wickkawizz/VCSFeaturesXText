@@ -356,28 +356,22 @@ ruleVCSFeatures returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_27=','
-				{
-					newLeafNode(otherlv_27, grammarAccess.getVCSFeaturesAccess().getCommaKeyword_12_2_0());
-				}
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getVCSFeaturesAccess().getDatabaseDatabaseParserRuleCall_12_2_1_0());
+					{
+						newCompositeNode(grammarAccess.getVCSFeaturesAccess().getDatabaseDatabaseParserRuleCall_12_2_0());
+					}
+					lv_database_27_0=ruleDatabase
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
 						}
-						lv_database_28_0=ruleDatabase
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getVCSFeaturesRule());
-							}
-							add(
-								$current,
-								"database",
-								lv_database_28_0,
-								"diro.geodes.VcsFeatures.Database");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"database",
+							lv_database_27_0,
+							"diro.geodes.VcsFeatures.Database");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)*
 		)?
@@ -469,48 +463,61 @@ ruleCommands returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_8=','
-				{
-					newLeafNode(otherlv_8, grammarAccess.getCommandsAccess().getCommaKeyword_2_4_0());
-				}
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_2_4_1_0());
+					{
+						newCompositeNode(grammarAccess.getCommandsAccess().getLowlevelcommandLowLevelCommandParserRuleCall_2_4_0());
+					}
+					lv_lowlevelcommand_8_0=ruleLowLevelCommand
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCommandsRule());
 						}
-						lv_lowlevelcommand_9_0=ruleLowLevelCommand
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCommandsRule());
-							}
-							add(
-								$current,
-								"lowlevelcommand",
-								lv_lowlevelcommand_9_0,
-								"diro.geodes.VcsFeatures.LowLevelCommand");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"lowlevelcommand",
+							lv_lowlevelcommand_8_0,
+							"diro.geodes.VcsFeatures.LowLevelCommand");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)*
 		)?
 		(
-			otherlv_10='Super'
+			otherlv_9='Super'
 			{
-				newLeafNode(otherlv_10, grammarAccess.getCommandsAccess().getSuperKeyword_3_0());
+				newLeafNode(otherlv_9, grammarAccess.getCommandsAccess().getSuperKeyword_3_0());
 			}
-			otherlv_11='command'
+			otherlv_10='command'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getCommandsAccess().getCommandKeyword_3_1());
+				newLeafNode(otherlv_10, grammarAccess.getCommandsAccess().getCommandKeyword_3_1());
 			}
-			otherlv_12='declaration:'
+			otherlv_11='declaration:'
 			{
-				newLeafNode(otherlv_12, grammarAccess.getCommandsAccess().getDeclarationKeyword_3_2());
+				newLeafNode(otherlv_11, grammarAccess.getCommandsAccess().getDeclarationKeyword_3_2());
 			}
 			(
 				(
 					{
 						newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_3_3_0());
+					}
+					lv_highlevelcommand_12_0=ruleHighLevelCommand
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCommandsRule());
+						}
+						add(
+							$current,
+							"highlevelcommand",
+							lv_highlevelcommand_12_0,
+							"diro.geodes.VcsFeatures.HighLevelCommand");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_3_4_0());
 					}
 					lv_highlevelcommand_13_0=ruleHighLevelCommand
 					{
@@ -524,31 +531,6 @@ ruleCommands returns [EObject current=null]
 							"diro.geodes.VcsFeatures.HighLevelCommand");
 						afterParserOrEnumRuleCall();
 					}
-				)
-			)
-			(
-				otherlv_14=','
-				{
-					newLeafNode(otherlv_14, grammarAccess.getCommandsAccess().getCommaKeyword_3_4_0());
-				}
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getCommandsAccess().getHighlevelcommandHighLevelCommandParserRuleCall_3_4_1_0());
-						}
-						lv_highlevelcommand_15_0=ruleHighLevelCommand
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getCommandsRule());
-							}
-							add(
-								$current,
-								"highlevelcommand",
-								lv_highlevelcommand_15_0,
-								"diro.geodes.VcsFeatures.HighLevelCommand");
-							afterParserOrEnumRuleCall();
-						}
-					)
 				)
 			)*
 		)?
@@ -732,28 +714,22 @@ ruleVersionUnit returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_4=','
-				{
-					newLeafNode(otherlv_4, grammarAccess.getVersionUnitAccess().getCommaKeyword_3_1_0());
-				}
 				(
-					(
-						{
-							newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_3_1_1_0());
+					{
+						newCompositeNode(grammarAccess.getVersionUnitAccess().getGranularityVersionUnitTypeEnumRuleCall_3_1_0());
+					}
+					lv_granularity_4_0=ruleVersionUnitType
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getVersionUnitRule());
 						}
-						lv_granularity_5_0=ruleVersionUnitType
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getVersionUnitRule());
-							}
-							add(
-								$current,
-								"granularity",
-								lv_granularity_5_0,
-								"diro.geodes.VcsFeatures.VersionUnitType");
-							afterParserOrEnumRuleCall();
-						}
-					)
+						add(
+							$current,
+							"granularity",
+							lv_granularity_4_0,
+							"diro.geodes.VcsFeatures.VersionUnitType");
+						afterParserOrEnumRuleCall();
+					}
 				)
 			)*
 		)?
