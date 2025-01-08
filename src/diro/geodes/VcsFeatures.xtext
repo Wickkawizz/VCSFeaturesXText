@@ -50,7 +50,7 @@ CollaborationStyle returns CollaborationStyle:
 
 Database returns Database:
 	{Database}
-	'DB' DatabaseType=DatabaseType '@' connectionString=EString
+	'DB' name=EString DatabaseType=DatabaseType '@' connectionString=EString
 		;
 
 EString returns ecore::EString:
