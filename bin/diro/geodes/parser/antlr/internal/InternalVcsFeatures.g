@@ -815,9 +815,28 @@ ruleDatabase returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDatabaseAccess().getDatabaseTypeDatabaseTypeEnumRuleCall_2_0());
+					newCompositeNode(grammarAccess.getDatabaseAccess().getNameEStringParserRuleCall_2_0());
 				}
-				lv_DatabaseType_2_0=ruleDatabaseType
+				lv_name_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getDatabaseRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"diro.geodes.VcsFeatures.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getDatabaseAccess().getDatabaseTypeDatabaseTypeEnumRuleCall_3_0());
+				}
+				lv_DatabaseType_3_0=ruleDatabaseType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDatabaseRule());
@@ -825,22 +844,22 @@ ruleDatabase returns [EObject current=null]
 					set(
 						$current,
 						"DatabaseType",
-						lv_DatabaseType_2_0,
+						lv_DatabaseType_3_0,
 						"diro.geodes.VcsFeatures.DatabaseType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3='@'
+		otherlv_4='@'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getDatabaseAccess().getCommercialAtKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getDatabaseAccess().getCommercialAtKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDatabaseAccess().getConnectionStringEStringParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getDatabaseAccess().getConnectionStringEStringParserRuleCall_5_0());
 				}
-				lv_connectionString_4_0=ruleEString
+				lv_connectionString_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDatabaseRule());
@@ -848,7 +867,7 @@ ruleDatabase returns [EObject current=null]
 					set(
 						$current,
 						"connectionString",
-						lv_connectionString_4_0,
+						lv_connectionString_5_0,
 						"diro.geodes.VcsFeatures.EString");
 					afterParserOrEnumRuleCall();
 				}

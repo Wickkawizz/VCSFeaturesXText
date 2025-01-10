@@ -4,6 +4,7 @@
 package diro.geodes.generator;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -17,5 +18,9 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class VcsFeaturesGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Hello world, this is a test");
+    _builder.newLine();
+    fsa.generateFile("greetings.txt", _builder);
   }
 }

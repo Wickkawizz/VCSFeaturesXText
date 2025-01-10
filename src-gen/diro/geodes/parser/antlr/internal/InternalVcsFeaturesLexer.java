@@ -1465,10 +1465,10 @@ public class InternalVcsFeaturesLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalVcsFeatures.g:1407:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalVcsFeatures.g:1407:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalVcsFeatures.g:1426:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalVcsFeatures.g:1426:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalVcsFeatures.g:1407:11: ( '^' )?
+            // InternalVcsFeatures.g:1426:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1477,7 +1477,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalVcsFeatures.g:1407:11: '^'
+                    // InternalVcsFeatures.g:1426:11: '^'
                     {
                     match('^'); 
 
@@ -1495,7 +1495,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalVcsFeatures.g:1407:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalVcsFeatures.g:1426:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1544,10 +1544,10 @@ public class InternalVcsFeaturesLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalVcsFeatures.g:1409:10: ( ( '0' .. '9' )+ )
-            // InternalVcsFeatures.g:1409:12: ( '0' .. '9' )+
+            // InternalVcsFeatures.g:1428:10: ( ( '0' .. '9' )+ )
+            // InternalVcsFeatures.g:1428:12: ( '0' .. '9' )+
             {
-            // InternalVcsFeatures.g:1409:12: ( '0' .. '9' )+
+            // InternalVcsFeatures.g:1428:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1561,7 +1561,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalVcsFeatures.g:1409:13: '0' .. '9'
+            	    // InternalVcsFeatures.g:1428:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1593,10 +1593,10 @@ public class InternalVcsFeaturesLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalVcsFeatures.g:1411:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalVcsFeatures.g:1411:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalVcsFeatures.g:1430:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalVcsFeatures.g:1430:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalVcsFeatures.g:1411:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalVcsFeatures.g:1430:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1614,10 +1614,10 @@ public class InternalVcsFeaturesLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalVcsFeatures.g:1411:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalVcsFeatures.g:1430:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalVcsFeatures.g:1411:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalVcsFeatures.g:1430:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1633,7 +1633,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalVcsFeatures.g:1411:21: '\\\\' .
+                    	    // InternalVcsFeatures.g:1430:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1641,7 +1641,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalVcsFeatures.g:1411:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalVcsFeatures.g:1430:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1666,10 +1666,10 @@ public class InternalVcsFeaturesLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalVcsFeatures.g:1411:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalVcsFeatures.g:1430:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalVcsFeatures.g:1411:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalVcsFeatures.g:1430:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1685,7 +1685,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalVcsFeatures.g:1411:54: '\\\\' .
+                    	    // InternalVcsFeatures.g:1430:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1693,7 +1693,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalVcsFeatures.g:1411:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalVcsFeatures.g:1430:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1736,12 +1736,12 @@ public class InternalVcsFeaturesLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalVcsFeatures.g:1413:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalVcsFeatures.g:1413:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalVcsFeatures.g:1432:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalVcsFeatures.g:1432:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalVcsFeatures.g:1413:24: ( options {greedy=false; } : . )*
+            // InternalVcsFeatures.g:1432:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1766,7 +1766,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalVcsFeatures.g:1413:52: .
+            	    // InternalVcsFeatures.g:1432:52: .
             	    {
             	    matchAny(); 
 
@@ -1796,12 +1796,12 @@ public class InternalVcsFeaturesLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalVcsFeatures.g:1415:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalVcsFeatures.g:1415:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalVcsFeatures.g:1434:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalVcsFeatures.g:1434:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalVcsFeatures.g:1415:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalVcsFeatures.g:1434:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1814,7 +1814,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalVcsFeatures.g:1415:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalVcsFeatures.g:1434:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1834,7 +1834,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalVcsFeatures.g:1415:40: ( ( '\\r' )? '\\n' )?
+            // InternalVcsFeatures.g:1434:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1843,9 +1843,9 @@ public class InternalVcsFeaturesLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalVcsFeatures.g:1415:41: ( '\\r' )? '\\n'
+                    // InternalVcsFeatures.g:1434:41: ( '\\r' )? '\\n'
                     {
-                    // InternalVcsFeatures.g:1415:41: ( '\\r' )?
+                    // InternalVcsFeatures.g:1434:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1854,7 +1854,7 @@ public class InternalVcsFeaturesLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalVcsFeatures.g:1415:41: '\\r'
+                            // InternalVcsFeatures.g:1434:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1886,10 +1886,10 @@ public class InternalVcsFeaturesLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalVcsFeatures.g:1417:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalVcsFeatures.g:1417:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalVcsFeatures.g:1436:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalVcsFeatures.g:1436:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalVcsFeatures.g:1417:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalVcsFeatures.g:1436:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1943,8 +1943,8 @@ public class InternalVcsFeaturesLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalVcsFeatures.g:1419:16: ( . )
-            // InternalVcsFeatures.g:1419:18: .
+            // InternalVcsFeatures.g:1438:16: ( . )
+            // InternalVcsFeatures.g:1438:18: .
             {
             matchAny(); 
 

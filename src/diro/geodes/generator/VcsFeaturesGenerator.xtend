@@ -16,10 +16,8 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class VcsFeaturesGenerator extends AbstractGenerator {
 //https://goto40.github.io/self-dsl/xtext_code_generation_xtend/
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		fsa.generateFile('greetings.txt', '''
+		Hello world, this is a test
+		''')
 	}
 }

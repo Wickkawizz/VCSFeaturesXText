@@ -525,20 +525,22 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cDatabaseAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDBKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cDatabaseTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cDatabaseTypeDatabaseTypeEnumRuleCall_2_0 = (RuleCall)cDatabaseTypeAssignment_2.eContents().get(0);
-		private final Keyword cCommercialAtKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cConnectionStringAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cConnectionStringEStringParserRuleCall_4_0 = (RuleCall)cConnectionStringAssignment_4.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cDatabaseTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDatabaseTypeDatabaseTypeEnumRuleCall_3_0 = (RuleCall)cDatabaseTypeAssignment_3.eContents().get(0);
+		private final Keyword cCommercialAtKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cConnectionStringAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cConnectionStringEStringParserRuleCall_5_0 = (RuleCall)cConnectionStringAssignment_5.eContents().get(0);
 		
 		//Database returns Database:
 		//    {Database}
-		//    'DB' DatabaseType=DatabaseType '@' connectionString=EString
+		//    'DB' name=EString DatabaseType=DatabaseType '@' connectionString=EString
 		//        ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Database}
-		//'DB' DatabaseType=DatabaseType '@' connectionString=EString
+		//'DB' name=EString DatabaseType=DatabaseType '@' connectionString=EString
 		public Group getGroup() { return cGroup; }
 		
 		//{Database}
@@ -547,20 +549,26 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 		//'DB'
 		public Keyword getDBKeyword_1() { return cDBKeyword_1; }
 		
-		//DatabaseType=DatabaseType
-		public Assignment getDatabaseTypeAssignment_2() { return cDatabaseTypeAssignment_2; }
-		
-		//DatabaseType
-		public RuleCall getDatabaseTypeDatabaseTypeEnumRuleCall_2_0() { return cDatabaseTypeDatabaseTypeEnumRuleCall_2_0; }
-		
-		//'@'
-		public Keyword getCommercialAtKeyword_3() { return cCommercialAtKeyword_3; }
-		
-		//connectionString=EString
-		public Assignment getConnectionStringAssignment_4() { return cConnectionStringAssignment_4; }
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//EString
-		public RuleCall getConnectionStringEStringParserRuleCall_4_0() { return cConnectionStringEStringParserRuleCall_4_0; }
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//DatabaseType=DatabaseType
+		public Assignment getDatabaseTypeAssignment_3() { return cDatabaseTypeAssignment_3; }
+		
+		//DatabaseType
+		public RuleCall getDatabaseTypeDatabaseTypeEnumRuleCall_3_0() { return cDatabaseTypeDatabaseTypeEnumRuleCall_3_0; }
+		
+		//'@'
+		public Keyword getCommercialAtKeyword_4() { return cCommercialAtKeyword_4; }
+		
+		//connectionString=EString
+		public Assignment getConnectionStringAssignment_5() { return cConnectionStringAssignment_5; }
+		
+		//EString
+		public RuleCall getConnectionStringEStringParserRuleCall_5_0() { return cConnectionStringEStringParserRuleCall_5_0; }
 	}
 	public class EStringElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "diro.geodes.VcsFeatures.EString");
@@ -1173,7 +1181,7 @@ public class VcsFeaturesGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	//Database returns Database:
 	//    {Database}
-	//    'DB' DatabaseType=DatabaseType '@' connectionString=EString
+	//    'DB' name=EString DatabaseType=DatabaseType '@' connectionString=EString
 	//        ;
 	public DatabaseElements getDatabaseAccess() {
 		return pDatabase;
