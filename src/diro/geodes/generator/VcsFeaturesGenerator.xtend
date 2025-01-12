@@ -66,9 +66,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		commands.add(new RmCommandGenerator)
 
 		for (cg : commands){
-			fsa.generateFile(projectPath + '/src/' + cg.class.name.split("Generator").get(0) + '.java', '''
-		Hello world, this is a test
-		''')
+			fsa.generateFile(projectPath + '/src/' + cg.class.name.split("Generator").get(0) + '.java', cg.generate)
 		}
 		
 		

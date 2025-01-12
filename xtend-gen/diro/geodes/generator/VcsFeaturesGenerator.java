@@ -26,7 +26,6 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -83,10 +82,7 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
         String _get = cg.getClass().getName().split("Generator")[0];
         String _plus = ((projectPath + "/src/") + _get);
         String _plus_1 = (_plus + ".java");
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("Hello world, this is a test");
-        _builder.newLine();
-        fsa.generateFile(_plus_1, _builder);
+        fsa.generateFile(_plus_1, cg.generate());
       }
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
