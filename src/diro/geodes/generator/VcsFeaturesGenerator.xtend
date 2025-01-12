@@ -30,6 +30,7 @@ import library.commands.PullCommandGenerator
 import library.commands.PushCommandGenerator
 import library.commands.RemoteAddCommandGenerator
 import library.commands.RmCommandGenerator
+import org.eclipse.core.resources.IProjectDescription
 
 /**
  * Generates code from your model files on save.
@@ -45,6 +46,12 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		val IProject project = root.getProject("VCSFeatures"); // TODO I should collect the project's name from the wizard too.
 		project.create(progressMonitor);
 		project.open(progressMonitor);
+		
+		val IProjectDescription description = project.getDescription();
+		val ArrayList<String> natures = new ArrayList<String>()
+		natures.add("org.eclipse.jdt.core.javanature")
+		description.setNatureIds(natures)
+		project.setDescription(description, null);
 		
 		val projectPath = project.fullPath.toString
 		
@@ -67,7 +74,9 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		commands.add(new RmCommandGenerator)
 
 		for (cg : commands){
-			fsa.generateFile(projectPath + '/src/' + cg.class.name.split("Generator").get(0) + '.java', cg.generate)
+			// Have to split 2 times, to get only the name of the class, otherwise it writes the name of the class with the package name in front of it. 
+			// We also want to remove the "Generator" at the end, because the class is the concrete version.
+			fsa.generateFile(projectPath + '/src/commands/' + cg.class.name.split("Generator").get(0).split("library.commands.").get(1) + '.java', cg.generate)
 		}
 		
 		

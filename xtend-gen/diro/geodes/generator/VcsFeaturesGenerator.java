@@ -21,6 +21,7 @@ import library.commands.PushCommandGenerator;
 import library.commands.RemoteAddCommandGenerator;
 import library.commands.RmCommandGenerator;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
@@ -46,6 +48,11 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
       final IProject project = root.getProject("VCSFeatures");
       project.create(progressMonitor);
       project.open(progressMonitor);
+      final IProjectDescription description = project.getDescription();
+      final ArrayList<String> natures = new ArrayList<String>();
+      natures.add("org.eclipse.jdt.core.javanature");
+      description.setNatureIds(((String[])Conversions.unwrapArray(natures, String.class)));
+      project.setDescription(description, null);
       final String projectPath = project.getFullPath().toString();
       final ArrayList<CommandGenerator> commands = new ArrayList<CommandGenerator>();
       AddCommandGenerator _addCommandGenerator = new AddCommandGenerator();
@@ -79,8 +86,8 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
       RmCommandGenerator _rmCommandGenerator = new RmCommandGenerator();
       commands.add(_rmCommandGenerator);
       for (final CommandGenerator cg : commands) {
-        String _get = cg.getClass().getName().split("Generator")[0];
-        String _plus = ((projectPath + "/src/") + _get);
+        String _get = (cg.getClass().getName().split("Generator")[0]).split("library.commands.")[1];
+        String _plus = ((projectPath + "/src/commands/") + _get);
         String _plus_1 = (_plus + ".java");
         fsa.generateFile(_plus_1, cg.generate());
       }
