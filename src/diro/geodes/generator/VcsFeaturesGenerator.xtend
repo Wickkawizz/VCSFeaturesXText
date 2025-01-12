@@ -36,6 +36,11 @@ import org.eclipse.jdt.core.JavaCore
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import java.io.FileWriter
+import java.io.FileOutputStream
+import java.io.Writer
+import java.io.BufferedWriter
+import java.io.OutputStreamWriter
 
 /**
  * Generates code from your model files on save.
@@ -47,11 +52,12 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		// https://stackoverflow.com/questions/13772464/can-i-generate-eclipse-workspace-and-project-manually-programmatically
 		// This piece is to generate a new project where we can generate all of our files into
-		/*val IProgressMonitor progressMonitor = new NullProgressMonitor();
+		val IProgressMonitor progressMonitor = new NullProgressMonitor();
 		val IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		val IProject project = root.getProject("VCSFeatures"); // TODO I should collect the project's name from the wizard too.
 		project.create(progressMonitor);
 		project.open(progressMonitor);
+
 		
 		val IProjectDescription description = project.getDescription();
 		val ArrayList<String> natures = new ArrayList<String>()
@@ -66,11 +72,11 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		val IJavaProject javaProject = JavaCore.create(project);
 		
 		//set the build path
-		val IClasspathEntry[] buildPath = new ArrayList<IClasspathEntry>
+		/*val IClasspathEntry[] buildPath = new ArrayList<IClasspathEntry>
 		buildPath.add(JavaCore.newSourceEntry(project.fullPath.append("src")));
 		
 		javaProject.setRawClasspath(buildPath, project.getFullPath().append(
-                "bin"), null);
+                "bin"), null);*/
 		
 		
 		//create folder by using resources package
@@ -91,7 +97,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
         val IPackageFragment functionsFragment = srcFolder.createPackageFragment(
 		        "functions", true, null);
         val IPackageFragment handlersFragment = srcFolder.createPackageFragment(
-		        "handlers", true, null);*/
+		        "handlers", true, null);
 
 		
 		//val projectPath = project.fullPath.toString
@@ -114,10 +120,21 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		commands.add(new RemoteAddCommandGenerator)
 		commands.add(new RmCommandGenerator)
 
+		
 		for (cg : commands){
 			// Have to split 2 times, to get only the name of the class, otherwise it writes the name of the class with the package name in front of it. 
 			// We also want to remove the "Generator" at the end, because the class is the concrete version.
 			fsa.generateFile('commands/' + cg.class.name.split("Generator").get(0).split("library.commands.").get(1) + '.java', cg.generate)
+			// TODO The method doGenerate categorically refuses to write to the other project. I can create packages, but no files can be added.
+			// Error: java.io.FileNotFoundException: \VCSFeatures\commands\AddCommand.java (The system cannot find the path specified)
+			// Try to find a fix for this, but maybe only manual copy-pasting will be an option
+			/*try (
+				val Writer writer = new BufferedWriter(new OutputStreamWriter(
+          		new FileOutputStream(javaProject.path.makeAbsolute.toString + '/commands/' + cg.class.name.split("Generator").get(0).split("library.commands.").get(1) + '.java'), "utf-8"))) {
+   				writer.write(cg.generate.toString);
+			}*/
+			//new FileOutputStream(srcFolder.path.makeAbsolute.toString + '/commands/' + cg.class.name.split("Generator").get(0).split("library.commands.").get(1) + '.java').write(cg.generate.toString).flush
+			
 		}
 		
 		

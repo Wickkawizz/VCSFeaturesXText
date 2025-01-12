@@ -20,10 +20,23 @@ import library.commands.PullCommandGenerator;
 import library.commands.PushCommandGenerator;
 import library.commands.RemoteAddCommandGenerator;
 import library.commands.RmCommandGenerator;
+import org.eclipse.core.resources.IFolder;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.jdt.core.IJavaProject;
+import org.eclipse.jdt.core.IPackageFragment;
+import org.eclipse.jdt.core.IPackageFragmentRoot;
+import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
  * Generates code from your model files on save.
@@ -34,42 +47,70 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class VcsFeaturesGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    final ArrayList<CommandGenerator> commands = new ArrayList<CommandGenerator>();
-    AddCommandGenerator _addCommandGenerator = new AddCommandGenerator();
-    commands.add(_addCommandGenerator);
-    CheckoutCommandGenerator _checkoutCommandGenerator = new CheckoutCommandGenerator();
-    commands.add(_checkoutCommandGenerator);
-    CheckoutCreateCommandGenerator _checkoutCreateCommandGenerator = new CheckoutCreateCommandGenerator();
-    commands.add(_checkoutCreateCommandGenerator);
-    CloneCommandGenerator _cloneCommandGenerator = new CloneCommandGenerator();
-    commands.add(_cloneCommandGenerator);
-    CommitCommandGenerator _commitCommandGenerator = new CommitCommandGenerator();
-    commands.add(_commitCommandGenerator);
-    CreateBranchCommandGenerator _createBranchCommandGenerator = new CreateBranchCommandGenerator();
-    commands.add(_createBranchCommandGenerator);
-    FetchCommandGenerator _fetchCommandGenerator = new FetchCommandGenerator();
-    commands.add(_fetchCommandGenerator);
-    ICommandGenerator _iCommandGenerator = new ICommandGenerator();
-    commands.add(_iCommandGenerator);
-    InitCommandGenerator _initCommandGenerator = new InitCommandGenerator();
-    commands.add(_initCommandGenerator);
-    LogCommandGenerator _logCommandGenerator = new LogCommandGenerator();
-    commands.add(_logCommandGenerator);
-    OpenCommandGenerator _openCommandGenerator = new OpenCommandGenerator();
-    commands.add(_openCommandGenerator);
-    PullCommandGenerator _pullCommandGenerator = new PullCommandGenerator();
-    commands.add(_pullCommandGenerator);
-    PushCommandGenerator _pushCommandGenerator = new PushCommandGenerator();
-    commands.add(_pushCommandGenerator);
-    RemoteAddCommandGenerator _remoteAddCommandGenerator = new RemoteAddCommandGenerator();
-    commands.add(_remoteAddCommandGenerator);
-    RmCommandGenerator _rmCommandGenerator = new RmCommandGenerator();
-    commands.add(_rmCommandGenerator);
-    for (final CommandGenerator cg : commands) {
-      String _get = (cg.getClass().getName().split("Generator")[0]).split("library.commands.")[1];
-      String _plus = ("commands/" + _get);
-      String _plus_1 = (_plus + ".java");
-      fsa.generateFile(_plus_1, cg.generate());
+    try {
+      final IProgressMonitor progressMonitor = new NullProgressMonitor();
+      final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+      final IProject project = root.getProject("VCSFeatures");
+      project.create(progressMonitor);
+      project.open(progressMonitor);
+      final IProjectDescription description = project.getDescription();
+      final ArrayList<String> natures = new ArrayList<String>();
+      natures.add("org.eclipse.jdt.core.javanature");
+      description.setNatureIds(((String[])Conversions.unwrapArray(natures, String.class)));
+      project.setDescription(description, null);
+      final IJavaProject javaProject = JavaCore.create(project);
+      final IFolder folder = project.getFolder("src");
+      folder.create(true, true, null);
+      final IPackageFragmentRoot srcFolder = javaProject.getPackageFragmentRoot(folder);
+      final IPackageFragment commandsFragment = srcFolder.createPackageFragment(
+        "commands", true, null);
+      final IPackageFragment controllersFragment = srcFolder.createPackageFragment(
+        "controllers", true, null);
+      final IPackageFragment dialogsFragment = srcFolder.createPackageFragment(
+        "dialogs", true, null);
+      final IPackageFragment functionsFragment = srcFolder.createPackageFragment(
+        "functions", true, null);
+      final IPackageFragment handlersFragment = srcFolder.createPackageFragment(
+        "handlers", true, null);
+      final ArrayList<CommandGenerator> commands = new ArrayList<CommandGenerator>();
+      AddCommandGenerator _addCommandGenerator = new AddCommandGenerator();
+      commands.add(_addCommandGenerator);
+      CheckoutCommandGenerator _checkoutCommandGenerator = new CheckoutCommandGenerator();
+      commands.add(_checkoutCommandGenerator);
+      CheckoutCreateCommandGenerator _checkoutCreateCommandGenerator = new CheckoutCreateCommandGenerator();
+      commands.add(_checkoutCreateCommandGenerator);
+      CloneCommandGenerator _cloneCommandGenerator = new CloneCommandGenerator();
+      commands.add(_cloneCommandGenerator);
+      CommitCommandGenerator _commitCommandGenerator = new CommitCommandGenerator();
+      commands.add(_commitCommandGenerator);
+      CreateBranchCommandGenerator _createBranchCommandGenerator = new CreateBranchCommandGenerator();
+      commands.add(_createBranchCommandGenerator);
+      FetchCommandGenerator _fetchCommandGenerator = new FetchCommandGenerator();
+      commands.add(_fetchCommandGenerator);
+      ICommandGenerator _iCommandGenerator = new ICommandGenerator();
+      commands.add(_iCommandGenerator);
+      InitCommandGenerator _initCommandGenerator = new InitCommandGenerator();
+      commands.add(_initCommandGenerator);
+      LogCommandGenerator _logCommandGenerator = new LogCommandGenerator();
+      commands.add(_logCommandGenerator);
+      OpenCommandGenerator _openCommandGenerator = new OpenCommandGenerator();
+      commands.add(_openCommandGenerator);
+      PullCommandGenerator _pullCommandGenerator = new PullCommandGenerator();
+      commands.add(_pullCommandGenerator);
+      PushCommandGenerator _pushCommandGenerator = new PushCommandGenerator();
+      commands.add(_pushCommandGenerator);
+      RemoteAddCommandGenerator _remoteAddCommandGenerator = new RemoteAddCommandGenerator();
+      commands.add(_remoteAddCommandGenerator);
+      RmCommandGenerator _rmCommandGenerator = new RmCommandGenerator();
+      commands.add(_rmCommandGenerator);
+      for (final CommandGenerator cg : commands) {
+        String _get = (cg.getClass().getName().split("Generator")[0]).split("library.commands.")[1];
+        String _plus = ("commands/" + _get);
+        String _plus_1 = (_plus + ".java");
+        fsa.generateFile(_plus_1, cg.generate());
+      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
     }
   }
 }
