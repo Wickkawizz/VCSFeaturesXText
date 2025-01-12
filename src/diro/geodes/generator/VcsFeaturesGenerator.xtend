@@ -48,6 +48,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		
 		val projectPath = project.fullPath.toString
 		
+		// List of commands to generate. Add as needed.
 		val ArrayList<CommandGenerator> commands = new ArrayList<CommandGenerator>()
 		commands.add(new AddCommandGenerator)
 		commands.add(new CheckoutCommandGenerator)
