@@ -3,6 +3,23 @@
  */
 package diro.geodes.generator;
 
+import java.util.ArrayList;
+import library.commands.AddCommandGenerator;
+import library.commands.CheckoutCommandGenerator;
+import library.commands.CheckoutCreateCommandGenerator;
+import library.commands.CloneCommandGenerator;
+import library.commands.CommandGenerator;
+import library.commands.CommitCommandGenerator;
+import library.commands.CreateBranchCommandGenerator;
+import library.commands.FetchCommandGenerator;
+import library.commands.ICommandGenerator;
+import library.commands.InitCommandGenerator;
+import library.commands.LogCommandGenerator;
+import library.commands.OpenCommandGenerator;
+import library.commands.PullCommandGenerator;
+import library.commands.PushCommandGenerator;
+import library.commands.RemoteAddCommandGenerator;
+import library.commands.RmCommandGenerator;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -22,9 +39,6 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
  */
 @SuppressWarnings("all")
 public class VcsFeaturesGenerator extends AbstractGenerator {
-  public static void main(final String[] args) {
-  }
-
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     try {
@@ -34,10 +48,46 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
       project.create(progressMonitor);
       project.open(progressMonitor);
       final String projectPath = project.getFullPath().toString();
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello world, this is a test");
-      _builder.newLine();
-      fsa.generateFile(projectPath, _builder);
+      final ArrayList<CommandGenerator> commands = new ArrayList<CommandGenerator>();
+      AddCommandGenerator _addCommandGenerator = new AddCommandGenerator();
+      commands.add(_addCommandGenerator);
+      CheckoutCommandGenerator _checkoutCommandGenerator = new CheckoutCommandGenerator();
+      commands.add(_checkoutCommandGenerator);
+      CheckoutCreateCommandGenerator _checkoutCreateCommandGenerator = new CheckoutCreateCommandGenerator();
+      commands.add(_checkoutCreateCommandGenerator);
+      CloneCommandGenerator _cloneCommandGenerator = new CloneCommandGenerator();
+      commands.add(_cloneCommandGenerator);
+      CommitCommandGenerator _commitCommandGenerator = new CommitCommandGenerator();
+      commands.add(_commitCommandGenerator);
+      CreateBranchCommandGenerator _createBranchCommandGenerator = new CreateBranchCommandGenerator();
+      commands.add(_createBranchCommandGenerator);
+      FetchCommandGenerator _fetchCommandGenerator = new FetchCommandGenerator();
+      commands.add(_fetchCommandGenerator);
+      ICommandGenerator _iCommandGenerator = new ICommandGenerator();
+      commands.add(_iCommandGenerator);
+      InitCommandGenerator _initCommandGenerator = new InitCommandGenerator();
+      commands.add(_initCommandGenerator);
+      LogCommandGenerator _logCommandGenerator = new LogCommandGenerator();
+      commands.add(_logCommandGenerator);
+      OpenCommandGenerator _openCommandGenerator = new OpenCommandGenerator();
+      commands.add(_openCommandGenerator);
+      PullCommandGenerator _pullCommandGenerator = new PullCommandGenerator();
+      commands.add(_pullCommandGenerator);
+      PushCommandGenerator _pushCommandGenerator = new PushCommandGenerator();
+      commands.add(_pushCommandGenerator);
+      RemoteAddCommandGenerator _remoteAddCommandGenerator = new RemoteAddCommandGenerator();
+      commands.add(_remoteAddCommandGenerator);
+      RmCommandGenerator _rmCommandGenerator = new RmCommandGenerator();
+      commands.add(_rmCommandGenerator);
+      for (final CommandGenerator cg : commands) {
+        String _get = cg.getClass().getName().split("Generator")[0];
+        String _plus = ((projectPath + "/src/") + _get);
+        String _plus_1 = (_plus + ".java");
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("Hello world, this is a test");
+        _builder.newLine();
+        fsa.generateFile(_plus_1, _builder);
+      }
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

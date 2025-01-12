@@ -12,6 +12,24 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import library.commands.AddCommandGenerator
+import library.commands.CommandGenerator
+import java.util.ArrayList
+import java.lang.reflect.Array
+import library.commands.CheckoutCommandGenerator
+import library.commands.CheckoutCreateCommandGenerator
+import library.commands.CloneCommandGenerator
+import library.commands.CommitCommandGenerator
+import library.commands.CreateBranchCommandGenerator
+import library.commands.FetchCommandGenerator
+import library.commands.ICommandGenerator
+import library.commands.InitCommandGenerator
+import library.commands.LogCommandGenerator
+import library.commands.OpenCommandGenerator
+import library.commands.PullCommandGenerator
+import library.commands.PushCommandGenerator
+import library.commands.RemoteAddCommandGenerator
+import library.commands.RmCommandGenerator
 
 /**
  * Generates code from your model files on save.
@@ -19,9 +37,6 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class VcsFeaturesGenerator extends AbstractGenerator {
-	def static void main(String[] args) {
-		
-	}
 //https://goto40.github.io/self-dsl/xtext_code_generation_xtend/
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		// This piece is to generate a new project where we can generate all of our files into
@@ -33,8 +48,29 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		
 		val projectPath = project.fullPath.toString
 		
-		fsa.generateFile(projectPath, '''
+		val ArrayList<CommandGenerator> commands = new ArrayList<CommandGenerator>()
+		commands.add(new AddCommandGenerator)
+		commands.add(new CheckoutCommandGenerator)
+		commands.add(new CheckoutCreateCommandGenerator)
+		commands.add(new CloneCommandGenerator)
+		commands.add(new CommitCommandGenerator)
+		commands.add(new CreateBranchCommandGenerator)
+		commands.add(new FetchCommandGenerator)
+		commands.add(new ICommandGenerator)
+		commands.add(new InitCommandGenerator)
+		commands.add(new LogCommandGenerator)
+		commands.add(new OpenCommandGenerator)
+		commands.add(new PullCommandGenerator)
+		commands.add(new PushCommandGenerator)
+		commands.add(new RemoteAddCommandGenerator)
+		commands.add(new RmCommandGenerator)
+
+		for (cg : commands){
+			fsa.generateFile(projectPath + '/src/' + cg.class.name.split("Generator").get(0) + '.java', '''
 		Hello world, this is a test
 		''')
+		}
+		
+		
 	}
 }

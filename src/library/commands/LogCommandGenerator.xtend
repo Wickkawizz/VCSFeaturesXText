@@ -1,7 +1,7 @@
 package library.commands
 
-class LogCommandGenerator {
-	def generate()
+class LogCommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 

@@ -1,7 +1,7 @@
 package library.commands
 
-class ICommandGenerator {
-	def generate()
+class ICommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 

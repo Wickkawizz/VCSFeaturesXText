@@ -1,7 +1,7 @@
 package library.commands
 
-class FetchCommandGenerator {
-	def generate()
+class FetchCommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 

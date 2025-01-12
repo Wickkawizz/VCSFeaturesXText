@@ -1,7 +1,7 @@
 package library.commands
 
-class RmCommandGenerator {
-	def generate()
+class RmCommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 

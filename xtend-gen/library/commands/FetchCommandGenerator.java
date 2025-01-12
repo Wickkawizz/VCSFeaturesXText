@@ -3,7 +3,8 @@ package library.commands;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class FetchCommandGenerator {
+public class FetchCommandGenerator implements CommandGenerator {
+  @Override
   public CharSequence generate() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package commands;");

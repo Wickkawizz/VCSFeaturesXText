@@ -1,7 +1,7 @@
 package library.commands
 
-class PushCommandGenerator {
-	def generate()
+class PushCommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 

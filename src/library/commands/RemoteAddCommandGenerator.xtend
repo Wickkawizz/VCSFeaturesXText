@@ -1,7 +1,7 @@
 package library.commands
 
-class RemoteAddCommandGenerator {
-	def generate()
+class RemoteAddCommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 

@@ -3,7 +3,8 @@ package library.commands;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class RemoteAddCommandGenerator {
+public class RemoteAddCommandGenerator implements CommandGenerator {
+  @Override
   public CharSequence generate() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package commands;");

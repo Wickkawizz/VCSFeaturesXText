@@ -1,7 +1,7 @@
 package library.commands
 
-class CommitCommandGenerator {
-	def generate()
+class CommitCommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 

@@ -1,7 +1,7 @@
 package library.commands
 
-class CheckoutCreateCommandGenerator {
-	def generate()
+class CheckoutCreateCommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 

@@ -1,7 +1,7 @@
 package library.commands
 
-class PullCommandGenerator {
-	def generate()
+class PullCommandGenerator implements CommandGenerator{
+	override generate()
 	'''
 package commands;
 
