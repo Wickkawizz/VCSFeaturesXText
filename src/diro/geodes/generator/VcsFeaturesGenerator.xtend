@@ -3,6 +3,11 @@
  */
 package diro.geodes.generator
 
+import org.eclipse.core.resources.IProject
+import org.eclipse.core.resources.IWorkspaceRoot
+import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.core.runtime.IProgressMonitor
+import org.eclipse.core.runtime.NullProgressMonitor
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
@@ -14,9 +19,21 @@ import org.eclipse.xtext.generator.IGeneratorContext
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class VcsFeaturesGenerator extends AbstractGenerator {
+	def static void main(String[] args) {
+		
+	}
 //https://goto40.github.io/self-dsl/xtext_code_generation_xtend/
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		fsa.generateFile('greetings.txt', '''
+		// This piece is to generate a new project where we can generate all of our files into
+		val IProgressMonitor progressMonitor = new NullProgressMonitor();
+		val IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		val IProject project = root.getProject("VCSFeatures"); // TODO I should collect the project's name from the wizard too.
+		project.create(progressMonitor);
+		project.open(progressMonitor);
+		
+		val projectPath = project.fullPath.toString
+		
+		fsa.generateFile(projectPath, '''
 		Hello world, this is a test
 		''')
 	}

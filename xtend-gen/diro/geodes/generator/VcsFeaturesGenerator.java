@@ -3,11 +3,17 @@
  */
 package diro.geodes.generator;
 
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
  * Generates code from your model files on save.
@@ -16,11 +22,24 @@ import org.eclipse.xtext.generator.IGeneratorContext;
  */
 @SuppressWarnings("all")
 public class VcsFeaturesGenerator extends AbstractGenerator {
+  public static void main(final String[] args) {
+  }
+
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("Hello world, this is a test");
-    _builder.newLine();
-    fsa.generateFile("greetings.txt", _builder);
+    try {
+      final IProgressMonitor progressMonitor = new NullProgressMonitor();
+      final IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+      final IProject project = root.getProject("VCSFeatures");
+      project.create(progressMonitor);
+      project.open(progressMonitor);
+      final String projectPath = project.getFullPath().toString();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Hello world, this is a test");
+      _builder.newLine();
+      fsa.generateFile(projectPath, _builder);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }
