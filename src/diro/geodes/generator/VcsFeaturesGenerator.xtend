@@ -3,22 +3,12 @@
  */
 package diro.geodes.generator
 
-import org.eclipse.core.resources.IProject
-import org.eclipse.core.resources.IWorkspaceRoot
-import org.eclipse.core.resources.ResourcesPlugin
-import org.eclipse.core.runtime.IProgressMonitor
-import org.eclipse.core.runtime.NullProgressMonitor
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.AbstractGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess2
-import org.eclipse.xtext.generator.IGeneratorContext
-import library.commands.AddCommandGenerator
-import library.commands.CommandGenerator
 import java.util.ArrayList
-import java.lang.reflect.Array
+import library.commands.AddCommandGenerator
 import library.commands.CheckoutCommandGenerator
 import library.commands.CheckoutCreateCommandGenerator
 import library.commands.CloneCommandGenerator
+import library.commands.CommandGenerator
 import library.commands.CommitCommandGenerator
 import library.commands.CreateBranchCommandGenerator
 import library.commands.FetchCommandGenerator
@@ -30,7 +20,22 @@ import library.commands.PullCommandGenerator
 import library.commands.PushCommandGenerator
 import library.commands.RemoteAddCommandGenerator
 import library.commands.RmCommandGenerator
+import org.eclipse.core.resources.IFolder
+import org.eclipse.core.resources.IProject
 import org.eclipse.core.resources.IProjectDescription
+import org.eclipse.core.resources.IWorkspaceRoot
+import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.core.runtime.IProgressMonitor
+import org.eclipse.core.runtime.NullProgressMonitor
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.jdt.core.IClasspathEntry
+import org.eclipse.jdt.core.IJavaProject
+import org.eclipse.jdt.core.IPackageFragment
+import org.eclipse.jdt.core.IPackageFragmentRoot
+import org.eclipse.jdt.core.JavaCore
+import org.eclipse.xtext.generator.AbstractGenerator
+import org.eclipse.xtext.generator.IFileSystemAccess2
+import org.eclipse.xtext.generator.IGeneratorContext
 
 /**
  * Generates code from your model files on save.
@@ -40,8 +45,9 @@ import org.eclipse.core.resources.IProjectDescription
 class VcsFeaturesGenerator extends AbstractGenerator {
 //https://goto40.github.io/self-dsl/xtext_code_generation_xtend/
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		// https://stackoverflow.com/questions/13772464/can-i-generate-eclipse-workspace-and-project-manually-programmatically
 		// This piece is to generate a new project where we can generate all of our files into
-		val IProgressMonitor progressMonitor = new NullProgressMonitor();
+		/*val IProgressMonitor progressMonitor = new NullProgressMonitor();
 		val IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		val IProject project = root.getProject("VCSFeatures"); // TODO I should collect the project's name from the wizard too.
 		project.create(progressMonitor);
@@ -50,10 +56,45 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		val IProjectDescription description = project.getDescription();
 		val ArrayList<String> natures = new ArrayList<String>()
 		natures.add("org.eclipse.jdt.core.javanature")
-		description.setNatureIds(natures)
-		project.setDescription(description, null);
+		//natures.add("org.eclipse.pde.core.org.eclipse.pde.PluginNature")
+		// TODO RCP nature?
 		
-		val projectPath = project.fullPath.toString
+		description.setNatureIds(natures)
+		
+		//create the project
+		project.setDescription(description, null);
+		val IJavaProject javaProject = JavaCore.create(project);
+		
+		//set the build path
+		val IClasspathEntry[] buildPath = new ArrayList<IClasspathEntry>
+		buildPath.add(JavaCore.newSourceEntry(project.fullPath.append("src")));
+		
+		javaProject.setRawClasspath(buildPath, project.getFullPath().append(
+                "bin"), null);
+		
+		
+		//create folder by using resources package
+		val IFolder folder = project.getFolder("src");
+		folder.create(true, true, null);
+		
+		//Add folder to Java element
+		val IPackageFragmentRoot srcFolder = javaProject
+		                .getPackageFragmentRoot(folder);
+		
+		//create package fragments
+		val IPackageFragment commandsFragment = srcFolder.createPackageFragment(
+		        "commands", true, null);
+        val IPackageFragment controllersFragment = srcFolder.createPackageFragment(
+		        "controllers", true, null);
+        val IPackageFragment dialogsFragment = srcFolder.createPackageFragment(
+		        "dialogs", true, null);
+        val IPackageFragment functionsFragment = srcFolder.createPackageFragment(
+		        "functions", true, null);
+        val IPackageFragment handlersFragment = srcFolder.createPackageFragment(
+		        "handlers", true, null);*/
+
+		
+		//val projectPath = project.fullPath.toString
 		
 		// List of commands to generate. Add as needed.
 		val ArrayList<CommandGenerator> commands = new ArrayList<CommandGenerator>()
@@ -76,7 +117,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		for (cg : commands){
 			// Have to split 2 times, to get only the name of the class, otherwise it writes the name of the class with the package name in front of it. 
 			// We also want to remove the "Generator" at the end, because the class is the concrete version.
-			fsa.generateFile(projectPath + '/src/commands/' + cg.class.name.split("Generator").get(0).split("library.commands.").get(1) + '.java', cg.generate)
+			fsa.generateFile('commands/' + cg.class.name.split("Generator").get(0).split("library.commands.").get(1) + '.java', cg.generate)
 		}
 		
 		
