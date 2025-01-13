@@ -1,7 +1,7 @@
 package library.dialogs
 
-class CheckoutCreateDialogGenerator {
-	def generate()
+class CheckoutCreateDialogGenerator implements DialogGenerator{
+	override generate()
 	'''
 	package dialogs;
 	

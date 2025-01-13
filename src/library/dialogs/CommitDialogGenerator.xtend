@@ -1,7 +1,7 @@
 package library.dialogs
 
-class CommitDialogGenerator {
-	def generate()
+class CommitDialogGenerator implements DialogGenerator{
+	override generate()
 	'''
 	package dialogs;
 	

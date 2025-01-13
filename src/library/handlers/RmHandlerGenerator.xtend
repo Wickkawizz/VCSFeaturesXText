@@ -1,7 +1,7 @@
 package library.handlers
 
-class RmHandlerGenerator {
-	def generate()
+class RmHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

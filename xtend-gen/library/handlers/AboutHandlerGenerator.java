@@ -3,7 +3,8 @@ package library.handlers;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class AboutHandlerGenerator {
+public class AboutHandlerGenerator implements HandlerGenerator {
+  @Override
   public CharSequence generate() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package handlers;");

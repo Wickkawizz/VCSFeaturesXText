@@ -1,7 +1,7 @@
 package library.handlers
 
-class RemoteAddHandlerGenerator {
-	def generate()
+class RemoteAddHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

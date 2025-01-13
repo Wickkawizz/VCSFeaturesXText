@@ -1,7 +1,7 @@
 package library.handlers
 
-class PushHandlerGenerator {
-	def generate()
+class PushHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

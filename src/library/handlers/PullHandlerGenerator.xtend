@@ -1,7 +1,7 @@
 package library.handlers
 
-class PullHandlerGenerator {
-		def generate()
+class PullHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

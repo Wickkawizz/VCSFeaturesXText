@@ -1,7 +1,7 @@
 package library.handlers
 
-class CreateBranchHandlerGenerator {
-	def generate()
+class CreateBranchHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

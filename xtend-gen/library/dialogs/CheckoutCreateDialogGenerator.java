@@ -3,7 +3,8 @@ package library.dialogs;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class CheckoutCreateDialogGenerator {
+public class CheckoutCreateDialogGenerator implements DialogGenerator {
+  @Override
   public CharSequence generate() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package dialogs;");

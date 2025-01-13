@@ -1,7 +1,7 @@
 package library.handlers
 
-class RenameHandlerGenerator {
-	def generate()
+class RenameHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

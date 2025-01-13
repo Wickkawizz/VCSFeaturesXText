@@ -1,7 +1,7 @@
 package library.dialogs
 
-class RenamerDialogGenerator {
-	def generate()
+class RenamerDialogGenerator implements DialogGenerator{
+	override generate()
 	'''
 	package dialogs;
 	

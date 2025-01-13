@@ -41,6 +41,36 @@ import java.io.FileOutputStream
 import java.io.Writer
 import java.io.BufferedWriter
 import java.io.OutputStreamWriter
+import library.handlers.HandlerGenerator
+import library.handlers.AddHandlerGenerator
+import library.handlers.CheckoutHandlerGenerator
+import library.handlers.CheckoutCreateHandlerGenerator
+import library.handlers.CloneHandlerGenerator
+import library.handlers.CommitHandlerGenerator
+import library.handlers.CreateBranchHandlerGenerator
+import library.handlers.FetchHandlerGenerator
+import library.handlers.InitHandlerGenerator
+import library.handlers.LogHandlerGenerator
+import library.handlers.OpenHandlerGenerator
+import library.handlers.PullHandlerGenerator
+import library.handlers.PushHandlerGenerator
+import library.handlers.RemoteAddHandlerGenerator
+import library.handlers.RmHandlerGenerator
+import library.dialogs.DialogGenerator
+import library.dialogs.AddDialogGenerator
+import library.dialogs.RmDialogGenerator
+import library.dialogs.CheckoutDialogGenerator
+import library.dialogs.CheckoutCreateDialogGenerator
+import library.dialogs.CloneDialogGenerator
+import library.dialogs.CommitDialogGenerator
+import library.dialogs.CreateBranchDialogGenerator
+import library.dialogs.FetchDialogGenerator
+import library.dialogs.InitDialogGenerator
+import library.dialogs.LogDialogGenerator
+import library.dialogs.OpenDialogGenerator
+import library.dialogs.PullDialogGenerator
+import library.dialogs.PushDialogGenerator
+import library.dialogs.RemoteAddDialogGenerator
 
 /**
  * Generates code from your model files on save.
@@ -63,7 +93,8 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		val ArrayList<String> natures = new ArrayList<String>()
 		natures.add("org.eclipse.jdt.core.javanature")
 		//natures.add("org.eclipse.pde.core.org.eclipse.pde.PluginNature")
-		// TODO RCP nature?
+		// RCP plugin nature?
+		//natures.add("org.eclipse.e4.ui.workbench.swt.E4Application")
 		
 		description.setNatureIds(natures)
 		
@@ -126,6 +157,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 			// We also want to remove the "Generator" at the end, because the class is the concrete version.
 			fsa.generateFile('commands/' + cg.class.name.split("Generator").get(0).split("library.commands.").get(1) + '.java', cg.generate)
 			// TODO The method doGenerate categorically refuses to write to the other project. I can create packages, but no files can be added.
+			// It seems like a permission is not acquired and it can't write outside it's own project.
 			// Error: java.io.FileNotFoundException: \VCSFeatures\commands\AddCommand.java (The system cannot find the path specified)
 			// Try to find a fix for this, but maybe only manual copy-pasting will be an option
 			/*try (
@@ -136,7 +168,44 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 			//new FileOutputStream(srcFolder.path.makeAbsolute.toString + '/commands/' + cg.class.name.split("Generator").get(0).split("library.commands.").get(1) + '.java').write(cg.generate.toString).flush
 			
 		}
+		val ArrayList<HandlerGenerator> handlers = new ArrayList<HandlerGenerator>()
+		handlers.add(new AddHandlerGenerator)
+		handlers.add(new CheckoutHandlerGenerator)
+		handlers.add(new CheckoutCreateHandlerGenerator)
+		handlers.add(new CloneHandlerGenerator)
+		handlers.add(new CommitHandlerGenerator)
+		handlers.add(new CreateBranchHandlerGenerator)
+		handlers.add(new FetchHandlerGenerator)
+		handlers.add(new InitHandlerGenerator)
+		handlers.add(new LogHandlerGenerator)
+		handlers.add(new OpenHandlerGenerator)
+		handlers.add(new PullHandlerGenerator)
+		handlers.add(new PushHandlerGenerator)
+		handlers.add(new RemoteAddHandlerGenerator)
+		handlers.add(new RmHandlerGenerator)
 		
+		for (hg : handlers){
+		fsa.generateFile('handlers/' + hg.class.name.split("Generator").get(0).split("library.handlers.").get(1) + '.java', hg.generate)
+		}
 		
+		val ArrayList<DialogGenerator> dialogs = new ArrayList<DialogGenerator>()
+		dialogs.add(new AddDialogGenerator)
+		dialogs.add(new CheckoutDialogGenerator)
+		dialogs.add(new CheckoutCreateDialogGenerator)
+		dialogs.add(new CloneDialogGenerator)
+		dialogs.add(new CommitDialogGenerator)
+		dialogs.add(new CreateBranchDialogGenerator)
+		dialogs.add(new FetchDialogGenerator)
+		dialogs.add(new InitDialogGenerator)
+		dialogs.add(new LogDialogGenerator)
+		dialogs.add(new OpenDialogGenerator)
+		dialogs.add(new PullDialogGenerator)
+		dialogs.add(new PushDialogGenerator)
+		dialogs.add(new RemoteAddDialogGenerator)
+		dialogs.add(new RmDialogGenerator)
+		
+		for (dg : dialogs){
+		fsa.generateFile('dialogs/' + dg.class.name.split("Generator").get(0).split("library.dialogs.").get(1) + '.java', dg.generate)
+		}
 	}
 }

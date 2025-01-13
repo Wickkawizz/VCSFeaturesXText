@@ -1,7 +1,7 @@
 package library.handlers
 
-class CheckoutCreateHandlerGenerator {
-	def generate()
+class CheckoutCreateHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

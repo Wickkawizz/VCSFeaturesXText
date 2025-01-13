@@ -1,7 +1,7 @@
 package library.dialogs
 
-class RmDialogGenerator {
-	def generate()
+class RmDialogGenerator implements DialogGenerator{
+	override generate()
 	'''
 	package dialogs;
 	

@@ -1,7 +1,7 @@
 package library.handlers
 
-class FetchHandlerGenerator {
-	def generate()
+class FetchHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

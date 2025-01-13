@@ -1,7 +1,7 @@
 package library.dialogs
 
-class RemoteAddDialogGenerator {
-	def generate()
+class RemoteAddDialogGenerator implements DialogGenerator{
+	override generate()
 	'''
 	package dialogs;
 	

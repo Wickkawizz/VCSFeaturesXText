@@ -1,7 +1,7 @@
 package library.dialogs
 
-class FetchDialogGenerator {
-	def generate()
+class FetchDialogGenerator implements DialogGenerator{
+	override generate()
 	'''
 	package dialogs;
 	

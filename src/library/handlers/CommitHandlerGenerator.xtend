@@ -1,7 +1,7 @@
 package library.handlers
 
-class CommitHandlergenerator {
-	def generate()
+class CommitHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 

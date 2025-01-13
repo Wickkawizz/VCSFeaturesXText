@@ -1,7 +1,7 @@
 package library.handlers
 
-class InitHandlerGenerator {
-	def generate()
+class InitHandlerGenerator implements HandlerGenerator{
+	override generate()
 	'''
 package handlers;
 
