@@ -1,7 +1,7 @@
 package library.controllers
 
-class PorcelainControllerGenerator {
-	def generate()
+class PorcelainControllerGenerator implements ControllerGenerator{
+	override generate()
 	'''
 	package controllers;
 	

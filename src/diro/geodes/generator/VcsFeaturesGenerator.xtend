@@ -71,6 +71,13 @@ import library.dialogs.OpenDialogGenerator
 import library.dialogs.PullDialogGenerator
 import library.dialogs.PushDialogGenerator
 import library.dialogs.RemoteAddDialogGenerator
+import library.controllers.IVcsControllerGenerator
+import library.controllers.PorcelainControllerGenerator
+import library.controllers.ControllerGenerator
+import library.functions.FunctionGenerator
+import library.functions.JGitRepositoryAPIGenerator
+import library.dialogs.DialogUtilsGenerator
+import library.dialogs.PathDialogGenerator
 
 /**
  * Generates code from your model files on save.
@@ -82,7 +89,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		// https://stackoverflow.com/questions/13772464/can-i-generate-eclipse-workspace-and-project-manually-programmatically
 		// This piece is to generate a new project where we can generate all of our files into
-		val IProgressMonitor progressMonitor = new NullProgressMonitor();
+		/*val IProgressMonitor progressMonitor = new NullProgressMonitor();
 		val IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		val IProject project = root.getProject("VCSFeatures"); // TODO I should collect the project's name from the wizard too.
 		project.create(progressMonitor);
@@ -111,7 +118,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		
 		
 		//create folder by using resources package
-		val IFolder folder = project.getFolder("src");
+		/*val IFolder folder = project.getFolder("src");
 		folder.create(true, true, null);
 		
 		//Add folder to Java element
@@ -128,7 +135,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
         val IPackageFragment functionsFragment = srcFolder.createPackageFragment(
 		        "functions", true, null);
         val IPackageFragment handlersFragment = srcFolder.createPackageFragment(
-		        "handlers", true, null);
+		        "handlers", true, null);*/
 
 		
 		//val projectPath = project.fullPath.toString
@@ -195,10 +202,12 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		dialogs.add(new CloneDialogGenerator)
 		dialogs.add(new CommitDialogGenerator)
 		dialogs.add(new CreateBranchDialogGenerator)
+		dialogs.add(new DialogUtilsGenerator)
 		dialogs.add(new FetchDialogGenerator)
 		dialogs.add(new InitDialogGenerator)
 		dialogs.add(new LogDialogGenerator)
 		dialogs.add(new OpenDialogGenerator)
+		dialogs.add(new PathDialogGenerator)
 		dialogs.add(new PullDialogGenerator)
 		dialogs.add(new PushDialogGenerator)
 		dialogs.add(new RemoteAddDialogGenerator)
@@ -206,6 +215,21 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		
 		for (dg : dialogs){
 		fsa.generateFile('dialogs/' + dg.class.name.split("Generator").get(0).split("library.dialogs.").get(1) + '.java', dg.generate)
+		}
+		
+		val ArrayList<ControllerGenerator> controllers = new ArrayList<ControllerGenerator>()
+		controllers.add(new IVcsControllerGenerator)
+		controllers.add(new PorcelainControllerGenerator)
+		
+		for (cg : controllers){
+		fsa.generateFile('controllers/' + cg.class.name.split("Generator").get(0).split("library.controllers.").get(1) + '.java', cg.generate)
+		}
+		
+		val ArrayList<FunctionGenerator> functions = new ArrayList<FunctionGenerator>()
+		functions.add(new JGitRepositoryAPIGenerator)
+		
+		for (fg : functions){
+		fsa.generateFile('functions/' + fg.class.name.split("Generator").get(0).split("library.functions.").get(1) + '.java', fg.generate)
 		}
 	}
 }

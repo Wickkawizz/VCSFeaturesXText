@@ -3,7 +3,8 @@ package library.controllers;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class IVcsControllerGenerator {
+public class IVcsControllerGenerator implements ControllerGenerator {
+  @Override
   public CharSequence generate() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package controllers;");

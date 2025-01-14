@@ -1,7 +1,7 @@
 package library.functions
 
-class JGitRepositoryAPIGenerator {
-	def generate()
+class JGitRepositoryAPIGenerator implements FunctionGenerator{
+	override generate()
 	'''
 	package functions;
 	

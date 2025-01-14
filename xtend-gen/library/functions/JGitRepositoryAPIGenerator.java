@@ -3,7 +3,8 @@ package library.functions;
 import org.eclipse.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
-public class JGitRepositoryAPIGenerator {
+public class JGitRepositoryAPIGenerator implements FunctionGenerator {
+  @Override
   public CharSequence generate() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package functions;");

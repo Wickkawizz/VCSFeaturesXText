@@ -1,7 +1,7 @@
 package library.controllers
 
-class IVcsControllerGenerator {
-	def generate()
+class IVcsControllerGenerator implements ControllerGenerator{
+	override generate()
 	'''
 	package controllers;
 	
