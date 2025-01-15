@@ -3,6 +3,7 @@
  */
 package diro.geodes.generator;
 
+import com.google.common.collect.Iterators;
 import java.util.ArrayList;
 import library.commands.AddCommandGenerator;
 import library.commands.CheckoutCommandGenerator;
@@ -57,10 +58,16 @@ import library.handlers.PullHandlerGenerator;
 import library.handlers.PushHandlerGenerator;
 import library.handlers.RemoteAddHandlerGenerator;
 import library.handlers.RmHandlerGenerator;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
+import vcsFeaturesMM.HighLevelCommand;
+import vcsFeaturesMM.LowLevelCommand;
 
 /**
  * Generates code from your model files on save.
@@ -107,6 +114,184 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
       String _plus = ("commands/" + _get);
       String _plus_1 = (_plus + ".java");
       fsa.generateFile(_plus_1, cg.generate());
+    }
+    Iterable<HighLevelCommand> _iterable = IteratorExtensions.<HighLevelCommand>toIterable(Iterators.<HighLevelCommand>filter(resource.getAllContents(), HighLevelCommand.class));
+    for (final HighLevelCommand superCommand : _iterable) {
+      {
+        String _name = superCommand.getName();
+        String _plus_2 = ("commands/" + _name);
+        String _plus_3 = (_plus_2 + "Command.java");
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("package commands;");
+        _builder.newLine();
+        _builder.append("\t\t\t");
+        _builder.newLine();
+        _builder.append("\t\t\t");
+        _builder.append("public class ");
+        String _name_1 = superCommand.getName();
+        _builder.append(_name_1, "\t\t\t");
+        _builder.append(" extends SuperCommand {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t");
+        _builder.newLine();
+        _builder.append("\t\t\t");
+        _builder.append("}");
+        _builder.newLine();
+        fsa.generateFile(_plus_3, _builder);
+        String _name_2 = superCommand.getName();
+        String _plus_4 = ("handlers/" + _name_2);
+        String _plus_5 = (_plus_4 + "Handler.java");
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("package handlers;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("import org.eclipse.core.commands.AbstractHandler;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("import org.eclipse.core.commands.ExecutionEvent;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("import org.eclipse.core.commands.ExecutionException;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("import org.eclipse.jface.window.Window;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("import org.eclipse.ui.IWorkbenchWindow;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("import org.eclipse.ui.handlers.HandlerUtil;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("import commands.PushCommand; ");
+        _builder_1.append("\t\t\t");
+        {
+          EList<LowLevelCommand> _lowlevelcommand = superCommand.getLowlevelcommand();
+          for(final LowLevelCommand lowCommands : _lowlevelcommand) {
+            _builder_1.append("import commands.");
+            String _name_3 = lowCommands.getClass().getName();
+            _builder_1.append(_name_3, "\t\t\t");
+            _builder_1.newLineIfNotEmpty();
+          }
+        }
+        _builder_1.append("\t\t\t");
+        _builder_1.append("import dialogs.PushDialog;");
+        _builder_1.append("\t\t\t");
+        {
+          EList<LowLevelCommand> _lowlevelcommand_1 = superCommand.getLowlevelcommand();
+          for(final LowLevelCommand lowCommands_1 : _lowlevelcommand_1) {
+            _builder_1.append("import dialogs.");
+            String _name_4 = lowCommands_1.getClass().getName();
+            _builder_1.append(_name_4, "\t\t\t");
+            _builder_1.newLineIfNotEmpty();
+          }
+        }
+        _builder_1.append("\t\t\t");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("public class ");
+        String _name_5 = superCommand.getName();
+        _builder_1.append(_name_5, "\t\t\t");
+        _builder_1.append(" extends AbstractHandler {");
+        _builder_1.newLineIfNotEmpty();
+        _builder_1.append("\t\t\t\t\t\t\t\t");
+        {
+          EList<LowLevelCommand> _lowlevelcommand_2 = superCommand.getLowlevelcommand();
+          for(final LowLevelCommand lowCommands_2 : _lowlevelcommand_2) {
+            _builder_1.append("private ");
+            String _name_6 = lowCommands_2.getClass().getName();
+            _builder_1.append(_name_6, "\t\t\t\t\t\t\t\t");
+            _builder_1.append(" ");
+            String _firstLower = StringExtensions.toFirstLower(lowCommands_2.getClass().getName());
+            _builder_1.append(_firstLower, "\t\t\t\t\t\t\t\t");
+            _builder_1.newLineIfNotEmpty();
+          }
+        }
+        _builder_1.append("\t\t\t\t");
+        _builder_1.append("PushCommand pushCommand;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t\t\t\t");
+        {
+          EList<LowLevelCommand> _lowlevelcommand_3 = superCommand.getLowlevelcommand();
+          for(final LowLevelCommand lowCommands_3 : _lowlevelcommand_3) {
+            _builder_1.append("private ");
+            String _get_1 = lowCommands_3.getClass().getName().split("Command")[0];
+            String _plus_6 = (_get_1 + "Dialog");
+            _builder_1.append(_plus_6, "\t\t\t\t\t\t\t\t");
+            _builder_1.append(" ");
+            String _firstLower_1 = StringExtensions.toFirstLower(lowCommands_3.getClass().getName());
+            _builder_1.append(_firstLower_1, "\t\t\t\t\t\t\t\t");
+            _builder_1.newLineIfNotEmpty();
+          }
+        }
+        _builder_1.append("\t\t\t\t");
+        _builder_1.append("private PushDialog dialog;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t");
+        _builder_1.append("@Override");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t");
+        _builder_1.append("public Object execute(ExecutionEvent event) throws ExecutionException {");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("// get workbench window");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("// Get the remote branches only and show them to the user.");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("dialog = new PushDialog(window.getShell());");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("// Open the dialog");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("dialog.create();");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("// If OK has been pressed, do something");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("if (dialog.open() == Window.OK) {");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t\t");
+        _builder_1.append("// Simply call the command and execute it.");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t\t");
+        _builder_1.append("// Create the command and set the path");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t\t");
+        _builder_1.append("pushCommand = new PushCommand(dialog.getUsername(), dialog.getPassword());");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t\t");
+        _builder_1.append("pushCommand.call();");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("}");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t\t");
+        _builder_1.append("return null;");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t\t");
+        _builder_1.append("}");
+        _builder_1.newLine();
+        _builder_1.append("\t\t\t");
+        _builder_1.append("}");
+        fsa.generateFile(_plus_5, _builder_1);
+      }
     }
     final ArrayList<HandlerGenerator> handlers = new ArrayList<HandlerGenerator>();
     AddHandlerGenerator _addHandlerGenerator = new AddHandlerGenerator();
