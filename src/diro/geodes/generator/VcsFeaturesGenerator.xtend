@@ -181,12 +181,13 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		for (superCommand : resource.allContents.filter(HighLevelCommand).toIterable){
 			fsa.generateFile('commands/' + superCommand.name + 'Command.java', '''package commands;
 			
-			public class «superCommand.name» extends SuperCommand {
+			public class «superCommand.name + "Command"» extends SuperCommand {
 			
 			}
 			''')
 			
-			fsa.generateFile('handlers/' + superCommand.name + 'Handler.java', '''package handlers;
+			fsa.generateFile('handlers/' + superCommand.name + 'Handler.java', '''
+			package handlers;
 			
 			import org.eclipse.core.commands.AbstractHandler;
 			import org.eclipse.core.commands.ExecutionEvent;
@@ -194,41 +195,19 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 			import org.eclipse.jface.window.Window;
 			import org.eclipse.ui.IWorkbenchWindow;
 			import org.eclipse.ui.handlers.HandlerUtil;
-			
-			import commands.PushCommand; ««« TODO Review these for-each and test them. Will require adjustment most likely
-			«FOR lowCommands : superCommand.lowlevelcommand»import commands.«lowCommands.class.name»
-			«ENDFOR»
-			import dialogs.PushDialog;««« Remove this when testing has been done
-			«FOR lowCommands : superCommand.lowlevelcommand»import dialogs.«lowCommands.class.name»
+			import org.eclipse.jface.dialogs.TitleAreaDialog;
+			import commands.ICommand;
+			«FOR lowCommands : superCommand.lowlevelcommand»import handlers.«lowCommands.command.getName.split("Command").get(0) + "Handler"»
 			«ENDFOR»
 			
-			public class «superCommand.name» extends AbstractHandler {
-				««« TODO Would transforming these in ArrayList<> would be better? Probably.
-				«FOR lowCommands : superCommand.lowlevelcommand»private «lowCommands.class.name» «lowCommands.class.name.toFirstLower»
-				«ENDFOR»
-				PushCommand pushCommand;
-				««« Transform all the commands into dialogs (we need the dialog corresponding to the command)
-				«FOR lowCommands : superCommand.lowlevelcommand»private «lowCommands.class.name.split("Command").get(0) + "Dialog"» «lowCommands.class.name.toFirstLower»
-				«ENDFOR»
-				private PushDialog dialog;
-			
+			public class «superCommand.name + "Handler"» extends AbstractHandler {
 				@Override
 				public Object execute(ExecutionEvent event) throws ExecutionException {
 					// get workbench window
 					IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-			
-					// Get the remote branches only and show them to the user.
-					dialog = new PushDialog(window.getShell());
-					// Open the dialog
-					dialog.create();
-			
-					// If OK has been pressed, do something
-					if (dialog.open() == Window.OK) {
-						// Simply call the command and execute it.
-						// Create the command and set the path
-						pushCommand = new PushCommand(dialog.getUsername(), dialog.getPassword());
-						pushCommand.call();
-					}
+					«FOR lowCommands : superCommand.lowlevelcommand»
+					new «lowCommands.command.getName.split("Command").get(0) + "Handler"»().execute(event);
+					«ENDFOR»
 					return null;
 				}
 			}''')
