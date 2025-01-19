@@ -79,6 +79,7 @@ import library.functions.JGitRepositoryAPIGenerator
 import library.dialogs.DialogUtilsGenerator
 import library.dialogs.PathDialogGenerator
 import vcsFeaturesMM.HighLevelCommand
+import metainf.ManifestGenerator
 
 /**
  * Generates code from your model files on save.
@@ -270,6 +271,13 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		
 		for (fg : functions){
 		fsa.generateFile('functions/' + fg.class.name.split("Generator").get(0).split("library.functions.").get(1) + '.java', fg.generate)
+		}
+		
+		val ArrayList<ManifestGenerator> manifest = new ArrayList<ManifestGenerator>()
+		manifest.add(new ManifestGenerator)
+		
+		for (man : manifest){
+		fsa.generateFile('META-INF/' + 'MANIFEST.MF', man.generate)
 		}
 	}
 }

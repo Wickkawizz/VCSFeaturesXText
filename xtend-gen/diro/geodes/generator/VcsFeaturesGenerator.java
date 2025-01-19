@@ -58,6 +58,7 @@ import library.handlers.PullHandlerGenerator;
 import library.handlers.PushHandlerGenerator;
 import library.handlers.RemoteAddHandlerGenerator;
 import library.handlers.RmHandlerGenerator;
+import metainf.ManifestGenerator;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -305,6 +306,12 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
       String _plus_8 = ("functions/" + _get_4);
       String _plus_9 = (_plus_8 + ".java");
       fsa.generateFile(_plus_9, fg.generate());
+    }
+    final ArrayList<ManifestGenerator> manifest = new ArrayList<ManifestGenerator>();
+    ManifestGenerator _manifestGenerator = new ManifestGenerator();
+    manifest.add(_manifestGenerator);
+    for (final ManifestGenerator man : manifest) {
+      fsa.generateFile(("META-INF/" + "MANIFEST.MF"), man.generate());
     }
   }
 }
