@@ -2,6 +2,7 @@ package configs
 
 import org.eclipse.emf.ecore.resource.Resource
 import vcsFeaturesMM.LowLevelCommand
+import vcsFeaturesMM.HighLevelCommand
 
 class PluginGenerator implements ConfigGenerator{
 	
@@ -47,6 +48,13 @@ class PluginGenerator implements ConfigGenerator{
 		            name="«llc.name»">
 		      </command>
 		      «ENDFOR»
+		      «FOR hlc : resource.allContents.filter(HighLevelCommand).toIterable»
+		      <command
+		      		categoryId="VCSFeatures.uiCommands"
+		      		id="VCSFeatures.«hlc.name + "Command"»"
+		      		name="«hlc.name»">
+		      </command>
+  		      «ENDFOR»
 		   </extension>
 		   <extension
 		         point="org.eclipse.ui.handlers">
@@ -56,8 +64,8 @@ class PluginGenerator implements ConfigGenerator{
 		      </handler>
 		      «FOR llc : resource.allContents.filter(LowLevelCommand).toIterable»
 			<handler			
-				class="handlers.«llc.command.getName.split("Command").get(0) + "Handler"»"
-				commandId="VCSFeatures.«llc.command.getName»">
+					class="handlers.«llc.command.getName.split("Command").get(0) + "Handler"»"
+					commandId="VCSFeatures.«llc.command.getName»">
 			</handler>
   		      «ENDFOR»
 		   </extension>

@@ -4,6 +4,7 @@ import com.google.common.collect.Iterators;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
+import vcsFeaturesMM.HighLevelCommand;
 import vcsFeaturesMM.LowLevelCommand;
 
 @SuppressWarnings("all")
@@ -131,6 +132,36 @@ public class PluginGenerator implements ConfigGenerator {
         _builder.newLine();
       }
     }
+    {
+      Iterable<HighLevelCommand> _iterable_1 = IteratorExtensions.<HighLevelCommand>toIterable(Iterators.<HighLevelCommand>filter(resource.getAllContents(), HighLevelCommand.class));
+      for(final HighLevelCommand hlc : _iterable_1) {
+        _builder.append("      ");
+        _builder.append("<command");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("\t\t");
+        _builder.append("categoryId=\"VCSFeatures.uiCommands\"");
+        _builder.newLine();
+        _builder.append("      ");
+        _builder.append("\t\t");
+        _builder.append("id=\"VCSFeatures.");
+        String _name_2 = hlc.getName();
+        String _plus = (_name_2 + "Command");
+        _builder.append(_plus, "      \t\t");
+        _builder.append("\"");
+        _builder.newLineIfNotEmpty();
+        _builder.append("      ");
+        _builder.append("\t\t");
+        _builder.append("name=\"");
+        String _name_3 = hlc.getName();
+        _builder.append(_name_3, "      \t\t");
+        _builder.append("\">");
+        _builder.newLineIfNotEmpty();
+        _builder.append("      ");
+        _builder.append("</command>");
+        _builder.newLine();
+      }
+    }
     _builder.append("   ");
     _builder.append("</extension>");
     _builder.newLine();
@@ -153,21 +184,21 @@ public class PluginGenerator implements ConfigGenerator {
     _builder.append("</handler>");
     _builder.newLine();
     {
-      Iterable<LowLevelCommand> _iterable_1 = IteratorExtensions.<LowLevelCommand>toIterable(Iterators.<LowLevelCommand>filter(resource.getAllContents(), LowLevelCommand.class));
-      for(final LowLevelCommand llc_1 : _iterable_1) {
+      Iterable<LowLevelCommand> _iterable_2 = IteratorExtensions.<LowLevelCommand>toIterable(Iterators.<LowLevelCommand>filter(resource.getAllContents(), LowLevelCommand.class));
+      for(final LowLevelCommand llc_1 : _iterable_2) {
         _builder.append("<handler\t\t\t");
         _builder.newLine();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("class=\"handlers.");
         String _get = llc_1.getCommand().getName().split("Command")[0];
-        String _plus = (_get + "Handler");
-        _builder.append(_plus, "\t");
+        String _plus_1 = (_get + "Handler");
+        _builder.append(_plus_1, "\t\t");
         _builder.append("\"");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
+        _builder.append("\t\t");
         _builder.append("commandId=\"VCSFeatures.");
-        String _name_2 = llc_1.getCommand().getName();
-        _builder.append(_name_2, "\t");
+        String _name_4 = llc_1.getCommand().getName();
+        _builder.append(_name_4, "\t\t");
         _builder.append("\">");
         _builder.newLineIfNotEmpty();
         _builder.append("</handler>");
@@ -202,20 +233,20 @@ public class PluginGenerator implements ConfigGenerator {
     _builder.append("label=\"VCSBuilder\">");
     _builder.newLine();
     {
-      Iterable<LowLevelCommand> _iterable_2 = IteratorExtensions.<LowLevelCommand>toIterable(Iterators.<LowLevelCommand>filter(resource.getAllContents(), LowLevelCommand.class));
-      for(final LowLevelCommand llc_2 : _iterable_2) {
+      Iterable<LowLevelCommand> _iterable_3 = IteratorExtensions.<LowLevelCommand>toIterable(Iterators.<LowLevelCommand>filter(resource.getAllContents(), LowLevelCommand.class));
+      for(final LowLevelCommand llc_2 : _iterable_3) {
         _builder.append("<command");
         _builder.newLine();
         _builder.append("      ");
         _builder.append("commandId=\"VCSFeatures.");
-        String _name_3 = llc_2.getCommand().getName();
-        _builder.append(_name_3, "      ");
+        String _name_5 = llc_2.getCommand().getName();
+        _builder.append(_name_5, "      ");
         _builder.append("\"");
         _builder.newLineIfNotEmpty();
         _builder.append("      ");
         _builder.append("label=\"");
-        String _name_4 = llc_2.getName();
-        _builder.append(_name_4, "      ");
+        String _name_6 = llc_2.getName();
+        _builder.append(_name_6, "      ");
         _builder.append("\"");
         _builder.newLineIfNotEmpty();
         _builder.append("      ");
