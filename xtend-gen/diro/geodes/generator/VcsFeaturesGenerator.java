@@ -4,6 +4,8 @@
 package diro.geodes.generator;
 
 import com.google.common.collect.Iterators;
+import configs.ConfigGenerator;
+import configs.PluginGenerator;
 import java.util.ArrayList;
 import library.commands.AddCommandGenerator;
 import library.commands.CheckoutCommandGenerator;
@@ -312,6 +314,12 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
     manifest.add(_manifestGenerator);
     for (final ManifestGenerator man : manifest) {
       fsa.generateFile(("META-INF/" + "MANIFEST.MF"), man.generate());
+    }
+    final ArrayList<ConfigGenerator> plugins = new ArrayList<ConfigGenerator>();
+    PluginGenerator _pluginGenerator = new PluginGenerator();
+    plugins.add(_pluginGenerator);
+    for (final ConfigGenerator plug : plugins) {
+      fsa.generateFile("plugin.xml", plug.generate(resource));
     }
   }
 }

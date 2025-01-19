@@ -1,6 +1,8 @@
 package configs;
 
+import org.eclipse.emf.ecore.resource.Resource;
+
 @SuppressWarnings("all")
 public interface ConfigGenerator {
-  CharSequence generate();
+  CharSequence generate(final Resource resource);
 }

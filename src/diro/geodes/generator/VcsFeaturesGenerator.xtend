@@ -80,6 +80,8 @@ import library.dialogs.DialogUtilsGenerator
 import library.dialogs.PathDialogGenerator
 import vcsFeaturesMM.HighLevelCommand
 import metainf.ManifestGenerator
+import configs.ConfigGenerator
+import configs.PluginGenerator
 
 /**
  * Generates code from your model files on save.
@@ -278,6 +280,13 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		
 		for (man : manifest){
 		fsa.generateFile('META-INF/' + 'MANIFEST.MF', man.generate)
+		}
+		
+		val ArrayList<ConfigGenerator> plugins = new ArrayList<ConfigGenerator>()
+		plugins.add(new PluginGenerator)
+		
+		for (plug : plugins){
+		fsa.generateFile('plugin.xml', plug.generate(resource))
 		}
 	}
 }
