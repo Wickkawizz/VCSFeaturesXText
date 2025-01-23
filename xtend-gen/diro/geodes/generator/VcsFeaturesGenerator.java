@@ -23,6 +23,7 @@ import library.commands.PullCommandGenerator;
 import library.commands.PushCommandGenerator;
 import library.commands.RemoteAddCommandGenerator;
 import library.commands.RmCommandGenerator;
+import library.commands.SuperCommandGenerator;
 import library.controllers.ControllerGenerator;
 import library.controllers.IVcsControllerGenerator;
 import library.controllers.PorcelainControllerGenerator;
@@ -111,6 +112,8 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
     commands.add(_remoteAddCommandGenerator);
     RmCommandGenerator _rmCommandGenerator = new RmCommandGenerator();
     commands.add(_rmCommandGenerator);
+    SuperCommandGenerator _superCommandGenerator = new SuperCommandGenerator();
+    commands.add(_superCommandGenerator);
     for (final CommandGenerator cg : commands) {
       String _get = (cg.getClass().getName().split("Generator")[0]).split("library.commands.")[1];
       String _plus = ("commands/" + _get);
@@ -171,6 +174,7 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
             String _get_1 = lowCommands.getCommand().getName().split("Command")[0];
             String _plus_7 = (_get_1 + "Handler");
             _builder_1.append(_plus_7);
+            _builder_1.append(";");
             _builder_1.newLineIfNotEmpty();
           }
         }
@@ -313,7 +317,7 @@ public class VcsFeaturesGenerator extends AbstractGenerator {
     ManifestGenerator _manifestGenerator = new ManifestGenerator();
     manifest.add(_manifestGenerator);
     for (final ManifestGenerator man : manifest) {
-      fsa.generateFile(("META-INF/" + "MANIFEST.MF"), man.generate());
+      fsa.generateFile(("META-INF/" + "MANIFEST.MF"), man.generate(resource));
     }
     final ArrayList<ConfigGenerator> plugins = new ArrayList<ConfigGenerator>();
     PluginGenerator _pluginGenerator = new PluginGenerator();

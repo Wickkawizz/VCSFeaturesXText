@@ -82,6 +82,7 @@ import vcsFeaturesMM.HighLevelCommand
 import metainf.ManifestGenerator
 import configs.ConfigGenerator
 import configs.PluginGenerator
+import library.commands.SuperCommandGenerator
 
 /**
  * Generates code from your model files on save.
@@ -161,6 +162,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		commands.add(new PushCommandGenerator)
 		commands.add(new RemoteAddCommandGenerator)
 		commands.add(new RmCommandGenerator)
+		commands.add(new SuperCommandGenerator)
 
 		
 		for (cg : commands){
@@ -200,7 +202,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 			import org.eclipse.ui.handlers.HandlerUtil;
 			import org.eclipse.jface.dialogs.TitleAreaDialog;
 			import commands.ICommand;
-			«FOR lowCommands : superCommand.lowlevelcommand»import handlers.«lowCommands.command.getName.split("Command").get(0) + "Handler"»
+			«FOR lowCommands : superCommand.lowlevelcommand»import handlers.«lowCommands.command.getName.split("Command").get(0) + "Handler"»;
 			«ENDFOR»
 			
 			public class «superCommand.name + "Handler"» extends AbstractHandler {
@@ -279,7 +281,7 @@ class VcsFeaturesGenerator extends AbstractGenerator {
 		manifest.add(new ManifestGenerator)
 		
 		for (man : manifest){
-		fsa.generateFile('META-INF/' + 'MANIFEST.MF', man.generate)
+		fsa.generateFile('META-INF/' + 'MANIFEST.MF', man.generate(resource))
 		}
 		
 		val ArrayList<ConfigGenerator> plugins = new ArrayList<ConfigGenerator>()

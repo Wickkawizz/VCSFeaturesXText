@@ -1,14 +1,17 @@
 package metainf
 
+import org.eclipse.emf.ecore.resource.Resource
+import vcsFeaturesMM.VCSFeatures
+
 class ManifestGenerator {
-	def generate()
+	def generate(Resource resource)
 	'''
 	Manifest-Version: 1.0
 	Bundle-ManifestVersion: 2
-	Bundle-Name: VCSFeatures««« TODO Change this for the name of the app when collected
-	Bundle-SymbolicName: VCSFeatures;singleton:=true
+	Bundle-Name: «resource.allContents.filter(VCSFeatures).head.name»
+	Bundle-SymbolicName: «resource.allContents.filter(VCSFeatures).head.name»;singleton:=true
 	Bundle-Version: 1.0.0.qualifier
-	Bundle-Activator: vcsfeatures.Activator««« TODO Change this for the name of the app when collected
+	Bundle-Activator: «resource.allContents.filter(VCSFeatures).head.name.toLowerCase».Activator
 	Require-Bundle: org.eclipse.swt,
 	 org.eclipse.e4.ui.model.workbench,
 	 org.eclipse.jface,
@@ -21,7 +24,7 @@ class ManifestGenerator {
 	 org.eclipse.ui,
 	 org.eclipse.jgit
 	Bundle-RequiredExecutionEnvironment: JavaSE-21
-	Automatic-Module-Name: VCSFeatures««« TODO Change this for the name of the app when collected
+	Automatic-Module-Name: «resource.allContents.filter(VCSFeatures).head.name»
 	Import-Package: jakarta.annotation;version="[2.1.0,3.0.0)",
 	 jakarta.inject;version="[2.0.0,3.0.0)",
 	 org.eclipse.core.resources

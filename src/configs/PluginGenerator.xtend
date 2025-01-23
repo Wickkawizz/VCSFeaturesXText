@@ -3,6 +3,7 @@ package configs
 import org.eclipse.emf.ecore.resource.Resource
 import vcsFeaturesMM.LowLevelCommand
 import vcsFeaturesMM.HighLevelCommand
+import vcsFeaturesMM.VCSFeatures
 
 class PluginGenerator implements ConfigGenerator{
 	
@@ -17,10 +18,10 @@ class PluginGenerator implements ConfigGenerator{
 		         point="org.eclipse.core.runtime.products">
 		      <product
 		            application="org.eclipse.e4.ui.workbench.swt.E4Application"
-		            name="vcsfeatures">
+		            name="«resource.allContents.filter(VCSFeatures).head.name.toLowerCase»">
 		         <property
 		               name="applicationCSS"
-		               value="platform:/plugin/VCSFeatures/css/default.css">
+		               value="platform:/plugin/«resource.allContents.filter(VCSFeatures).head.name»/css/default.css">
 		         </property>
 		      </product>
 		   </extension>
@@ -28,30 +29,30 @@ class PluginGenerator implements ConfigGenerator{
 		<extension
 		         point="org.eclipse.ui.commands">
 		      <category
-		            id="VCSFeatures.commands.category"
+		            id="«resource.allContents.filter(VCSFeatures).head.name».commands.category"
 		            name="Sample Category">
 		      </category>
 		      <category
-		            id="VCSFeatures.uiCommands"
+		            id="«resource.allContents.filter(VCSFeatures).head.name».uiCommands"
 		            name="UI Commands">
 		      </category>
 		      <command
-		            categoryId="VCSFeatures.commands.category"
+		            categoryId="«resource.allContents.filter(VCSFeatures).head.name».commands.category"
 		            description="This command is used to rename JGit commands (give aliases)"
-		            id="VCSFeatures.commands.renameCommand"
+		            id="«resource.allContents.filter(VCSFeatures).head.name».commands.renameCommand"
 		            name="Rename Command">
 		      </command>
 		      «FOR llc : resource.allContents.filter(LowLevelCommand).toIterable»
 		      <command
-		            categoryId="VCSFeatures.uiCommands"
-		            id="VCSFeatures.«llc.command.getName»"
+		            categoryId="«resource.allContents.filter(VCSFeatures).head.name».uiCommands"
+		            id="«resource.allContents.filter(VCSFeatures).head.name».«llc.command.getName»"
 		            name="«llc.name»">
 		      </command>
 		      «ENDFOR»
 		      «FOR hlc : resource.allContents.filter(HighLevelCommand).toIterable»
 		      <command
-		      		categoryId="VCSFeatures.uiCommands"
-		      		id="VCSFeatures.«hlc.name + "Command"»"
+		      		categoryId="«resource.allContents.filter(VCSFeatures).head.name».uiCommands"
+		      		id="«resource.allContents.filter(VCSFeatures).head.name».«hlc.name + "Command"»"
 		      		name="«hlc.name»">
 		      </command>
   		      «ENDFOR»
@@ -60,14 +61,20 @@ class PluginGenerator implements ConfigGenerator{
 		         point="org.eclipse.ui.handlers">
 		      <handler
 		            class="handlers.RenameHandler"
-		            commandId="VCSFeatures.commands.renameCommand">
+		            commandId="«resource.allContents.filter(VCSFeatures).head.name».commands.renameCommand">
 		      </handler>
 		      «FOR llc : resource.allContents.filter(LowLevelCommand).toIterable»
 			<handler			
 					class="handlers.«llc.command.getName.split("Command").get(0) + "Handler"»"
-					commandId="VCSFeatures.«llc.command.getName»">
+					commandId="«resource.allContents.filter(VCSFeatures).head.name».«llc.command.getName»">
 			</handler>
   		      «ENDFOR»
+  		      «FOR hlc : resource.allContents.filter(HighLevelCommand).toIterable»
+  			<handler			
+  					class="handlers.«hlc.getName + "Handler"»"
+  					commandId="«resource.allContents.filter(VCSFeatures).head.name».«hlc.name + "Command"»">
+  			</handler>
+		      «ENDFOR»
 		   </extension>
 		   <extension
 		            point="org.eclipse.ui.menus">
@@ -79,11 +86,18 @@ class PluginGenerator implements ConfigGenerator{
 		                  label="VCSBuilder">
 		                  «FOR llc : resource.allContents.filter(LowLevelCommand).toIterable»
 		               <command
-		                     commandId="VCSFeatures.«llc.command.getName»"
+		                     commandId="«resource.allContents.filter(VCSFeatures).head.name».«llc.command.getName»"
 		                     label="«llc.name»"
 		                     style="push">
 		               </command>
             		      «ENDFOR»
+            		      «FOR hlc : resource.allContents.filter(HighLevelCommand).toIterable»
+  		               <command
+  		                     commandId="«resource.allContents.filter(VCSFeatures).head.name».«hlc.name + "Command"»"
+  		                     label="«hlc.name»"
+  		                     style="push">
+  		               </command>
+              		      «ENDFOR»
 		            </menu>
 		         </menuContribution>
 			</extension>
